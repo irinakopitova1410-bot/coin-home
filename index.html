@@ -3,60 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COIN HOME | Atelier</title>
-    <link href="https://fonts.googleapis.com/css2?family=Prata&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <title>COIN HOME | ATELIER</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prata&family=Montserrat:wght@100;200;300;400&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header class="luxury-header">
-        <div class="header-section left">
-            <div class="burger-container" onclick="openNav()">
+        <div class="header-left">
+            <div class="burger-menu">
                 <div class="line"></div>
                 <div class="line"></div>
             </div>
         </div>
-
-        <div class="header-section center">
-            <h1 class="brand-logo" onclick="location.reload()">COIN HOME</h1>
+        
+        <div class="header-center">
+            <a href="#" class="brand-logo">COIN HOME</a>
         </div>
 
-        <div class="header-section right">
-            <div class="header-icon hide-mobile">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <div class="header-right">
+            <div class="search-trigger" onclick="toggleSearch(true)">
+                <span>CERCA</span>
+                <div class="trigger-line"></div>
             </div>
-            <div class="header-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-                <span class="cart-count">(0)</span>
+            <div class="icons">
+                <span>ACCEDI</span>
+                <span>AIUTO</span>
+                <span>(0)</span>
             </div>
         </div>
     </header>
-<section class="zara-search-overlay">
-    <div class="search-inner">
-        <input type="text" id="main-search" placeholder="COSA STAI CERCANDO?" onkeyup="filtraProdotti()">
-        <span class="search-close" onclick="document.getElementById('main-search').value=''">&times;</span>
-    </div>
-    <div class="search-suggestions">
-        <p>PUÒ INTERESSARTI</p>
-    </div>
-</section>
-    <nav id="full-menu" class="overlay-nav">
-        <span class="close-btn" onclick="closeNav()">&times;</span>
-        <div class="overlay-content">
-            <a href="#">Nuovi Arrivi</a>
-            <a href="#">Collezione Notte</a>
-            <a href="#">Decorazione</a>
-            <a href="#" class="vip-link">Area VIP %</a>
+
+    <div id="search-overlay" class="search-overlay">
+        <div class="search-overlay-header">
+            <div class="brand-logo-small">COIN HOME</div>
+            <span class="close-btn" onclick="toggleSearch(false)">&times;</span>
         </div>
-    </nav>
+        
+        <div class="search-content">
+            <div class="input-wrapper">
+                <input type="text" id="main-search" placeholder="COSA STAI CERCANDO?" onkeyup="filtraProdotti()">
+                <div class="search-line-bold"></div>
+            </div>
+            
+            <div class="search-suggestions">
+                <p>PUÒ INTERESSARTI</p>
+                <ul>
+                    <li>NOVITÀ</li>
+                    <li>COLLEZIONE PETS</li>
+                    <li>CANDELARIA</li>
+                    <li>TAPPETI IUTA</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-    <main id="griglia-prodotti" class="zara-grid"></main>
+    <main class="zara-container">
+        <div class="product-grid" id="grid-prodotti">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://static.zarahome.net/assets/public/6ec8/bd73/31e8424682ac/7cc3c382f/43386029052-a7/43386029052-a7.jpg" alt="Prodotto">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">TAPPETINO ANIMALI DOMESTICI IUTA</h3>
+                    <p class="product-price">15,99 €</p>
+                </div>
+            </div>
+            </div>
+    </main>
 
-    <a href="https://wa.me/3518588451" target="_blank" class="luxury-chat">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-        <span class="chat-text">CHAT</span>
-    </a>
-
-    <script src="script.js"></script>
+    <script>
+        function toggleSearch(show) {
+            const overlay = document.getElementById('search-overlay');
+            if(show) {
+                overlay.style.display = 'flex';
+                setTimeout(() => { document.getElementById('main-search').focus(); }, 100);
+            } else {
+                overlay.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
