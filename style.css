@@ -72,3 +72,59 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; padding-bottom: 
 /* FOOTER NAV */
 .quick-nav { position: fixed; bottom: 0; width: 100%; display: flex; background: #fff; border-top: 0.5px solid #eee; z-index: 1000; }
 .quick-nav button { flex: 1; padding: 20px; border: none; background: none; font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; }
+/* SEARCH BAR SUPER COOL */
+.search-container {
+    position: fixed;
+    top: 100px; /* Sotto l'header */
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+    z-index: 900;
+    transition: all 0.4s ease;
+}
+
+.search-glass {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.7); /* Trasparente */
+    backdrop-filter: blur(15px); /* Effetto vetro sfocato */
+    -webkit-backdrop-filter: blur(15px);
+    border: 0.5px solid rgba(0, 0, 0, 0.05);
+    border-radius: 50px; /* Arrotondata stile App moderna */
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03); /* Ombra leggerissima */
+}
+
+.search-icon {
+    color: #000;
+    margin-right: 15px;
+    opacity: 0.6;
+}
+
+#main-search {
+    border: none;
+    background: transparent;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    outline: none;
+    text-transform: uppercase;
+    color: #000;
+}
+
+#main-search::placeholder {
+    color: #999;
+    letter-spacing: 2px;
+}
+
+/* Effetto focus quando clicchi per scrivere */
+.search-glass:focus-within {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    transform: scale(1.02); /* Si ingrandisce leggermente */
+}
