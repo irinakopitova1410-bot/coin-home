@@ -51,7 +51,34 @@
         <button onclick="cambiaUser('Standard')">HOME</button>
         <button onclick="cambiaUser('VIP')" style="color: #d00; font-weight: 600;">AREA VIP %</button>
     </footer>
+<script src="script.js"></script>
+    <div id="newsletter-popup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="close-popup" onclick="closePopup()">&times;</span>
+            <h3 class="popup-title">NON HAI ANCORA LA NOSTRA APP?</h3>
+            <div class="qr-container">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://coin-home.onrender.com/" alt="QR Code">
+                <p>Scaricale subito!</p>
+            </div>
+            <div class="newsletter-section">
+                <h4>ISCRIVITI ALLA NOSTRA NEWSLETTER</h4>
+                <p>Iscriviti alla nostra newsletter e riceverai tutte le novità di COIN HOME.</p>
+                <div class="input-group">
+                    <input type="email" id="news-email" placeholder="Email*">
+                    <button onclick="subscribe()">SOTTOSCRIVITI</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
 
-    <script src="script.js"></script>
+
+
+
+
+
+
+    
 </body>
 </html>
