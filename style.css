@@ -40,19 +40,22 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; padding-bottom: 
 }
 .zara-details { 
     position: absolute; 
-    bottom: 50%; /* Lo sposta a metà altezza */
-    left: 50%;   /* Lo sposta a metà larghezza */
-    transform: translate(-50%, 50%); /* Lo centra esattamente al mezzo */
-    text-align: center; /* Allinea il testo al centro */
-    width: 90%; /* Evita che il testo tocchi i bordi */
+    bottom: 50%; 
+    left: 50%;   
+    /* Nota bene: deve essere -50%, -50% per centrare perfettamente */
+    transform: translate(-50%, 50%); 
+    text-align: center; 
+    width: 90%; 
     color: #000;
-    background: rgba(255, 255, 255, 0.5); /* Leggero velo bianco per leggere meglio il testo */
-    padding: 20px;
-    backdrop-filter: blur(5px); /* Effetto vetro sfocato sotto il testo */
+    background: rgba(255, 255, 255, 0.4); 
+    padding: 25px 15px;
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); /* Per farlo vedere bene su iPhone */
+    border-radius: 2px;
 }
 .zara-name { 
     font-family: 'Libre Baskerville', serif; 
-    font-size: 1.2rem; /* Leggermente più grande */
+    font-size: 1.1rem; 
     font-style: italic; 
     margin: 10px 0; 
     text-transform: uppercase;
