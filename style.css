@@ -84,12 +84,13 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; padding-bottom: 
     z-index: 900;
     transition: all 0.4s ease;
 }
-
 .search-glass {
     width: 100%;
     max-width: 500px;
-    background: rgba(255, 255, 255, 0.7); /* Trasparente */
-    backdrop-filter: blur(15px); /* Effetto vetro sfocato */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* AGGIUNGI QUESTA */
+    background: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(15px); 
+    /* ... il resto del tuo codice ... */
     -webkit-backdrop-filter: blur(15px);
     border: 0.5px solid rgba(0, 0, 0, 0.05);
     border-radius: 50px; /* Arrotondata stile App moderna */
