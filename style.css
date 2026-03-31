@@ -1,26 +1,30 @@
-/* 1. RESET E FONTS */
+/* =========================================================
+   1. RESET & FONT - IL FONDAMENTO DEL LUSSO
+   ========================================================= */
 * {
     margin: 0;
     padding: 0;
-    box-box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; /* Font pulito */
 }
 
 body {
-    background-color: #fff;
+    background-color: #fff; /* Bianco assoluto */
     color: #000;
     overflow-x: hidden;
     padding-top: 100px; /* Spazio per l'header fisso */
 }
 
-/* 2. HEADER LUXURY (ZARA STYLE) */
+/* =========================================================
+   2. HEADER LUXURY (ZARA STYLE) - LOGO CENTRALE
+   ========================================================= */
 .luxury-header {
     position: fixed;
     top: 0; left: 0; width: 100%;
     height: 75px;
     background: #fff;
     display: grid;
-    grid-template-columns: 1fr auto 1fr; /* Logo perfettamente al centro */
+    grid-template-columns: 1fr auto 1fr; /* Tre colonne per allineamento perfetto */
     align-items: center;
     padding: 0 40px;
     z-index: 2000;
@@ -32,9 +36,9 @@ body {
 .header-section.right { display: flex; justify-content: flex-end; gap: 25px; }
 
 .brand-logo {
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Libre Baskerville', serif; /* Font elegante con grazie */
     font-size: 1.3rem;
-    letter-spacing: 7px;
+    letter-spacing: 7px; /* Spaziatura ampia */
     text-transform: uppercase;
     cursor: pointer;
     white-space: nowrap;
@@ -56,6 +60,7 @@ body {
 }
 
 /* Burger Menu */
+.burger-container { cursor: pointer; }
 .line {
     width: 20px;
     height: 1px;
@@ -63,7 +68,9 @@ body {
     margin: 5px 0;
 }
 
-/* 3. RICERCA "GLASS" */
+/* =========================================================
+   3. RICERCA "GLASS" SOPRA I PRODOTTI
+   ========================================================= */
 .search-container {
     display: flex;
     justify-content: center;
@@ -73,7 +80,7 @@ body {
 .search-glass {
     width: 90%;
     max-width: 600px;
-    background: #f4f4f4;
+    background: #f4f4f4; /* Grigio chiarissimo */
     padding: 12px 20px;
     border-radius: 2px;
     display: flex;
@@ -89,9 +96,12 @@ body {
     font-size: 0.7rem;
     letter-spacing: 1px;
     text-transform: uppercase;
+    font-weight: 200; /* Font sottilissimo */
 }
 
-/* 4. GRIGLIA PRODOTTI */
+/* =========================================================
+   4. GRIGLIA PRODOTTI
+   ========================================================= */
 .zara-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -99,129 +109,44 @@ body {
     padding: 0 10px;
 }
 
-/* CHAT ULTRA-MINIMAL (PIU' CORTA) */
+/* =========================================================
+   5. CHAT "MINI PILLOLA CHIC" (DESTRA) - IL RITORNO AL LUSSO
+   ========================================================= */
 .luxury-chat {
     position: fixed !important;
-    bottom: 110px !important; 
-    right: 30px !important;
-    left: auto !important;
+    bottom: 110px !important; /* Posizione sopra il popup */
+    right: 30px !important;   /* Spostata a DESTRA */
+    left: auto !important;   /* Annulla la vecchia posizione a sinistra */
     background: #fff;
-    border: 0.5px solid #e1d1d6; /* Linea ancora più sottile */
+    border: 1px solid #e1d1d6; /* Bordo grigio rosato delicato */
     
-    /* Padding ridottissimo per accorciare la barra */
-    padding: 6px 12px; 
+    /* PADDING AMPIO per restituire il senso di "spazio" e lusso */
+    padding: 10px 20px; 
     
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
     cursor: pointer;
     z-index: 2500;
-    border-radius: 50px; /* Arrotondamento perfetto */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    border-radius: 40px; /* Forma a pillola morbida */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Ombra minima */
     text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.3s ease;
 }
 
 .chat-text {
-    font-size: 0.55rem; /* Testo minuscolo ed elegante */
-    letter-spacing: 1.2px;
-    font-weight: 400;
+    /* RIPRISTINO DEL FONT DI LUSSO ORIGINALE */
+    font-size: 0.65rem; /* Un pelo più grande per respirare */
+    letter-spacing: 2px; /* Spaziatura ampia e lussuosa */
+    font-weight: 400; /* Non grassetto, ma sottile */
     color: #000;
-    text-transform: uppercase;
 }
 
-/* Effetto Hover: si allunga leggermente solo quando passi il mouse */
+/* Hover più elegante: solo bordo nero e un leggero movimento */
 .luxury-chat:hover {
-    padding: 6px 16px;
+    transform: translateY(-3px);
     border-color: #000;
-    background: #fdfdfd;
 }
 
-/* Icona SVG più piccola */
-.luxury-chat svg {
-    width: 14px;
-    height: 14px;
-}
-/* 6. POPUP NEWSLETTER (LATO DESTRO) */
-.popup-overlay {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 320px;
-    background: #fff;
-    z-index: 2400;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-    border: 1px solid #eee;
-    padding: 25px;
-    display: none; /* Gestito via JS */
-    animation: slideIn 0.5s ease-out;
-}
-
-@keyframes slideIn {
-    from { transform: translateX(100%); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-.popup-title { font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 15px; }
-
-.qr-container img {
-    width: 80px;
-    margin-bottom: 15px;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 10px 0;
-    border: none;
-    border-bottom: 1px solid #000;
-    font-size: 0.7rem;
-    margin-bottom: 15px;
-    outline: none;
-}
-
-.input-group button {
-    width: 100%;
-    background: #000;
-    color: #fff;
-    border: none;
-    padding: 12px;
-    font-size: 0.65rem;
-    letter-spacing: 2px;
-    cursor: pointer;
-}
-
-/* 7. MENU LATERALE OVERLAY */
-.overlay-nav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 3000;
-    top: 0; left: 0;
-    background-color: #fff;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
-
-.overlay-content { position: relative; width: 100%; padding: 40px; }
-
-.overlay-nav a {
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: #000;
-    display: block;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-}
-
-.close-btn { position: absolute; top: 20px; right: 30px; font-size: 30px; cursor: pointer; }
-
-/* 8. MOBILE RESPONSIVE */
-@media (max-width: 768px) {
-    .luxury-header { padding: 0 20px; height: 65px; }
-    .brand-logo { font-size: 1rem; letter-spacing: 4px; }
-    .hide-mobile { display: none; }
-    .luxury-chat { right: 20px; bottom: 90px; padding: 10px; }
-    .chat-text { display: none; } /* Su mobile solo l'icona nel cerchio */
-    .popup-overlay { width: 90%; right: 5%; left: 5%; }
-}
+/* =========================================================
+   6. POPUP NEWSLETTER (L
