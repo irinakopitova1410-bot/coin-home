@@ -86,8 +86,8 @@ function closePopup() {
     if(popup) popup.style.display = "none";
 }
 
-// ATTIVAZIONE: Mostra il popup dopo 5 secondi
-setTimeout(openPopup, 5000);
+// ATTIVAZIONE: Mostra il popup dopo 1 secondi
+setTimeout(openPopup, 1000);
 
 // Funzione per il tasto sottoscriviti
 function subscribe() {
