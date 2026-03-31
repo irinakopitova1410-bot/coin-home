@@ -36,7 +36,21 @@ function renderApp() {
         `;
         main.appendChild(card);
     });
+function filtraProdotti() {
+    const input = document.getElementById('main-search').value.toUpperCase();
+    const items = document.querySelectorAll('.zara-item');
 
+    items.forEach(item => {
+        const nomeProdotto = item.querySelector('.zara-name').innerText.toUpperCase();
+        if (nomeProdotto.indexOf(input) > -1) {
+            item.style.display = "";
+            item.classList.add('visible'); // Riattiva l'animazione
+        } else {
+            item.style.display = "none";
+            item.classList.remove('visible');
+        }
+    });
+}
     // --- MOTORE ANIMAZIONE (RIGA 43 CIRCA) ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
