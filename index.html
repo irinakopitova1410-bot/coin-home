@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COIN HOME | Official Site</title>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <title>COIN HOME | Atelier Online</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,19 +23,13 @@
 
         <div class="header-section right">
             <div class="header-icon" onclick="cambiaUser('VIP')">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-                </svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="header-icon hide-mobile">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
             </div>
             <div class="header-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1">
-                    <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
-                </svg>
-            </div>
-            <div class="header-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1">
-                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
-                </svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                 <span class="cart-count">(0)</span>
             </div>
         </div>
@@ -43,10 +37,8 @@
 
     <div class="search-container">
         <div class="search-glass">
-            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
-            </svg>
-            <input type="text" id="main-search" placeholder="CERCA NELL'ATELIER..." onkeyup="filtraProdotti()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" id="main-search" placeholder="COSA STAI CERCANDO?" onkeyup="filtraProdotti()">
         </div>
     </div>
 
@@ -54,51 +46,36 @@
         <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
         <div class="overlay-content">
             <div class="menu-section">
-                <span class="section-title">COLLEZIONI</span>
-                <a href="#" onclick="cambiaUser('Standard'); closeNav()">NUOVI ARRIVI</a>
-                <a href="#" onclick="cambiaUser('VIP'); closeNav()" style="color:#d00; font-weight:500;">SPECIAL PRICE VIP %</a>
-            </div>
-            <div class="menu-section">
-                <span class="section-title">CATEGORIE</span>
-                <a href="#" onclick="closeNav()">SOGGIORNO</a>
-                <a href="#" onclick="closeNav()">CAMERA DA LETTO</a>
-                <a href="#" onclick="closeNav()">FRAGRANZE</a>
+                <span class="section-title">SHOP</span>
+                <a href="#" onclick="cambiaUser('Standard'); closeNav()">COLLEZIONE</a>
+                <a href="#" onclick="cambiaUser('VIP'); closeNav()" style="color:#d00;">OFFERTE VIP %</a>
             </div>
         </div>
     </div>
 
-    <main id="griglia-prodotti" class="zara-grid">
-        </main>
+    <main id="griglia-prodotti" class="zara-grid"></main>
 
     <div id="newsletter-popup" class="popup-overlay">
         <div class="popup-content">
             <span class="close-popup" onclick="closePopup()">&times;</span>
-            <h3 class="popup-title">APP COIN HOME</h3>
+            <h3 class="popup-title">COIN HOME APP</h3>
             <div class="qr-container">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://coin-home.onrender.com/" alt="QR Code">
-                <p>Scansione per accedere</p>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://coin-home.onrender.com/" alt="QR">
             </div>
             <div class="newsletter-section">
-                <h4>RESTA AGGIORNATO</h4>
                 <div class="input-group">
-                    <input type="email" id="news-email" placeholder="Email*">
+                    <input type="email" placeholder="EMAIL PER ACCESSO VIP">
                     <button onclick="subscribe()">SOTTOSCRIVITI</button>
                 </div>
             </div>
         </div>
     </div>
+
     <a href="https://wa.me/3518588451" target="_blank" class="luxury-chat">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.2">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-    </svg>
-    <span class="chat-text">CHAT</span>
-</a>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        <span class="chat-text">CHAT</span>
+    </a>
+
     <script src="script.js"></script>
-<div class="luxury-chat" onclick="window.open('https://wa.me/tuonumero', '_blank')">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.2">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-    </svg>
-    <span class="chat-text">CHAT</span>
-</div>
 </body>
 </html>
