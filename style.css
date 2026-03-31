@@ -226,23 +226,32 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; padding-bottom: 
     transition: all 0.3s ease;
 }
 
-.luxury-chat:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    border-color: #000;
+/* CHAT SPOSTATA A DESTRA */
+.luxury-chat {
+    position: fixed;
+    bottom: 100px; /* Alzata a 100px per non coprire il popup che sta a 20px */
+    right: 30px;  /* Spostata a DESTRA */
+    background: #fff;
+    border: 1px solid #e1d1d6;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    z-index: 2500;
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
 }
 
-.chat-text {
-    font-size: 0.65rem;
-    letter-spacing: 2px;
-    font-weight: 400;
-    color: #000;
-}
-
-/* Nascondi testo su mobile per essere ancora più minimal */
+/* Modifica anche la versione mobile */
 @media (max-width: 768px) {
-    .chat-text { display: none; }
-    .luxury-chat { padding: 12px; border-radius: 50%; bottom: 20px; left: 20px; }
+    .luxury-chat {
+        bottom: 90px; /* Mantienila sopra il popup anche su mobile */
+        right: 20px;
+        left: auto;   /* Annulla il vecchio left: 20px */
+        padding: 12px;
+    }
 }
 /* Rimpiccioliamo un po' il QR per il box laterale */
 .qr-container img { width: 100px; margin: 10px 0; }
