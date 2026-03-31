@@ -38,10 +38,35 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; padding-bottom: 
     opacity: 1;
     transform: translateY(0);
 }
-.zara-details { position: absolute; bottom: 40px; left: 20px; text-align: left; }
-.zara-name { font-family: 'Libre Baskerville', serif; font-size: 1rem; font-style: italic; margin: 5px 0; }
+.zara-details { 
+    position: absolute; 
+    bottom: 50%; /* Lo sposta a metà altezza */
+    left: 50%;   /* Lo sposta a metà larghezza */
+    transform: translate(-50%, 50%); /* Lo centra esattamente al mezzo */
+    text-align: center; /* Allinea il testo al centro */
+    width: 90%; /* Evita che il testo tocchi i bordi */
+    color: #000;
+    background: rgba(255, 255, 255, 0.5); /* Leggero velo bianco per leggere meglio il testo */
+    padding: 20px;
+    backdrop-filter: blur(5px); /* Effetto vetro sfocato sotto il testo */
+}
+.zara-name { 
+    font-family: 'Libre Baskerville', serif; 
+    font-size: 1.2rem; /* Leggermente più grande */
+    font-style: italic; 
+    margin: 10px 0; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 .old-price { text-decoration: line-through; color: #888; font-size: 0.8rem; margin-right: 10px; }
-.zara-status { color: #d00; font-size: 0.6rem; font-weight: bold; letter-spacing: 1px; }
+.zara-status { 
+    color: #d00; 
+    font-size: 0.7rem; 
+    font-weight: bold; 
+    letter-spacing: 3px; 
+    display: block;
+    margin-bottom: 5px;
+}
 .btn-zara { background: #000; color: #fff; border: none; padding: 12px 30px; font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; margin-top: 15px; cursor: pointer; }
 
 /* FOOTER NAV */
