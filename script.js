@@ -1,42 +1,82 @@
+/* --- LOGICA DI VENDITA COIN HOME --- */
+
 const catalogo = [
-    { id: 1, nome: "Scultura in Ceramica Grezza", scorta: 1, prezzo: 59, standardDesc: 10, vip: true, vipDesc: 60, img: "https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?q=80&w=1200" },
-    { id: 2, nome: "Poltrona in Tessuto Bouclé Chic", scorta: 1, prezzo: 450, standardDesc: 15, vip: true, vipDesc: 75, img: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1200" },
-    { id: 3, nome: "Candela Botanica Pure Linen", scorta: 5, prezzo: 29, standardDesc: 5, vip: false, vipDesc: 40, img: "https://images.unsplash.com/photo-1602872030219-cbf647a41456?q=80&w=1200" }
+    { 
+        id: 1, 
+        nome: "Vaso in gres lavorato", 
+        prezzo: 49, 
+        scontoStandard: 15, 
+        vip: true, 
+        scontoVip: 60, 
+        img: "https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?q=80&w=1200" 
+    },
+    { 
+        id: 2, 
+        nome: "Poltrona in tessuto bouclé", 
+        prezzo: 380, 
+        scontoStandard: 20, 
+        vip: true, 
+        scontoVip: 75, 
+        img: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1200" 
+    },
+    { 
+        id: 3, 
+        nome: "Candela vegetale 'Linen'", 
+        prezzo: 25, 
+        scontoStandard: 10, 
+        vip: false, 
+        scontoVip: 40, 
+        img: "https://images.unsplash.com/photo-1603006905003-be475563bc59?q=80&w=1200" 
+    }
 ];
 
-let mode = "Standard";
-const WHATSAPP = "+ 39 3518588451 ; // <--- IL TUO NUMERO QUI
+let modalita = "Standard";
+const WHATSAPP_NUM = "393282121307"; // Sostituisci con il tuo numero reale
 
-function buildApp() {
+function renderApp() {
     const main = document.getElementById('griglia-prodotti');
     main.innerHTML = "";
-    document.getElementById('user-badge').innerText = mode === "VIP" ? "OFFERTE RISERVATE %" : "NUOVA COLLEZIONE";
+    
+    // Aggiorna il testo del badge nell'header se presente
+    const badge = document.getElementById('tipo-view');
+    if(badge) badge.innerText = modalita === "VIP" ? "OFFERTE RISERVATE %" : "NUOVI ARRIVI";
 
     catalogo.forEach(p => {
-        if (p.vip && mode !== "VIP") return;
-        let sconto = mode === "VIP" ? p.vipDesc : p.standardDesc;
-        let prezzoF = p.prezzo - (p.prezzo * sconto / 100);
+        // Logica Rimanenze: Se è un pezzo VIP, appare solo in modalità VIP
+        if (p.vip && modalita !== "VIP") return;
 
-        const card = document.createElement('div');
-        card.className = 'card-vip';
-        card.innerHTML = `
-            <img src="${p.img}" class="img-cinematic">
-            <div class="info-vip">
-                <span class="tag-exclusive">SPECIAL PRICE -${sconto}%</span>
-                <h3 class="nome-prod-luxury">${p.nome}</h3>
-                <div class="prezzi-vip">
-                    <span class="old-p-vip">${p.prezzo.toFixed(2)}€</span>
-                    <span>${prezzoF.toFixed(2)}€</span>
+        let sconto = modalita === "VIP" ? p.scontoVip : p.scontoStandard;
+        let prezzoFinale = p.prezzo - (p.prezzo * sconto / 100);
+
+        // Struttura a Scansione Verticale (Zara Home Style)
+        const item = document.createElement('div');
+        item.className = 'zara-item';
+        item.innerHTML = `
+            <img src="${p.img}" loading="lazy">
+            <div class="zara-details">
+                <span class="zara-status">SPECIAL PRICE -${sconto}%</span>
+                <h2 class="zara-name">${p.nome}</h2>
+                <div class="zara-price">
+                    <span class="old-price">${p.prezzo.toFixed(2)}€</span>
+                    <span>${prezzoFinale.toFixed(2)}€</span>
                 </div>
-                ${p.scorta < 3 ? `<p class="rimanenza-urgenza">ULTIMO PEZZO DISPONIBILE</p>` : `<p class="rimanenza-urgenza" style="color:black">Disponibile: ${p.scorta}</p>`}
-                <button class="btn-reserve-vip" onclick="order('${p.nome}', ${prezzoF.toFixed(2)})">Prenota</button>
+                <button class="btn-zara" onclick="inviaOrdine('${p.nome}', ${prezzoFinale.toFixed(2)})">PRENOTA ORA</button>
             </div>
         `;
-        main.appendChild(card);
+        main.appendChild(item);
     });
 }
 
-function cambiaUser(tipo) { mode = tipo; buildApp(); window.scrollTo(0,0); }
-function order(n, p) { window.open(`https://wa.me/${WHATSAPP}?text=Richiesta ordine: ${n} (${p}€)`, '_blank'); }
+function cambiaUser(tipo) {
+    modalita = tipo;
+    renderApp();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
-window.onload = buildApp;
+function inviaOrdine(nome, prezzo) {
+    const messaggio = `Buongiorno, vorrei ordinare dal catalogo: ${nome} al prezzo scontato di ${prezzo}€.`;
+    window.open(`https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent(messaggio)}`, '_blank');
+}
+
+// Avvio dell'app al caricamento
+window.onload = renderApp;
