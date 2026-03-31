@@ -12,26 +12,31 @@ body { background: #fff; color: #000; overflow-x: hidden; }
 .header-section.center { display: flex; justify-content: center; }
 .header-section.right { display: flex; justify-content: flex-end; gap: 25px; }
 
-/* Sostituisci la riga 15 e 16 con questo */
-.brand-logo { 
-    font-family: 'Prata', serif; /* Font da Casa di Moda */
-    font-size: 1.6rem; 
-    letter-spacing: 12px; /* Molto più spazio tra le lettere */
-    text-transform: uppercase; 
-    cursor: pointer;
+/* --- IL LOGO D'ELITE --- */
+.brand-logo {
+    font-family: 'Prata', serif; /* Manteniamo Prata, ma lo usiamo in modo etereo */
+    font-size: 1.5rem; /* Rimpicciolito leggermente */
+    font-weight: 200; /* IMPORANTE: Peso minimizzato per la massima sottigliezza */
+    letter-spacing: 16px; /* Spaziatura estrema: le lettere respirano lusso */
+    text-transform: uppercase;
+    color: #000;
     display: flex;
     flex-direction: column;
     align-items: center;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
 }
 
-/* Aggiungi questo subito sotto per il sottotitolo elegante */
+/* --- IL SOTTOTITOLO SOTTILE --- */
 .brand-logo::after {
     content: "ATELIER";
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.5rem;
-    letter-spacing: 6px;
-    font-weight: 200;
-    margin-top: 5px;
+    font-size: 0.4rem; /* Minuscolo, quasi un sussurro */
+    letter-spacing: 10px; /* Ancora più aria per "Atelier" */
+    font-weight: 100; /* Il peso più sottile possibile */
+    margin-top: 12px; /* Più stacco dal logo principale */
+    opacity: 0.5; /* Semi-trasparente per non competere */
 }
 
 /* BURGER */
