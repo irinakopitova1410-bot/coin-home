@@ -1,195 +1,37 @@
-/* --- RESET & FONTS --- */
-* { 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
-    -webkit-font-smoothing: antialiased; 
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Montserrat', sans-serif; background: #fff; padding-bottom: 80px; }
 
-body { 
-    background-color: #ffffff; 
-    color: #000000; 
-    font-family: 'Montserrat', sans-serif; 
-    overflow-x: hidden;
-}
-
-/* --- HEADER (ZARA STYLE) --- */
+/* HEADER */
 .luxury-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 25px;
-    position: fixed;
-    top: 0; width: 100%;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(20px); /* Effetto vetro moderno */
-    z-index: 1500;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 30px 20px; position: fixed; top: 0; width: 100%;
+    background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); z-index: 1000;
 }
+.brand-logo { font-family: 'Libre Baskerville', serif; letter-spacing: 8px; font-size: 1.1rem; text-transform: uppercase; }
+.burger-container { cursor: pointer; width: 22px; }
+.line { width: 100%; height: 1px; background: #000; margin: 5px 0; }
 
-.brand-logo {
-    font-family: 'Libre Baskerville', serif;
-    letter-spacing: 12px;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
-.burger-container {
-    cursor: pointer;
-    width: 22px;
-}
-
-.line {
-    width: 100%;
-    height: 1px;
-    background: #000;
-    margin: 5px 0;
-}
-
-/* --- MENU OVERLAY (H&M STYLE) --- */
+/* MENU OVERLAY */
 .overlay-nav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 3000;
-    top: 0; left: 0;
-    background-color: #ffffff;
-    overflow-x: hidden;
-    transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    height: 100%; width: 0; position: fixed; z-index: 2000;
+    top: 0; left: 0; background: #fff; overflow-x: hidden; transition: 0.5s;
 }
+.overlay-content { position: relative; top: 15%; width: 100%; padding: 0 40px; }
+.close-btn { position: absolute; top: 20px; right: 30px; font-size: 40px; color: #000; text-decoration: none; }
+.menu-section { margin-bottom: 40px; }
+.section-title { display: block; font-size: 0.6rem; color: #999; letter-spacing: 2px; margin-bottom: 15px; }
+.overlay-nav a { display: block; font-size: 1rem; color: #000; text-decoration: none; margin-bottom: 15px; letter-spacing: 1px; }
 
-.overlay-content {
-    position: relative;
-    top: 100px;
-    width: 100%;
-    padding: 0 40px;
-}
+/* PRODOTTI ZARA STYLE */
+.zara-grid { display: flex; flex-direction: column; padding-top: 80px; }
+.zara-item { position: relative; width: 100%; height: 85vh; margin-bottom: 5px; }
+.zara-item img { width: 100%; height: 100%; object-fit: cover; }
+.zara-details { position: absolute; bottom: 40px; left: 20px; text-align: left; }
+.zara-name { font-family: 'Libre Baskerville', serif; font-size: 1rem; font-style: italic; margin: 5px 0; }
+.old-price { text-decoration: line-through; color: #888; font-size: 0.8rem; margin-right: 10px; }
+.zara-status { color: #d00; font-size: 0.6rem; font-weight: bold; letter-spacing: 1px; }
+.btn-zara { background: #000; color: #fff; border: none; padding: 12px 30px; font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; margin-top: 15px; cursor: pointer; }
 
-.close-btn {
-    position: absolute;
-    top: 30px; right: 30px;
-    font-size: 40px;
-    text-decoration: none;
-    color: #000;
-    font-weight: 200;
-}
-
-.menu-section { margin-bottom: 50px; }
-
-.section-title {
-    display: block;
-    font-size: 0.55rem;
-    letter-spacing: 2.5px;
-    color: #999;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-}
-
-.overlay-nav a {
-    text-decoration: none;
-    font-size: 1.1rem;
-    color: #000;
-    display: block;
-    margin-bottom: 18px;
-    font-weight: 300;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-}
-
-.vip-highlight { color: #d00 !important; font-weight: 500 !important; }
-
-.menu-footer {
-    margin-top: 40px;
-    border-top: 0.5px solid #eee;
-    padding-top: 30px;
-}
-
-.menu-footer a { font-size: 0.65rem; color: #888; margin-right: 20px; }
-
-/* --- GRIGLIA PRODOTTI (CINEMATIC) --- */
-.zara-grid { 
-    display: flex; 
-    flex-direction: column; 
-    padding-top: 0; /* I prodotti partono da sotto l'header */
-}
-
-.zara-item { 
-    position: relative; 
-    width: 100%; 
-    height: 95vh; /* Immagine quasi a schermo intero */
-    margin-bottom: 5px;
-}
-
-.zara-item img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-}
-
-/* Dettagli prodotto sopra l'immagine */
-.zara-details { 
-    position: absolute; 
-    bottom: 60px; 
-    left: 25px; 
-    text-align: left; 
-    color: #000;
-}
-
-.zara-name { 
-    font-family: 'Libre Baskerville', serif;
-    font-size: 1rem; 
-    letter-spacing: 1px; 
-    font-weight: 400; 
-    margin-bottom: 8px;
-    font-style: italic;
-}
-
-.zara-price { font-size: 0.85rem; font-weight: 400; letter-spacing: 1px; }
-.old-price { text-decoration: line-through; color: #888; margin-right: 10px; font-size: 0.75rem; }
-
-.zara-status { 
-    font-size: 0.55rem; 
-    color: #d00; 
-    margin-top: 15px; 
-    letter-spacing: 2px; 
-    text-transform: uppercase; 
-    font-weight: bold;
-}
-
-.btn-zara { 
-    background: #000; 
-    color: #fff; 
-    border: none; 
-    padding: 14px 40px; 
-    font-size: 0.6rem; 
-    letter-spacing: 3px; 
-    text-transform: uppercase; 
-    margin-top: 25px; 
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn-zara:hover { background: #333; }
-
-/* --- NAVIGAZIONE RAPIDA IN FONDO --- */
-.quick-nav {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    background: rgba(255, 255, 255, 0.95);
-    border-top: 0.5px solid #eee;
-    z-index: 1000;
-}
-
-.quick-nav button {
-    flex: 1;
-    padding: 20px;
-    border: none;
-    background: none;
-    font-size: 0.6rem;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: #000;
-    cursor: pointer;
-}
+/* FOOTER NAV */
+.quick-nav { position: fixed; bottom: 0; width: 100%; display: flex; background: #fff; border-top: 0.5px solid #eee; z-index: 1000; }
+.quick-nav button { flex: 1; padding: 20px; border: none; background: none; font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; }
