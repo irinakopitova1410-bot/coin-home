@@ -208,6 +208,42 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; padding-bottom: 
     color: #999;
 }
 
+/* STILE CHAT FLOTTANTE */
+.luxury-chat {
+    position: fixed;
+    bottom: 30px;
+    left: 30px; /* Lo mettiamo a sinistra così non litiga con il popup a destra */
+    background: #fff;
+    border: 1px solid #e1d1d6; /* Grigio rosato come nel tuo screenshot */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    z-index: 2500;
+    border-radius: 40px; /* Forma a pillola molto moderna */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.luxury-chat:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border-color: #000;
+}
+
+.chat-text {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+    color: #000;
+}
+
+/* Nascondi testo su mobile per essere ancora più minimal */
+@media (max-width: 768px) {
+    .chat-text { display: none; }
+    .luxury-chat { padding: 12px; border-radius: 50%; bottom: 20px; left: 20px; }
+}
 /* Rimpiccioliamo un po' il QR per il box laterale */
 .qr-container img { width: 100px; margin: 10px 0; }
 .popup-title { font-size: 0.7rem; letter-spacing: 1px; margin-bottom: 10px; }
