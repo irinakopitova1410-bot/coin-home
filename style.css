@@ -56,6 +56,15 @@ body { background: #fff; color: #000; overflow-x: hidden; }
     font-weight: 400; 
     letter-spacing: -0.5px;
 }
+
+.zara-status {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200; /* Super leggero */
+    font-size: 0.6rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
 .btn-zara { background: #000; color: #fff; border: none; padding: 12px 40px; font-size: 0.6rem; letter-spacing: 3px; cursor: pointer; text-transform: uppercase; }
 
 /* CHAT CORTA (LUSSO) */
