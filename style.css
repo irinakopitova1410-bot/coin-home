@@ -93,59 +93,37 @@ body { background: #fff; color: #000; overflow-x: hidden; }
     width: 280px; /* Larghezza discreta, non invasiva */
 }
 
-/* CONTAINER RICERCA ZARA */
+/* CONTAINER RICERCA - PIÙ SPAZIO E ARIA */
 .zara-search-overlay {
     width: 100%;
-    padding: 60px 40px 20px;
+    padding: 100px 40px 40px; /* Aumentato il padding superiore per non toccare l'header */
     background: #fff;
-    border-bottom: 0.5px solid #e0e0e0;
+    border-bottom: 0.5px solid #f0f0f0;
+    margin-top: 80px; /* Spinge la ricerca sotto l'header fisso */
 }
 
 .search-inner {
-    position: relative;
     display: flex;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    border-bottom: 1px solid #000; /* La linea nera sotto il testo */
 }
 
-/* L'INPUT GIGANTE E LEGGERO */
 .search-inner input {
     width: 100%;
     border: none;
     outline: none;
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.2rem; /* Font grande come Zara */
-    font-weight: 200; /* Molto sottile */
+    font-size: 2.5rem; /* Ancora più grande ed elegante */
+    font-weight: 200; 
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #000;
+    padding: 10px 0;
 }
 
-/* Placeholder personalizzato */
-.search-inner input::placeholder {
-    color: #a8a8a8;
-}
-
-/* La X di chiusura */
-.search-close {
-    font-size: 2rem;
-    font-weight: 100;
-    cursor: pointer;
-    color: #000;
-    padding-left: 20px;
-}
-
-/* Suggerimenti sotto la barra */
+/* Suggerimenti distanziati */
 .search-suggestions {
     max-width: 1200px;
-    margin: 30px auto 0;
-}
-
-.search-suggestions p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.65rem;
-    letter-spacing: 1.5px;
-    color: #666;
-    text-transform: uppercase;
+    margin: 40px auto 0;
 }
