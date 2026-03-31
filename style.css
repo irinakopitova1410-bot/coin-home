@@ -24,8 +24,20 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; padding-bottom: 
 
 /* PRODOTTI ZARA STYLE */
 .zara-grid { display: flex; flex-direction: column; padding-top: 80px; }
-.zara-item { position: relative; width: 100%; height: 85vh; margin-bottom: 5px; }
-.zara-item img { width: 100%; height: 100%; object-fit: cover; }
+.zara-item { 
+    position: relative; 
+    width: 100%; 
+    height: 85vh; 
+    margin-bottom: 5px;
+    opacity: 0; 
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.zara-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 .zara-details { position: absolute; bottom: 40px; left: 20px; text-align: left; }
 .zara-name { font-family: 'Libre Baskerville', serif; font-size: 1rem; font-style: italic; margin: 5px 0; }
 .old-price { text-decoration: line-through; color: #888; font-size: 0.8rem; margin-right: 10px; }
