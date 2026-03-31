@@ -75,3 +75,22 @@ function inviaOrdine(nome, prezzo) {
 }
 
 window.onload = renderApp;
+// Funzioni per gestire il Popup
+function openPopup() {
+    const popup = document.getElementById("newsletter-popup");
+    if(popup) popup.style.display = "flex";
+}
+
+function closePopup() {
+    const popup = document.getElementById("newsletter-popup");
+    if(popup) popup.style.display = "none";
+}
+
+// ATTIVAZIONE: Mostra il popup dopo 5 secondi
+setTimeout(openPopup, 5000);
+
+// Funzione per il tasto sottoscriviti
+function subscribe() {
+    alert("Grazie per l'iscrizione! Controlla la tua email per il codice VIP.");
+    closePopup();
+}
