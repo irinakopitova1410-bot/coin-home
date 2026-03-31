@@ -110,43 +110,54 @@ body {
 }
 
 /* =========================================================
-   5. CHAT "MINI PILLOLA CHIC" (DESTRA) - IL RITORNO AL LUSSO
+   5. CHAT "BOUTIQUE LUXURY" (SISTEMATA)
    ========================================================= */
 .luxury-chat {
     position: fixed !important;
-    bottom: 110px !important; /* Posizione sopra il popup */
-    right: 30px !important;   /* Spostata a DESTRA */
-    left: auto !important;   /* Annulla la vecchia posizione a sinistra */
+    bottom: 110px !important; 
+    right: 30px !important;   
+    left: auto !important;   
+    
+    /* BLOCCA LA LARGHEZZA: Impedisce alla riga di allungarsi */
+    width: auto !important;
+    display: inline-flex !important; /* Fondamentale per non farla espandere */
+    
     background: #fff;
-    border: 1px solid #e1d1d6; /* Bordo grigio rosato delicato */
-    
-    /* PADDING AMPIO per restituire il senso di "spazio" e lusso */
-    padding: 10px 20px; 
-    
-    display: flex;
+    border: 1px solid #d1d1d6; /* Bordo sottile grigio rosato Zara */
+    padding: 10px 22px; 
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     cursor: pointer;
     z-index: 2500;
-    border-radius: 40px; /* Forma a pillola morbida */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Ombra minima */
+    border-radius: 40px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .chat-text {
-    /* RIPRISTINO DEL FONT DI LUSSO ORIGINALE */
-    font-size: 0.65rem; /* Un pelo più grande per respirare */
-    letter-spacing: 2px; /* Spaziatura ampia e lussuosa */
-    font-weight: 400; /* Non grassetto, ma sottile */
+    font-size: 0.65rem; 
+    letter-spacing: 2px; 
+    font-weight: 400; 
     color: #000;
+    text-transform: uppercase;
 }
 
-/* Hover più elegante: solo bordo nero e un leggero movimento */
 .luxury-chat:hover {
     transform: translateY(-3px);
     border-color: #000;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .luxury-chat {
+        right: 20px !important;
+        bottom: 90px !important;
+        padding: 12px;
+        border-radius: 50%;
+    }
+    .chat-text { display: none; } /* Solo icona su mobile */
+}
 /* =========================================================
    6. POPUP NEWSLETTER (L
