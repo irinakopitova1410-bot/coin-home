@@ -3,35 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Coin Home - VIP Sconti</title>
+    <title>COIN HOME | Sito Ufficiale</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <h1 class="logo">COIN HOME</h1>
-        <div id="user-badge" class="badge-standard">CLIENTE STANDARD</div>
+        <div class="logo">COIN HOME</div>
+        <div id="user-badge">COLLEZIONE <span id="tipo-view">STANDARD</span></div>
     </header>
-<section style="text-align:center; padding:20px; background:#f9f9f9; border-top:1px solid #eee;">
-    <h3 style="font-size:0.9rem;">INSTALLA L'APP COIN HOME</h3>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://coin-home.onrender.com" alt="QR Code">
-    <p style="font-size:0.7rem; color:#666;">Inquadra con la fotocamera per averci sempre con te!</p>
-</section>
-    <main id="app">
-        <div class="header-sezione">
-            <h2 id="titolo-pagina">Nuova Collezione</h2>
-            <p id="sottotitolo">Eleganza per la tua casa</p>
-        </div>
 
-        <div id="griglia-prodotti" class="grid">
-            </div>
-    </main>
+    <main id="griglia-prodotti" class="zara-grid"></main>
 
-    <nav class="nav-bottom">
-        <button class="btn-std" onclick="cambiaUser('Standard')">HOME</button>
-        <button class="btn-vip" onclick="cambiaUser('VIP')">AREA VIP %</button>
+    <nav class="zara-nav">
+        <button onclick="cambiaUser('Standard')">HOME</button>
+        <button onclick="cambiaUser('VIP')" class="btn-vip-access">AREA VIP %</button>
     </nav>
 
     <script src="script.js"></script>
