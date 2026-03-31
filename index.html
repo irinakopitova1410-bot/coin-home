@@ -3,26 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>COIN HOME VIP | L'Eleganza su Misura</title>
-    <link rel="stylesheet" href="style.css">
+    <title>COIN HOME | Official Store</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="loading">
+<body>
 
-    <header class="main-header">
-        <div class="logo">COIN HOME</div>
-        <div id="user-badge" class="badge-standard">NUOVA COLLEZIONE</div>
+    <header class="luxury-header">
+        <div class="burger-container" onclick="openNav()">
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <div class="brand-logo" onclick="location.reload()">COIN HOME</div>
+
+        <div class="user-icon" onclick="openNav()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
     </header>
 
-    <main id="app-content">
-        <section class="cinematic-grid" id="griglia-prodotti"></section>
-    </main>
+    <div id="full-menu" class="overlay-nav">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        
+        <div class="overlay-content">
+            <div class="menu-section">
+                <span class="section-title">COLLEZIONI</span>
+                <a href="#" onclick="cambiaUser('Standard'); closeNav()">NUOVI ARRIVI</a>
+                <a href="#" onclick="cambiaUser('VIP'); closeNav()" class="vip-highlight">SPECIAL PRICE VIP %</a>
+            </div>
+            
+            <div class="menu-section">
+                <span class="section-title">ARREDO & DESIGN</span>
+                <a href="#" onclick="closeNav()">SOGGIORNO</a>
+                <a href="#" onclick="closeNav()">CAMERA DA LETTO</a>
+                <a href="#" onclick="closeNav()">FRAGRANZE</a>
+                <a href="#" onclick="closeNav()">TAVOLA & CUCINA</a>
+            </div>
 
-    <nav class="nav-vip">
-        <button onclick="cambiaUser('Standard')" class="nav-btn active" id="btn-standard">COIN HOME</button>
-        <button onclick="cambiaUser('VIP')" class="nav-btn btn-vip-trigger" id="btn-vip">IL TUO SPAZIO VIP</button>
-    </nav>
+            <div class="menu-footer">
+                <a href="#">I NOSTRI NEGOZI</a>
+                <a href="#">CONTATTI</a>
+                <p style="font-size: 0.5rem; color: #ccc; margin-top: 20px; letter-spacing: 1px;">© COIN HOME 2026</p>
+            </div>
+        </div>
+    </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <main id="griglia-prodotti" class="zara-grid">
