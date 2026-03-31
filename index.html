@@ -4,29 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COIN HOME | ATELIER</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Prata&family=Montserrat:wght@100;200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="luxury-header">
+    <nav id="side-menu" class="side-menu">
+        <span class="close-btn" onclick="toggleMenu(false)">&times;</span>
+        <div class="menu-content">
+            <ul class="menu-list">
+                <li><a href="#">NOVITÀ</a></li>
+                <li><a href="#">COLLEZIONE PETS</a></li>
+                <li><a href="#">VINCENT VAN DUYSEN</a></li>
+                <li class="menu-spacer"></li>
+                <li><a href="#">CAMERA DA LETTO</a></li>
+                <li><a href="#">CUCINA E SALA DA PRANZO</a></li>
+                <li><a href="#">BAGNO</a></li>
+                <li><a href="#">FRAGRANZE</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="search-overlay" class="search-overlay">
+        <div class="search-header-ui">
+            <div class="brand-logo-small">COIN HOME</div>
+            <span class="close-btn" onclick="toggleSearch(false)">&times;</span>
+        </div>
+        <div class="search-main-content">
+            <input type="text" id="main-search-input" placeholder="COSA STAI CERCANDO?" onkeyup="filtraProdotti()">
+            <div class="search-underline"></div>
+            <div class="search-suggestions">
+                <p>PUÒ INTERESSARTI</p>
+                <div class="suggest-links">
+                    <span>TAPPETI</span> <span>CANDELARIA</span> <span>NOVITÀ</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
         <div class="header-left">
-            <div class="burger-menu">
-                <div class="line"></div>
-                <div class="line"></div>
+            <div class="burger" onclick="toggleMenu(true)">
+                <div class="b-line"></div>
+                <div class="b-line"></div>
             </div>
         </div>
         
         <div class="header-center">
-            <a href="#" class="brand-logo">COIN HOME</a>
+            <h1 class="logo">COIN HOME</h1>
         </div>
 
         <div class="header-right">
             <div class="search-trigger" onclick="toggleSearch(true)">
                 <span>CERCA</span>
-                <div class="trigger-line"></div>
+                <div class="s-line"></div>
             </div>
-            <div class="icons">
+            <div class="nav-icons">
                 <span>ACCEDI</span>
                 <span>AIUTO</span>
                 <span>(0)</span>
@@ -34,54 +67,42 @@
         </div>
     </header>
 
-    <div id="search-overlay" class="search-overlay">
-        <div class="search-overlay-header">
-            <div class="brand-logo-small">COIN HOME</div>
-            <span class="close-btn" onclick="toggleSearch(false)">&times;</span>
-        </div>
-        
-        <div class="search-content">
-            <div class="input-wrapper">
-                <input type="text" id="main-search" placeholder="COSA STAI CERCANDO?" onkeyup="filtraProdotti()">
-                <div class="search-line-bold"></div>
-            </div>
-            
-            <div class="search-suggestions">
-                <p>PUÒ INTERESSARTI</p>
-                <ul>
-                    <li>NOVITÀ</li>
-                    <li>COLLEZIONE PETS</li>
-                    <li>CANDELARIA</li>
-                    <li>TAPPETI IUTA</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <main class="zara-container">
-        <div class="product-grid" id="grid-prodotti">
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="https://static.zarahome.net/assets/public/6ec8/bd73/31e8424682ac/7cc3c382f/43386029052-a7/43386029052-a7.jpg" alt="Prodotto">
+    <main class="content-wrapper">
+        <div class="zara-grid">
+            <div class="product-item">
+                <div class="img-box">
+                    <img src="https://static.zarahome.net/assets/public/6ec8/bd73/31e8424682ac/7cc3c382f/43386029052-a7/43386029052-a7.jpg" alt="Tappetino">
                 </div>
-                <div class="product-info">
-                    <h3 class="product-title">TAPPETINO ANIMALI DOMESTICI IUTA</h3>
-                    <p class="product-price">15,99 €</p>
+                <div class="info-box">
+                    <h2>TAPPETINO ANIMALI DOMESTICI IUTA</h2>
+                    <p>15,99 €</p>
                 </div>
             </div>
+            <div class="product-item">
+                <div class="img-box">
+                    <img src="https://static.zarahome.net/assets/public/008b/76b7/e00a44279b9c/0438b4d8d1e2/43386029052-a7.jpg" alt="Ciotola">
+                </div>
+                <div class="info-box">
+                    <h2>CIOTOLA PIEGHEVOLE SILICONE</h2>
+                    <p>11,99 €</p>
+                </div>
             </div>
+            <div class="product-item">
+                <div class="img-box">
+                    <img src="https://static.zarahome.net/assets/public/6641/1231/948348638685/2919d3640b39/43343029052-a7.jpg" alt="Cesta">
+                </div>
+                <div class="info-box">
+                    <h2>CESTA OSSO PER ANIMALI</h2>
+                    <p>39,99 €</p>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <script>
-        function toggleSearch(show) {
-            const overlay = document.getElementById('search-overlay');
-            if(show) {
-                overlay.style.display = 'flex';
-                setTimeout(() => { document.getElementById('main-search').focus(); }, 100);
-            } else {
-                overlay.style.display = 'none';
-            }
-        }
-    </script>
+    <div class="zara-chat">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
