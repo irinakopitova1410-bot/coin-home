@@ -1,40 +1,42 @@
 const catalogo = [
-    { id: 1, nome: "VASO CERAMICA RUSTICA", prezzo: 59, scontoStandard: 10, vip: true, scontoVip: 60, img: "https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?q=80&w=1200" },
-    { id: 2, nome: "POLTRONA TESSUTO BOUCLÉ", prezzo: 450, scontoStandard: 15, vip: true, scontoVip: 70, img: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1200" },
-    { id: 3, nome: "CANDELA VEGETALE PURE", prezzo: 29, scontoStandard: 5, vip: false, scontoVip: 40, img: "https://images.unsplash.com/photo-1602872030219-cbf647a41456?q=80&w=1200" }
+    { id: 1, nome: "Scultura in Ceramica Grezza", scorta: 1, prezzo: 59, standardDesc: 10, vip: true, vipDesc: 60, img: "https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?q=80&w=1200" },
+    { id: 2, nome: "Poltrona in Tessuto Bouclé Chic", scorta: 1, prezzo: 450, standardDesc: 15, vip: true, vipDesc: 75, img: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1200" },
+    { id: 3, nome: "Candela Botanica Pure Linen", scorta: 5, prezzo: 29, standardDesc: 5, vip: false, vipDesc: 40, img: "https://images.unsplash.com/photo-1602872030219-cbf647a41456?q=80&w=1200" }
 ];
 
-let modalita = "Standard";
-const WHATSAPP = "393282121307";
+let mode = "Standard";
+const WHATSAPP = "+ 39 3518588451 ; // <--- IL TUO NUMERO QUI
 
-function render() {
+function buildApp() {
     const main = document.getElementById('griglia-prodotti');
     main.innerHTML = "";
-    
-    catalogo.forEach(p => {
-        if (p.vip && modalita !== "VIP") return;
-        let sconto = modalita === "VIP" ? p.scontoVip : p.scontoStandard;
-        let finale = p.prezzo - (p.prezzo * sconto / 100);
+    document.getElementById('user-badge').innerText = mode === "VIP" ? "OFFERTE RISERVATE %" : "NUOVA COLLEZIONE";
 
-        main.innerHTML += `
-            <div class="zara-item">
-                <img src="${p.img}">
-                <div class="zara-details">
-                    <p style="color:#d00; font-size:0.6rem; margin-bottom:5px;">-${sconto}% SPECIAL PRICE</p>
-                    <h2 class="zara-name">${p.nome}</h2>
-                    <div class="zara-price">
-                        <span class="old-price">${p.prezzo.toFixed(2)}€</span>
-                        <span>${finale.toFixed(2)}€</span>
-                    </div>
-                    <p class="zara-status">ULTIME RIMANENZE</p>
-                    <button class="btn-zara" onclick="order('${p.nome}', ${finale.toFixed(2)})">PRENOTA ORA</button>
+    catalogo.forEach(p => {
+        if (p.vip && mode !== "VIP") return;
+        let sconto = mode === "VIP" ? p.vipDesc : p.standardDesc;
+        let prezzoF = p.prezzo - (p.prezzo * sconto / 100);
+
+        const card = document.createElement('div');
+        card.className = 'card-vip';
+        card.innerHTML = `
+            <img src="${p.img}" class="img-cinematic">
+            <div class="info-vip">
+                <span class="tag-exclusive">SPECIAL PRICE -${sconto}%</span>
+                <h3 class="nome-prod-luxury">${p.nome}</h3>
+                <div class="prezzi-vip">
+                    <span class="old-p-vip">${p.prezzo.toFixed(2)}€</span>
+                    <span>${prezzoF.toFixed(2)}€</span>
                 </div>
+                ${p.scorta < 3 ? `<p class="rimanenza-urgenza">ULTIMO PEZZO DISPONIBILE</p>` : `<p class="rimanenza-urgenza" style="color:black">Disponibile: ${p.scorta}</p>`}
+                <button class="btn-reserve-vip" onclick="order('${p.nome}', ${prezzoF.toFixed(2)})">Prenota</button>
             </div>
         `;
+        main.appendChild(card);
     });
 }
 
-function cambiaUser(tipo) { modalita = tipo; render(); window.scrollTo(0,0); }
-function order(n, p) { window.open(`https://wa.me/${WHATSAPP}?text=Vorrei prenotare ${n} a ${p}€`, '_blank'); }
+function cambiaUser(tipo) { mode = tipo; buildApp(); window.scrollTo(0,0); }
+function order(n, p) { window.open(`https://wa.me/${WHATSAPP}?text=Richiesta ordine: ${n} (${p}€)`, '_blank'); }
 
-window.onload = render;
+window.onload = buildApp;
