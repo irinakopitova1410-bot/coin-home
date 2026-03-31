@@ -31,11 +31,13 @@
             </div>
         </div>
     </header>
-<section class="search-container">
-    <div class="search-wrapper">
-        <label>CERCA</label>
-        <input type="text" id="main-search" placeholder="" onkeyup="filtraProdotti()">
-        <div class="search-line"></div>
+<section class="zara-search-overlay">
+    <div class="search-inner">
+        <input type="text" id="main-search" placeholder="COSA STAI CERCANDO?" onkeyup="filtraProdotti()">
+        <span class="search-close" onclick="document.getElementById('main-search').value=''">&times;</span>
+    </div>
+    <div class="search-suggestions">
+        <p>PUÒ INTERESSARTI</p>
     </div>
 </section>
     <nav id="full-menu" class="overlay-nav">
