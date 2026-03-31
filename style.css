@@ -1,129 +1,117 @@
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-body { background: #fff; color: #000; overflow-x: hidden; }
-
-/* HEADER ATELIER */
-.luxury-header {
-    position: fixed; top: 0; left: 0; width: 100%; height: 80px;
-    background: rgba(255,255,255,0.85); backdrop-filter: blur(15px);
-    display: grid; grid-template-columns: 1fr auto 1fr; 
-    align-items: center; padding: 0 40px; z-index: 2000;
+/* --- RESET E BASI --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; /* Font pulito per tutto il sito */
 }
-.header-section.left { display: flex; justify-content: flex-start; }
-.header-section.center { display: flex; justify-content: center; }
-.header-section.right { display: flex; justify-content: flex-end; gap: 25px; }
-/* --- IL LOGO D'ELITE --- */
-/* IMPOSTA IL LOGO COSÌ NEL TUO STYLE.CSS */
+
+body {
+    background-color: #fff;
+    color: #000;
+    overflow-x: hidden;
+}
+
+/* --- HEADER "ATELIER" (FISSO) --- */
+.luxury-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 0 40px;
+    z-index: 2000;
+    border-bottom: 0.5px solid #f2f2f2;
+}
+
 .brand-logo {
-    font-family: 'Prata', serif; /* Font d'élite */
-    font-size: 1.5rem; /* Sottile */
-    font-weight: 200; /* Leggerissimo */
+    font-family: 'Prata', serif;
+    font-size: 1.6rem;
+    font-weight: 200;
     letter-spacing: 16px; /* Spaziatura estrema */
     text-transform: uppercase;
+    text-decoration: none;
     color: #000;
     cursor: pointer;
-    /* Rimosso flexbox perché non serve più impilare nulla */
 }
 
-/* BURGER */
-.burger-container { cursor: pointer; }
-.line { width: 22px; height: 1px; background: #000; margin: 6px 0; }
-
-/* PRODOTTI GIGANTI (ZARA STYLE) */
-.zara-item { position: relative; width: 100%; height: 100vh; margin-bottom: 5px; }
-.zara-item img { width: 100%; height: 100%; object-fit: cover; }
-
-.zara-details {
-    position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%);
-    background: rgba(255,255,255,0.6); backdrop-filter: blur(20px);
-    padding: 35px; text-align: center; width: 90%; max-width: 500px;
-}
-/* Sostituisci la riga 30 con questo */
-.zara-name { 
-    font-family: 'Playfair Display', serif; 
-    font-size: 2rem; 
-    font-style: italic; /* Il corsivo è il segreto dell'eleganza */
-    margin: 10px 0; 
-    font-weight: 400; 
-    letter-spacing: -0.5px;
-}
-
-.zara-status {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 200; /* Super leggero */
-    font-size: 0.6rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-}
-
-.btn-zara { background: #000; color: #fff; border: none; padding: 12px 40px; font-size: 0.6rem; letter-spacing: 3px; cursor: pointer; text-transform: uppercase; }
-
-/* CHAT CORTA (LUSSO) */
-.luxury-chat {
-    position: fixed !important; bottom: 40px !important; right: 40px !important;
-    background: #fff; border: 0.5px solid #d1d1d6; padding: 10px 18px;
-    display: inline-flex !important; align-items: center; gap: 8px;
-    z-index: 2500; text-decoration: none; border-radius: 40px;
-}
-.chat-text { font-size: 0.6rem; letter-spacing: 2px; font-weight: 400; color: #000; }
-
-/* MENU OVERLAY */
-.overlay-nav { height: 100%; width: 0; position: fixed; z-index: 3000; top: 0; left: 0; background: #fff; transition: 0.5s; overflow-x: hidden; }
-.overlay-content { padding: 100px 50px; }
-.overlay-nav a { display: block; font-size: 1.3rem; color: #000; text-decoration: none; margin-bottom: 30px; letter-spacing: 3px; text-transform: uppercase; font-weight: 200; }
-.close-btn { position: absolute; top: 25px; left: 40px; font-size: 35px; cursor: pointer; }
-
-@media (max-width: 768px) {
-    .luxury-header { padding: 0 20px; }
-    .brand-logo { font-size: 1rem; letter-spacing: 4px; }
-    .luxury-chat { right: 20px; bottom: 20px; padding: 12px; }
-    .chat-text { display: none; }
-}
-/* --- RICERCA STILE ZARA (SOTTILE) --- */
-.search-container {
+.header-section.right {
     display: flex;
-    justify-content: center; /* La tiene al centro come il logo */
-    padding: 20px 0;
-    margin-top: 10px;
+    justify-content: flex-end;
+    gap: 25px;
+    font-size: 0.8rem;
 }
 
-.search-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 280px; /* Larghezza discreta, non invasiva */
-}
-
-/* CONTAINER RICERCA - PIÙ SPAZIO E ARIA */
+/* --- BARRA RICERCA "ZARA HOME" (OTTIMIZZATA) --- */
 .zara-search-overlay {
     width: 100%;
-    padding: 100px 40px 40px; /* Aumentato il padding superiore per non toccare l'header */
+    padding: 140px 40px 60px; /* Molta aria sopra per non toccare il logo */
     background: #fff;
-    border-bottom: 0.5px solid #f0f0f0;
-    margin-top: 80px; /* Spinge la ricerca sotto l'header fisso */
+    text-align: left;
 }
 
 .search-inner {
-    display: flex;
-    align-items: center;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
-    border-bottom: 1px solid #000; /* La linea nera sotto il testo */
+    position: relative;
+    border-bottom: 1px solid #e0e0e0; /* Linea grigia sottilissima */
 }
 
 .search-inner input {
     width: 100%;
     border: none;
     outline: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem; /* Ancora più grande ed elegante */
-    font-weight: 200; 
+    font-size: 2.2rem;
+    font-weight: 200;
     letter-spacing: 1px;
     text-transform: uppercase;
-    padding: 10px 0;
+    padding: 15px 0;
+    color: #000;
 }
 
-/* Suggerimenti distanziati */
+.search-inner input::placeholder {
+    color: #d1d1d6;
+}
+
 .search-suggestions {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 40px auto 0;
 }
+
+.search-suggestions p {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    color: #888;
+    text-transform: uppercase;
+}
+
+/* --- GRIGLIA PRODOTTI IMMERSIVA --- */
+.zara-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.zara-item {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ogni prodotto prende tutta la schermata */
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.zara-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- BOX DETTAGLI (EFFETTO GLASS) --- */
+.zara-details {
+    position: absolute;
+    bottom: 8%;
+    left:
