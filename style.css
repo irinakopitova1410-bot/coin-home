@@ -93,41 +93,59 @@ body { background: #fff; color: #000; overflow-x: hidden; }
     width: 280px; /* Larghezza discreta, non invasiva */
 }
 
-/* La scritta "CERCA" */
-.search-wrapper label {
+/* CONTAINER RICERCA ZARA */
+.zara-search-overlay {
+    width: 100%;
+    padding: 60px 40px 20px;
+    background: #fff;
+    border-bottom: 0.5px solid #e0e0e0;
+}
+
+.search-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* L'INPUT GIGANTE E LEGGERO */
+.search-inner input {
+    width: 100%;
+    border: none;
+    outline: none;
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.6rem;
-    letter-spacing: 3px;
-    font-weight: 300;
-    margin-right: 15px;
+    font-size: 2.2rem; /* Font grande come Zara */
+    font-weight: 200; /* Molto sottile */
+    letter-spacing: 1px;
     text-transform: uppercase;
     color: #000;
 }
 
-/* L'input dove scrivi */
-.search-wrapper input {
-    border: none;
-    background: transparent;
-    outline: none;
-    width: 100%;
+/* Placeholder personalizzato */
+.search-inner input::placeholder {
+    color: #a8a8a8;
+}
+
+/* La X di chiusura */
+.search-close {
+    font-size: 2rem;
+    font-weight: 100;
+    cursor: pointer;
+    color: #000;
+    padding-left: 20px;
+}
+
+/* Suggerimenti sotto la barra */
+.search-suggestions {
+    max-width: 1200px;
+    margin: 30px auto 0;
+}
+
+.search-suggestions p {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 1px;
-    padding-bottom: 5px;
-}
-
-/* La linea orizzontale sottilissima */
-.search-line {
-    position: absolute;
-    bottom: 0;
-    left: 55px; /* Parte esattamente dopo la parola CERCA */
-    right: 0;
-    height: 0.5px;
-    background: #000;
-    opacity: 0.2; /* Molto chiara, si vede appena */
-}
-
-/* Quando clicchi per scrivere, la linea diventa più scura */
-.search-wrapper input:focus + .search-line {
-    opacity: 1;
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    color: #666;
+    text-transform: uppercase;
 }
