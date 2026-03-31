@@ -40,7 +40,18 @@ function renderApp() {
         main.appendChild(card);
     });
 }
+// Attiva l'animazione di comparsa
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
 
+    document.querySelectorAll('.zara-item').forEach(item => {
+        observer.observe(item);
+    });
 // FUNZIONE PER CAMBIARE MODALITÀ (VIP/STANDARD)
 function cambiaUser(tipo) {
     modalita = tipo;
