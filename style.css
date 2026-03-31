@@ -12,7 +12,27 @@ body { background: #fff; color: #000; overflow-x: hidden; }
 .header-section.center { display: flex; justify-content: center; }
 .header-section.right { display: flex; justify-content: flex-end; gap: 25px; }
 
-.brand-logo { font-family: 'Libre Baskerville', serif; font-size: 1.3rem; letter-spacing: 8px; text-transform: uppercase; cursor: pointer; }
+/* Sostituisci la riga 15 e 16 con questo */
+.brand-logo { 
+    font-family: 'Prata', serif; /* Font da Casa di Moda */
+    font-size: 1.6rem; 
+    letter-spacing: 12px; /* Molto più spazio tra le lettere */
+    text-transform: uppercase; 
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Aggiungi questo subito sotto per il sottotitolo elegante */
+.brand-logo::after {
+    content: "ATELIER";
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.5rem;
+    letter-spacing: 6px;
+    font-weight: 200;
+    margin-top: 5px;
+}
 
 /* BURGER */
 .burger-container { cursor: pointer; }
