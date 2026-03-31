@@ -1,65 +1,53 @@
-/* RESET TOTALE */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-body { background: #fff; color: #000; overflow-x: hidden; padding-top: 80px; }
+body { background: #fff; color: #000; overflow-x: hidden; }
 
-/* HEADER TRASPARENTE */
+/* HEADER ATELIER */
 .luxury-header {
-    position: fixed; top: 0; left: 0; width: 100%; height: 75px;
-    background: rgba(255,255,255,0.9); backdrop-filter: blur(15px);
-    display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
-    padding: 0 40px; z-index: 2000; border-bottom: 0.5px solid #f0f0f0;
+    position: fixed; top: 0; left: 0; width: 100%; height: 80px;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(15px);
+    display: grid; grid-template-columns: 1fr auto 1fr; 
+    align-items: center; padding: 0 40px; z-index: 2000;
 }
-.brand-logo { font-family: 'Libre Baskerville', serif; font-size: 1.4rem; letter-spacing: 8px; text-transform: uppercase; cursor: pointer; }
+.header-section.left { display: flex; justify-content: flex-start; }
+.header-section.center { display: flex; justify-content: center; }
+.header-section.right { display: flex; justify-content: flex-end; gap: 25px; }
 
-/* GRIGLIA PRODOTTI */
-.zara-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* Uno sotto l'altro come catalogo */
-    gap: 0; padding: 0;
-}
+.brand-logo { font-family: 'Libre Baskerville', serif; font-size: 1.3rem; letter-spacing: 8px; text-transform: uppercase; cursor: pointer; }
 
-/* IL BOX PRODOTTO (IL TUO DESIGN ORIGINALE) */
-.zara-item {
-    position: relative; width: 100%; height: 100vh; overflow: hidden;
-}
-.zara-item img {
-    width: 100%; height: 100%; object-fit: cover;
-}
+/* BURGER */
+.burger-container { cursor: pointer; }
+.line { width: 22px; height: 1px; background: #000; margin: 6px 0; }
 
-/* BOX TRASPARENTE (GLASS EFFECT) */
+/* PRODOTTI GIGANTI (ZARA STYLE) */
+.zara-item { position: relative; width: 100%; height: 100vh; margin-bottom: 5px; }
+.zara-item img { width: 100%; height: 100%; object-fit: cover; }
+
 .zara-details {
     position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%);
-    background: rgba(255,255,255,0.7); backdrop-filter: blur(15px);
-    padding: 30px; text-align: center; width: 90%; max-width: 500px;
-    border: 0.5px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.6); backdrop-filter: blur(20px);
+    padding: 35px; text-align: center; width: 90%; max-width: 500px;
 }
+.zara-name { font-family: 'Libre Baskerville', serif; font-size: 1.6rem; font-style: italic; margin: 10px 0; font-weight: 400; }
+.btn-zara { background: #000; color: #fff; border: none; padding: 12px 40px; font-size: 0.6rem; letter-spacing: 3px; cursor: pointer; text-transform: uppercase; }
 
-.zara-status { font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; color: #666; }
-.zara-name { 
-    font-family: 'Libre Baskerville', serif; font-size: 1.6rem; 
-    font-style: italic; margin: 10px 0; font-weight: 400;
-}
-.zara-price { font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 20px; }
-
-/* BOTTONE NERO */
-.btn-zara {
-    background: #000; color: #fff; border: none; padding: 12px 40px;
-    font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; cursor: pointer;
-    transition: 0.3s;
-}
-
-/* CHAT A DESTRA (RETTANGOLO PULITO) */
+/* CHAT CORTA (LUSSO) */
 .luxury-chat {
     position: fixed !important; bottom: 40px !important; right: 40px !important;
-    left: auto !important; width: auto !important; display: inline-flex !important;
-    background: #fff; border: 1px solid #d1d1d6; padding: 10px 20px;
-    align-items: center; gap: 10px; z-index: 2500; text-decoration: none;
+    background: #fff; border: 0.5px solid #d1d1d6; padding: 10px 18px;
+    display: inline-flex !important; align-items: center; gap: 8px;
+    z-index: 2500; text-decoration: none; border-radius: 40px;
 }
-.chat-text { font-size: 0.65rem; letter-spacing: 2px; color: #000; }
+.chat-text { font-size: 0.6rem; letter-spacing: 2px; font-weight: 400; color: #000; }
 
-/* MOBILE */
+/* MENU OVERLAY */
+.overlay-nav { height: 100%; width: 0; position: fixed; z-index: 3000; top: 0; left: 0; background: #fff; transition: 0.5s; overflow-x: hidden; }
+.overlay-content { padding: 100px 50px; }
+.overlay-nav a { display: block; font-size: 1.3rem; color: #000; text-decoration: none; margin-bottom: 30px; letter-spacing: 3px; text-transform: uppercase; font-weight: 200; }
+.close-btn { position: absolute; top: 25px; left: 40px; font-size: 35px; cursor: pointer; }
+
 @media (max-width: 768px) {
     .luxury-header { padding: 0 20px; }
-    .brand-logo { font-size: 1.1rem; letter-spacing: 4px; }
+    .brand-logo { font-size: 1rem; letter-spacing: 4px; }
     .luxury-chat { right: 20px; bottom: 20px; padding: 12px; }
     .chat-text { display: none; }
 }
