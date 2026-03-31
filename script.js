@@ -1,42 +1,40 @@
 const catalogo = [
-    { id: 1, nome: "VASO IN CERAMICA RUSTICA", scorta: 1, prezzo: 59, standardDesc: 10, vip: true, vipDesc: 60, img: "https://images.unsplash.com/photo-1578500484692-911075677b5d?q=80&w=1000" },
-    { id: 2, nome: "POLTRONA IN TESSUTO BOUCLÉ", scorta: 1, prezzo: 450, standardDesc: 15, vip: true, vipDesc: 70, img: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1000" },
-    { id: 3, nome: "CANDELA VEGETALE PURE", scorta: 5, prezzo: 29, standardDesc: 5, vip: false, vipDesc: 40, img: "https://images.unsplash.com/photo-1602872030219-cbf647a41456?q=80&w=1000" }
+    { id: 1, nome: "VASO CERAMICA RUSTICA", prezzo: 59, scontoStandard: 10, vip: true, scontoVip: 60, img: "https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?q=80&w=1200" },
+    { id: 2, nome: "POLTRONA TESSUTO BOUCLÉ", prezzo: 450, scontoStandard: 15, vip: true, scontoVip: 70, img: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1200" },
+    { id: 3, nome: "CANDELA VEGETALE PURE", prezzo: 29, scontoStandard: 5, vip: false, scontoVip: 40, img: "https://images.unsplash.com/photo-1602872030219-cbf647a41456?q=80&w=1200" }
 ];
 
-let view = "Standard";
-const WHATSAPP_NUM = "393282121307"; // <--- METTI IL TUO NUMERO QUI
+let modalita = "Standard";
+const WHATSAPP = "393282121307";
 
-function renderApp() {
-    const container = document.getElementById('griglia-prodotti');
-    container.innerHTML = "";
-    document.getElementById('tipo-view').innerText = view === "VIP" ? "OFFERTE RISERVATE %" : "NUOVI ARRIVI";
-
+function render() {
+    const main = document.getElementById('griglia-prodotti');
+    main.innerHTML = "";
+    
     catalogo.forEach(p => {
-        if (p.vip && view !== "VIP") return;
-        let sconto = view === "VIP" ? p.vipDesc : p.standardDesc;
-        let prezzoF = p.prezzo - (p.prezzo * sconto / 100);
+        if (p.vip && modalita !== "VIP") return;
+        let sconto = modalita === "VIP" ? p.scontoVip : p.scontoStandard;
+        let finale = p.prezzo - (p.prezzo * sconto / 100);
 
-        const card = document.createElement('div');
-        card.className = 'zara-card';
-        card.innerHTML = `
-            <img src="${p.img}">
-            <div class="zara-info">
-                <span class="zara-tag">SPECIAL PRICE -${sconto}%</span>
-                <h3 class="zara-nome">${p.nome}</h3>
-                <div class="zara-prezzi">
-                    <span class="old-p">${p.prezzo.toFixed(2)}€</span>
-                    <span>${prezzoF.toFixed(2)}€</span>
+        main.innerHTML += `
+            <div class="zara-item">
+                <img src="${p.img}">
+                <div class="zara-details">
+                    <p style="color:#d00; font-size:0.6rem; margin-bottom:5px;">-${sconto}% SPECIAL PRICE</p>
+                    <h2 class="zara-name">${p.nome}</h2>
+                    <div class="zara-price">
+                        <span class="old-price">${p.prezzo.toFixed(2)}€</span>
+                        <span>${finale.toFixed(2)}€</span>
+                    </div>
+                    <p class="zara-status">ULTIME RIMANENZE</p>
+                    <button class="btn-zara" onclick="order('${p.nome}', ${finale.toFixed(2)})">PRENOTA ORA</button>
                 </div>
-                <p class="zara-scorta">${p.scorta < 2 ? 'ULTIMO DISPONIBILE' : 'RIMANENZA: ' + p.scorta}</p>
-                <button class="btn-buy" onclick="order('${p.nome}', ${prezzoF.toFixed(2)})">PRENOTA</button>
             </div>
         `;
-        container.appendChild(card);
     });
 }
 
-function cambiaUser(tipo) { view = tipo; renderApp(); window.scrollTo(0,0); }
-function order(n, p) { window.open(`https://wa.me/${WHATSAPP_NUM}?text=Salve, vorrei prenotare ${n} a ${p}€`, '_blank'); }
+function cambiaUser(tipo) { modalita = tipo; render(); window.scrollTo(0,0); }
+function order(n, p) { window.open(`https://wa.me/${WHATSAPP}?text=Vorrei prenotare ${n} a ${p}€`, '_blank'); }
 
-window.onload = renderApp;
+window.onload = render;
