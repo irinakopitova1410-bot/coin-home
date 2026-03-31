@@ -132,3 +132,45 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; padding-bottom: 
     box-shadow: 0 15px 40px rgba(0,0,0,0.08);
     transform: scale(1.02); /* Si ingrandisce leggermente */
 }
+/* STILE POPUP COIN HOME */
+.popup-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none; /* Parte nascosto, il JS lo mostrerà */
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.popup-content {
+    background: #fff;
+    width: 85%;
+    max-width: 400px;
+    padding: 40px 20px;
+    position: relative;
+    text-align: center;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.qr-container img { width: 150px; margin: 20px 0; border: 1px solid #eee; }
+
+.input-group input {
+    width: 100%; padding: 12px; border: none; border-bottom: 1px solid #000;
+    margin: 20px 0; outline: none;
+}
+
+.input-group button {
+    width: 100%; background: #000; color: #fff; border: none;
+    padding: 15px; letter-spacing: 2px; cursor: pointer;
+}
