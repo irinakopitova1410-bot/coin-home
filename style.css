@@ -47,7 +47,15 @@ body { background: #fff; color: #000; overflow-x: hidden; }
     background: rgba(255,255,255,0.6); backdrop-filter: blur(20px);
     padding: 35px; text-align: center; width: 90%; max-width: 500px;
 }
-.zara-name { font-family: 'Libre Baskerville', serif; font-size: 1.6rem; font-style: italic; margin: 10px 0; font-weight: 400; }
+/* Sostituisci la riga 30 con questo */
+.zara-name { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 2rem; 
+    font-style: italic; /* Il corsivo è il segreto dell'eleganza */
+    margin: 10px 0; 
+    font-weight: 400; 
+    letter-spacing: -0.5px;
+}
 .btn-zara { background: #000; color: #fff; border: none; padding: 12px 40px; font-size: 0.6rem; letter-spacing: 3px; cursor: pointer; text-transform: uppercase; }
 
 /* CHAT CORTA (LUSSO) */
