@@ -1,117 +1,199 @@
-/* --- RESET E BASI --- */
+/* --- RESET --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif; /* Font pulito per tutto il sito */
 }
 
 body {
+    font-family: 'Montserrat', sans-serif;
     background-color: #fff;
     color: #000;
-    overflow-x: hidden;
 }
 
-/* --- HEADER "ATELIER" (FISSO) --- */
+/* --- HEADER --- */
 .luxury-header {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    height: 90px;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     padding: 0 40px;
-    z-index: 2000;
-    border-bottom: 0.5px solid #f2f2f2;
+    background: #fff;
+    z-index: 1000;
 }
 
 .brand-logo {
     font-family: 'Prata', serif;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 200;
-    letter-spacing: 16px; /* Spaziatura estrema */
-    text-transform: uppercase;
+    letter-spacing: 18px; /* Logo sottile e largo */
     text-decoration: none;
     color: #000;
+    text-transform: uppercase;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+}
+
+/* --- TRIGGER RICERCA (ZARA STYLE) --- */
+.search-trigger {
+    cursor: pointer;
+    text-align: right;
+    width: 120px;
+}
+
+.search-trigger span {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.trigger-line {
+    width: 100%;
+    height: 0.5px;
+    background: #000;
+    margin-top: 4px;
+    opacity: 0.4;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+}
+
+/* --- OVERLAY RICERCA (LA NUOVA PAGINA) --- */
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 2000;
+    display: none; /* Si attiva col JS */
+    flex-direction: column;
+    padding: 40px;
+}
+
+.search-overlay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo-small {
+    font-family: 'Prata', serif;
+    letter-spacing: 8px;
+    font-size: 0.9rem;
+}
+
+.close-btn {
+    font-size: 2.5rem;
+    font-weight: 100;
     cursor: pointer;
 }
 
-.header-section.right {
-    display: flex;
-    justify-content: flex-end;
-    gap: 25px;
-    font-size: 0.8rem;
-}
-
-/* --- BARRA RICERCA "ZARA HOME" (OTTIMIZZATA) --- */
-.zara-search-overlay {
-    width: 100%;
-    padding: 140px 40px 60px; /* Molta aria sopra per non toccare il logo */
-    background: #fff;
-    text-align: left;
-}
-
-.search-inner {
+.search-content {
     max-width: 1100px;
-    margin: 0 auto;
-    position: relative;
-    border-bottom: 1px solid #e0e0e0; /* Linea grigia sottilissima */
+    margin: 100px auto 0;
+    width: 100%;
 }
 
-.search-inner input {
+.input-wrapper input {
     width: 100%;
     border: none;
     outline: none;
-    font-size: 2.2rem;
+    font-size: 2.8rem;
     font-weight: 200;
     letter-spacing: 1px;
     text-transform: uppercase;
-    padding: 15px 0;
-    color: #000;
+    padding: 20px 0;
 }
 
-.search-inner input::placeholder {
-    color: #d1d1d6;
+.search-line-bold {
+    width: 100%;
+    height: 1px;
+    background: #000;
 }
 
 .search-suggestions {
-    max-width: 1100px;
-    margin: 40px auto 0;
+    margin-top: 50px;
 }
 
 .search-suggestions p {
-    font-size: 0.65rem;
-    letter-spacing: 3px;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
     color: #888;
-    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
-/* --- GRIGLIA PRODOTTI IMMERSIVA --- */
-.zara-grid {
+.search-suggestions ul {
+    list-style: none;
     display: flex;
-    flex-direction: column;
+    gap: 30px;
 }
 
-.zara-item {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Ogni prodotto prende tutta la schermata */
-    margin-bottom: 5px;
+.search-suggestions li {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+/* --- GRIGLIA PRODOTTI --- */
+.zara-container {
+    margin-top: 140px;
+    padding: 0 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 15px;
+}
+
+.product-card {
+    cursor: pointer;
+}
+
+.product-image {
+    aspect-ratio: 3/4;
     overflow: hidden;
+    margin-bottom: 15px;
+    background: #f9f9f9;
 }
 
-.zara-item img {
+.product-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* --- BOX DETTAGLI (EFFETTO GLASS) --- */
-.zara-details {
-    position: absolute;
-    bottom: 8%;
-    left:
+.product-title {
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.product-price {
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+    .brand-logo { letter-spacing: 8px; font-size: 1.2rem; }
+    .input-wrapper input { font-size: 1.5rem; }
+}
