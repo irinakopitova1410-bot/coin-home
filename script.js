@@ -8,18 +8,15 @@ const catalogo = [
 let modalita = "Standard";
 const WHATSAPP_NUM = "393282121307"; 
 
-// FUNZIONE PER APRIRE/CHIUDERE MENU
 function openNav() { document.getElementById("full-menu").style.width = "100%"; }
 function closeNav() { document.getElementById("full-menu").style.width = "0%"; }
 
-// FUNZIONE PER CARICARE I PRODOTTI
 function renderApp() {
     const main = document.getElementById('griglia-prodotti');
     main.innerHTML = "";
     
     catalogo.forEach(p => {
         if (p.vip && modalita !== "VIP") return;
-
         let sconto = modalita === "VIP" ? p.scontoVip : p.scontoStd;
         let finale = p.prezzo - (p.prezzo * sconto / 100);
 
@@ -28,7 +25,7 @@ function renderApp() {
         card.innerHTML = `
             <img src="${p.img}">
             <div class="zara-details">
-                <span class="zara-status">OFFERTA -${sconto}%</span>
+                <span class="zara-status">${modalita === 'VIP' ? 'ESCLUSIVA VIP' : 'OFFERTA'} -${sconto}%</span>
                 <h2 class="zara-name">${p.nome}</h2>
                 <div class="zara-price">
                     <span class="old-price">${p.prezzo.toFixed(2)}€</span>
@@ -39,8 +36,8 @@ function renderApp() {
         `;
         main.appendChild(card);
     });
-}
-// Attiva l'animazione di comparsa
+
+    // --- MOTORE ANIMAZIONE (RIGA 43 CIRCA) ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -49,17 +46,15 @@ function renderApp() {
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.zara-item').forEach(item => {
-        observer.observe(item);
-    });
-// FUNZIONE PER CAMBIARE MODALITÀ (VIP/STANDARD)
+    document.querySelectorAll('.zara-item').forEach(item => observer.observe(item));
+}
+
 function cambiaUser(tipo) {
     modalita = tipo;
     renderApp();
     window.scrollTo(0,0);
 }
 
-// FUNZIONE WHATSAPP
 function inviaOrdine(nome, prezzo) {
     const msg = `Ciao Coin Home, vorrei ordinare ${nome} a ${prezzo}€`;
     window.open(`https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent(msg)}`, '_blank');
