@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COIN HOME | ATELIER</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -17,26 +17,26 @@
                 <span class="menu-text">MENU</span>
             </div>
         </div>
-
         <div class="header-center">
             <a href="/"><img src="logo-coin-atelier.svg" alt="COIN HOME" class="main-logo"></a>
         </div>
-
         <div class="header-right">
             <span class="search-btn" onclick="toggleSearch()">CERCA</span>
             <div class="user-nav">
-                <span>ACCEDI</span>
+                <span onclick="toggleLogin()">ACCEDI</span>
                 <span>(0)</span>
             </div>
         </div>
     </header>
-<div id="search-overlay" class="search-overlay">
-    <span class="close-x" onclick="toggleSearch()">&times;</span>
-    <div class="search-content">
-        <h2>COSA STAI CERCANDO?</h2>
-        <input type="text" placeholder="" id="search-input" autofocus>
+
+    <div id="search-overlay" class="search-overlay">
+        <span class="close-x" onclick="toggleSearch()">&times;</span>
+        <div class="search-content">
+            <h2>COSA STAI CERCANDO?</h2>
+            <input type="text" placeholder="" id="search-input">
+        </div>
     </div>
-</div>
+
     <div id="side-menu" class="side-menu">
         <span class="close-x" onclick="toggleMenu()">&times;</span>
         <nav>
@@ -50,64 +50,38 @@
         </nav>
     </div>
 
-    <main>
-        <div class="product-grid">
-            <div class="product-item">
-                <img src="https://static.zarahome.net/assets/public/6ec8/bd73/31e8424682ac/7cc3c382f/43386029052-a7/43386029052-a7.jpg" alt="Prodotto">
-                <h3>TAPPETINO IUTA</h3>
-                <p>15,99 €</p>
-            </div>
-        </div>
-<div class="login-container">
-    <div class="login-header">
-        <img src="logo-coin-atelier.svg" alt="COIN HOME" class="login-logo">
-    </div>
-
-    <section class="login-section">
-        <h2>EFFETTUA IL LOGIN</h2>
-        <form class="login-form">
+    <div id="login-overlay" class="login-overlay">
+        <span class="close-x" onclick="toggleLogin()">&times;</span>
+        <div class="login-container">
+            <h2>EFFETTUA IL LOGIN</h2>
             <div class="input-group">
                 <label>E-mail</label>
-                <input type="email" required>
+                <input type="email">
             </div>
             <div class="input-group">
                 <label>Password</label>
-                <div class="password-wrapper">
-                    <input type="password" required>
-                    <span class="show-password">👁</span>
-                </div>
+                <input type="password">
             </div>
-            <a href="#" class="forgot-password">Hai dimenticato la password?</a>
+            <a href="#" class="forgot-link">Hai dimenticato la password?</a>
+            <button class="btn-black">EFFETTUA IL LOGIN</button>
+            <button class="btn-white">REGISTRATI</button>
             
-            <button type="submit" class="btn-black">EFFETTUA IL LOGIN</button>
-            <button type="button" class="btn-white">REGISTRATI</button>
-        </form>
-    </section>
-
-    <section class="social-login">
-        <h3>ACCESSO CON</h3>
-        <p class="privacy-note">Effettuando l'accesso con il mio social login, accetto di collegare il mio account in conformità alla <a href="#">Politica sulla Privacy</a></p>
-        
-        <button class="social-btn"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="FB"> CONTINUA CON FACEBOOK</button>
-        <button class="social-btn"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="GO"> CONTINUA CON GOOGLE</button>
-        <button class="social-btn"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="AP"> CONTINUA CON APPLE</button>
-    </section>
-</div>
-
-
-        
-    </main>
-
-    <div id="app-popup" class="zara-popup-overlay">
-        <div class="zara-popup-content">
-            <span class="zara-popup-close" onclick="closeAppPopup()">&times;</span>
-            <h2 class="zara-popup-title">NON HAI ANCORA LA NOSTRA APP?</h2>
-            <div class="zara-popup-qr-container">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&amp;data=https://coin-home.onrender.com/" alt="QR" class="zara-popup-qr">
+            <div class="social-login">
+                <h3>ACCESSO CON</h3>
+                <button class="social-btn">CONTINUA CON FACEBOOK</button>
+                <button class="social-btn">CONTINUA CON GOOGLE</button>
+                <button class="social-btn">CONTINUA CON APPLE</button>
             </div>
-            <p class="zara-popup-subtitle">SCARICALA SUBITO!</p>
         </div>
     </div>
+
+    <main>
+        <div class="product-grid">
+            <div class="product-item"><img src="https://static.zarahome.net/assets/public/6ec8/bd73/31e8424682ac/7cc3c382f/43386029052-a7/43386029052-a7.jpg"></div>
+            <div class="product-item"><img src="https://static.zarahome.net/assets/public/008b/76b7/e00a44279b9c/0438b4d8d1e2/43386029052-a7.jpg"></div>
+            <div class="product-item"><img src="https://static.zarahome.net/assets/public/6641/1231/948348638685/2919d3640b39/43343029052-a7.jpg"></div>
+        </div>
+    </main>
 
     <script src="script.js"></script>
 </body>
