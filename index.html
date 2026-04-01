@@ -29,11 +29,37 @@
         </div>
     </header>
 
-    <div id="search-overlay" class="search-overlay">
+    <div id="search-overlay" class="overlay-full">
         <span class="close-x" onclick="toggleSearch()">&times;</span>
         <div class="search-content">
             <h2>COSA STAI CERCANDO?</h2>
-            <input type="text" placeholder="" id="search-input">
+            <input type="text" placeholder="" id="search-input" autofocus>
+        </div>
+    </div>
+
+    <div id="login-overlay" class="overlay-full">
+        <span class="close-x" onclick="toggleLogin()">&times;</span>
+        <div class="login-wrapper">
+            <h2>EFFETTUA IL LOGIN</h2>
+            <div class="input-zara">
+                <label>E-MAIL</label>
+                <input type="email" autocomplete="off">
+            </div>
+            <div class="input-zara">
+                <label>PASSWORD</label>
+                <input type="password">
+            </div>
+            <a href="#" class="forgot-link">Hai dimenticato la password?</a>
+            <button class="btn-black">EFFETTUA IL LOGIN</button>
+            <button class="btn-white">REGISTRATI</button>
+            
+            <div class="social-access">
+                <h3>ACCESSO CON</h3>
+                <p class="privacy-text">Effettuando l'accesso con il mio social login, accetto di collegare il mio account in conformità alla Politica sulla Privacy</p>
+                <button class="social-btn">CONTINUA CON FACEBOOK</button>
+                <button class="social-btn">CONTINUA CON GOOGLE</button>
+                <button class="social-btn">CONTINUA CON APPLE</button>
+            </div>
         </div>
     </div>
 
@@ -48,31 +74,6 @@
                 <li><a href="#">FRAGRANZE</a></li>
             </ul>
         </nav>
-    </div>
-
-    <div id="login-overlay" class="login-overlay">
-        <span class="close-x" onclick="toggleLogin()">&times;</span>
-        <div class="login-container">
-            <h2>EFFETTUA IL LOGIN</h2>
-            <div class="input-group">
-                <label>E-mail</label>
-                <input type="email">
-            </div>
-            <div class="input-group">
-                <label>Password</label>
-                <input type="password">
-            </div>
-            <a href="#" class="forgot-link">Hai dimenticato la password?</a>
-            <button class="btn-black">EFFETTUA IL LOGIN</button>
-            <button class="btn-white">REGISTRATI</button>
-            
-            <div class="social-login">
-                <h3>ACCESSO CON</h3>
-                <button class="social-btn">CONTINUA CON FACEBOOK</button>
-                <button class="social-btn">CONTINUA CON GOOGLE</button>
-                <button class="social-btn">CONTINUA CON APPLE</button>
-            </div>
-        </div>
     </div>
 
     <main>
