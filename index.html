@@ -7,41 +7,37 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="layout-zara">
 
-    <header>
-        <div class="header-left">
-            <div class="menu-burger" onclick="toggleMenu()">
-                <div class="line"></div>
-                <div class="line"></div>
-                <span class="menu-text">MENU</span>
+    <header class="header-main">
+        <div class="header-content">
+            <div class="header-left">
+                <button class="menu-trigger" onclick="toggleMenu()">
+                    <div class="burger-icon">
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="label">MENU</span>
+                </button>
             </div>
-        </div>
 
-        <div class="header-center">
-            <a href="/"><img src="logo-coin-atelier.svg" alt="COIN HOME" class="main-logo"></a>
-        </div>
+            <div class="header-center">
+                <a href="/"><img src="logo-coin-atelier.svg" alt="COIN HOME" class="logo-img"></a>
+            </div>
 
-        <div class="header-right">
-            <span class="search-btn" onclick="toggleSearch()">CERCA</span>
-            <div class="user-nav">
-                <span>ACCEDI</span>
-                <span>(0)</span>
+            <div class="header-right">
+                <button class="search-trigger" onclick="toggleSearch()">CERCA</button>
+                <div class="user-actions">
+                    <span>ACCEDI</span>
+                    <span>(0)</span>
+                </div>
             </div>
         </div>
     </header>
 
-    <div id="search-overlay" class="search-overlay">
-        <span class="close-btn-search" onclick="toggleSearch()">&times;</span>
-        <div class="search-content">
-            <h2>COSA STAI CERCANDO?</h2>
-            <input type="text" placeholder="CERCA..." id="search-input">
-        </div>
-    </div>
-
-    <div id="side-menu" class="side-menu">
-        <span class="close-btn-menu" onclick="toggleMenu()">&times;</span>
-        <nav>
+    <aside id="side-menu" class="zara-sidebar">
+        <button class="close-icon" onclick="toggleMenu()">&times;</button>
+        <nav class="nav-menu">
             <ul>
                 <li><a href="#">NOVITÀ</a></li>
                 <li><a href="#">COLLEZIONE PETS</a></li>
@@ -50,26 +46,36 @@
                 <li><a href="#">FRAGRANZE</a></li>
             </ul>
         </nav>
+    </aside>
+
+    <div id="search-overlay" class="zara-search-overlay">
+        <button class="close-icon" onclick="toggleSearch()">&times;</span>
+        <div class="search-wrapper">
+            <h2>COSA STAI CERCANDO?</h2>
+            <input type="text" placeholder="CERCA..." id="search-input" autofocus>
+        </div>
     </div>
 
-    <main>
-        <div class="product-grid">
-            <div class="product-item">
-                <img src="https://static.zarahome.net/assets/public/6ec8/bd73/31e8424682ac/7cc3c382f/43386029052-a7/43386029052-a7.jpg" alt="Tappeto">
-                <h3>TAPPETINO IUTA</h3>
-                <p>15,99 €</p>
+    <main class="container">
+        <section class="product-grid">
+            <div class="product-card">
+                <img src="https://static.zarahome.net/assets/public/6ec8/bd73/31e8424682ac/7cc3c382f/43386029052-a7/43386029052-a7.jpg" alt="Prodotto">
+                <div class="product-info">
+                    <h3>TAPPETINO IUTA</h3>
+                    <p>15,99 €</p>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
 
-    <div id="app-popup" class="zara-popup-overlay">
-        <div class="zara-popup-content">
-            <span class="zara-popup-close" onclick="closeAppPopup()">&times;</span>
-            <h2 class="zara-popup-title">NON HAI ANCORA LA NOSTRA APP?</h2>
-            <div class="zara-popup-qr-container">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&amp;data=https://coin-home.onrender.com/" alt="QR" class="zara-popup-qr">
+    <div id="app-popup" class="zara-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closePopup()">&times;</button>
+            <h2 class="modal-title">NON HAI ANCORA LA NOSTRA APP?</h2>
+            <div class="qr-box">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://coin-home.onrender.com/" alt="QR">
             </div>
-            <p class="zara-popup-subtitle">SCARICALA SUBITO!</p>
+            <p class="modal-footer-text">SCARICALA SUBITO!</p>
         </div>
     </div>
 
