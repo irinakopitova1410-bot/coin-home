@@ -164,17 +164,18 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; color: #000; ove
     min-height: 180px; /* Evita che il box si schiacci */
 }
 
-/* Forza l'immagine del QR a essere visibile e della dimensione giusta */
-.zara-popup-qr {
-    display: block !important;
-    width: 180px !important;
-    height: 180px !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    filter: none !important; /* Rimuove eventuali filtri che lo rendono invisibile */
-    background-color: #fff; /* Sfondo bianco per farlo leggere bene dai telefoni */
+.zara-popup-qr-container {
+    display: flex !important;
+    justify-content: center !important;
+    margin: 20px 0 !important;
 }
 
+.zara-popup-qr {
+    width: 180px !important;
+    height: 180px !important;
+    display: block !important;
+    background-color: #fff !important; /* Crea il quadrato bianco se il caricamento è lento */
+}
 /* Distanzia il testo "SCARICALA SUBITO" */
 .zara-popup-subtitle {
     margin-top: 20px !important;
