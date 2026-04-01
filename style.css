@@ -24,16 +24,53 @@ header {
 .side-menu li { margin-bottom: 25px; }
 .side-menu a { text-decoration: none; color: #000; font-size: 13px; letter-spacing: 1.5px; }
 
-/* RICERCA OVERLAY */
+/* RICERCA OVERLAY STILE ZARA HOME */
 .search-overlay {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: #fff; z-index: 3000; display: none; flex-direction: column; 
-    align-items: center; padding-top: 150px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 3000;
+    display: none; /* Diventa flex con .active */
+    flex-direction: column;
+    padding: 0; 
 }
-.search-overlay.active { display: flex; }
-.search-content h2 { font-family: 'Bodoni Moda', serif; font-weight: 300; margin-bottom: 40px; letter-spacing: 2px; font-size: 24px; }
-.search-content input { width: 80%; max-width: 600px; border: none; border-bottom: 1px solid #000; padding: 15px; font-size: 24px; outline: none; text-align: center; font-weight: 200; }
 
+.search-overlay.active { 
+    display: flex; 
+}
+
+.search-content {
+    width: 100%;
+    margin-top: 80px; /* Abbassa il blocco sotto l'header */
+    padding: 0 40px;  /* Margine laterale uguale al resto del sito */
+}
+
+/* SCRITTA "COSA STAI CERCANDO?" */
+.search-content h2 {
+    font-family: 'Montserrat', sans-serif; /* Più moderno di Bodoni per la ricerca */
+    font-size: 52px;       /* Molto più grande */
+    font-weight: 300;
+    color: #999;           /* Grigio chiaro come Zara */
+    letter-spacing: -1px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    text-align: left;      /* Allineato a sinistra */
+}
+
+/* BARRA DI RICERCA LUNGA (LINEA) */
+.search-content input {
+    width: 100%;           /* Occupa tutto lo spazio da destra a sinistra */
+    border: none;
+    border-bottom: 1px solid #000; /* Linea nera sottile */
+    padding: 10px 0;
+    font-size: 24px;
+    outline: none;
+    text-align: left;      /* Scrivi da sinistra */
+    font-weight: 200;
+}
 /* POP-UP APP */
 .zara-popup-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
