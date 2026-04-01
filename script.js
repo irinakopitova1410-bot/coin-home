@@ -3,16 +3,21 @@ function toggleMenu() {
 }
 
 function toggleSearch() {
-    document.getElementById('search-overlay').classList.toggle('active');
+    const overlay = document.getElementById('search-overlay');
+    overlay.classList.toggle('active');
+    if(overlay.classList.contains('active')) {
+        document.getElementById('search-input').focus();
+    }
 }
 
 function closeAppPopup() {
     document.getElementById('app-popup').classList.remove('active');
 }
 
-// Mostra pop-up dopo 3 secondi
+// Mostra il pop-up dopo 2 secondi
 window.onload = () => {
     setTimeout(() => {
-        document.getElementById('app-popup').classList.add('active');
-    }, 3000);
+        const popup = document.getElementById('app-popup');
+        if(popup) popup.classList.add('active');
+    }, 2000);
 };
