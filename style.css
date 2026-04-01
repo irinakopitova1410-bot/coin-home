@@ -1,86 +1,49 @@
-/* RESET E FONTS */
+/* RESET */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Montserrat', sans-serif; background: #fff; color: #000; overflow-x: hidden; }
+body { font-family: 'Montserrat', sans-serif; color: #000; }
 
-/* HEADER */
+/* HEADER FISSO */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    position: fixed;
-    top: 0; width: 100%;
-    background: white;
-    z-index: 1000;
+    position: fixed; top: 0; width: 100%; height: 80px;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 40px; background: #fff; z-index: 1000;
 }
+.header-center { position: absolute; left: 50%; transform: translateX(-50%); }
+.main-logo { height: 50px; }
 
-.header-center { flex-grow: 1; text-align: center; }
-.main-logo { height: 60px; width: auto; }
+.header-left, .header-right { display: flex; align-items: center; gap: 25px; font-size: 11px; letter-spacing: 2px; cursor: pointer; }
+.menu-burger .line { width: 18px; height: 1px; background: #000; margin: 4px 0; }
 
-.header-left, .header-right { 
-    display: flex; 
-    align-items: center; 
-    gap: 20px; 
-    width: 250px; 
-    font-size: 11px; 
-    letter-spacing: 2px;
-    cursor: pointer;
+/* MENU LATERALE */
+.side-menu {
+    position: fixed; top: 0; left: -100%; width: 350px; height: 100%;
+    background: #fff; z-index: 2000; transition: 0.4s; padding: 80px 40px;
 }
-.header-right { justify-content: flex-end; }
+.side-menu.active { left: 0; }
+.side-menu ul { list-style: none; }
+.side-menu li { margin-bottom: 20px; }
+.side-menu a { text-decoration: none; color: #000; font-size: 13px; letter-spacing: 1px; }
 
 /* OVERLAY RICERCA */
 .search-overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: white;
-    display: none;
-    z-index: 2000;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 100px;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: #fff; z-index: 3000; display: none; flex-direction: column; align-items: center; padding-top: 150px;
 }
 .search-overlay.active { display: flex; }
-.search-content h2 { font-family: 'Bodoni Moda', serif; font-weight: 300; margin-bottom: 30px; letter-spacing: 3px; }
-.search-content input {
-    width: 600px;
-    border: none;
-    border-bottom: 1px solid #000;
-    padding: 10px;
-    font-size: 1.5rem;
-    text-align: center;
-    outline: none;
-}
-.close-btn { position: absolute; top: 30px; right: 40px; font-size: 40px; cursor: pointer; font-weight: 100; }
+.search-content h2 { font-family: 'Bodoni Moda', serif; font-weight: 300; margin-bottom: 40px; }
+.search-content input { width: 500px; border: none; border-bottom: 1px solid #000; padding: 10px; font-size: 20px; outline: none; text-align: center; }
 
-/* GRID PRODOTTI */
-main { margin-top: 120px; padding: 40px; }
-.product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.product-item { text-align: center; margin-bottom: 40px; }
-.product-item img { width: 100%; height: auto; margin-bottom: 15px; }
-.product-item h3 { font-size: 11px; letter-spacing: 2px; font-weight: 300; }
-.product-item p { font-size: 11px; margin-top: 5px; }
-
-/* POP-UP APP ZARA STYLE */
+/* POP-UP QR */
 .zara-popup-overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.3);
-    display: none; justify-content: center; align-items: center;
-    z-index: 5000;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.2); z-index: 4000; display: none; justify-content: center; align-items: center;
 }
 .zara-popup-overlay.active { display: flex; }
-.zara-popup-content {
-    background: white;
-    padding: 60px 40px;
-    text-align: center;
-    position: relative;
-    max-width: 450px;
-    width: 90%;
-}
-.zara-popup-close { position: absolute; top: 20px; right: 25px; font-size: 30px; cursor: pointer; opacity: 0.5; }
-.zara-popup-title { font-family: 'Bodoni Moda', serif; font-size: 1.3rem; letter-spacing: 2px; margin-bottom: 30px; font-weight: 300; }
-.zara-popup-qr-container { margin: 20px auto; display: flex; justify-content: center; }
-.zara-popup-qr { width: 180px; height: 180px; display: block; }
-.zara-popup-subtitle { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; margin-top: 20px; }
+.zara-popup-content { background: #fff; padding: 50px; text-align: center; max-width: 450px; position: relative; }
+.zara-popup-qr { width: 180px; height: 180px; margin: 20px auto; }
+.close-btn { position: absolute; top: 30px; right: 40px; font-size: 30px; cursor: pointer; }
 
-
+/* GRIGLIA PRODOTTI */
+main { margin-top: 100px; padding: 20px; }
+.product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.product-item img { width: 100%; }
