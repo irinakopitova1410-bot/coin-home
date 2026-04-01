@@ -10,11 +10,21 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; color: #000; ove
 }
 
 .header-center {
-    position: absolute; left: 50%; transform: translateX(-50%);
-    pointer-events: none; /* Il logo non blocca i click */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    display: flex;
+    align-items: center;
 }
 
-.zara-logo-img { height: 75px; width: auto; }
+.zara-logo-img {
+    height: 90px; /* Dimensione ideale per il logo fuso */
+    width: auto;
+    filter: none !important; /* Forza il colore blu dell'SVG */
+    display: block;
+}
 
 /* TESTI SOTTILI */
 .search-trigger span, .nav-icons span {
