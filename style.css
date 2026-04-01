@@ -2,8 +2,16 @@
 body { font-family: 'Montserrat', sans-serif; background: #fff; overflow-x: hidden; }
 
 /* HEADER */
-header { position: fixed; top: 0; width: 100%; height: 90px; display: flex; justify-content: space-between; align-items: center; padding: 0 40px; background: #fff; z-index: 1000; }
-.main-logo { height: 40px; }
+header {
+    height: 80px; /* Zara usa un header leggermente più basso e arioso */
+    border-bottom: 0.5px solid #eee; /* Una linea sottilissima quasi invisibile */
+}
+
+.main-logo {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+}
 .header-left, .header-right { width: 250px; font-size: 11px; letter-spacing: 2px; cursor: pointer; display: flex; align-items: center; gap: 20px; }
 .header-right { justify-content: flex-end; }
 .menu-burger .line { width: 20px; height: 1px; background: #000; margin: 4px 0; }
