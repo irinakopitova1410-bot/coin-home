@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 180">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;1,400&display=swap');
+      .main-txt { 
+        font-family: 'Bodoni Moda', serif; 
+        font-size: 90px; 
+        fill: #5B7A9A; 
+      }
+      .atelier-txt { 
+        font-family: 'Bodoni Moda', serif; 
+        font-style: italic; 
+        font-size: 42px; 
+        fill: #5B7A9A; 
+        letter-spacing: 2px;
+      }
+    </style>
+  </defs>
+  
+  <text x="250" y="90" text-anchor="middle" class="main-txt">
+    <tspan>C</tspan><tspan dx="-15">O</tspan><tspan dx="-12">I</tspan><tspan dx="-15">N</tspan>
+    <tspan dx="25">H</tspan><tspan dx="-15">O</tspan><tspan dx="-12">M</tspan><tspan dx="-12">E</tspan>
+  </text>
+  
+  <text x="250" y="145" text-anchor="middle" class="atelier-txt">Atelier</text>
+</svg>
