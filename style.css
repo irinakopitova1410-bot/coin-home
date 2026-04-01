@@ -88,3 +88,76 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; color: #000; ove
     .side-menu.active { transform: translateX(100%); }
     .zara-logo-img { height: 50px; }
 }
+
+/* --- POP-UP APP COIN HOME ATELIER --- */
+.zara-popup-overlay {
+    display: none; /* Inizialmente nascosto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: 9999; /* Sopra ogni cosa, anche la ricerca */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.zara-popup-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.zara-popup-content {
+    background-color: #fff;
+    padding: 60px 40px;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0px 20px 50px rgba(0,0,0,0.1);
+}
+
+.zara-popup-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 28px;
+    cursor: pointer;
+    font-weight: 100;
+    opacity: 0.5;
+}
+
+.zara-popup-title {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.zara-popup-qr-container img {
+    width: 180px;
+    height: auto;
+    margin-bottom: 40px;
+}
+
+.zara-popup-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+
+
+
