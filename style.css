@@ -153,7 +153,37 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; color: #000; ove
 }
 
 
+/* --- FIX PER IL QR CODE POPUP --- */
 
+/* Forza il contenitore a mostrare il QR al centro */
+.zara-popup-qr-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 25px 0 !important;
+    min-height: 180px; /* Evita che il box si schiacci */
+}
+
+/* Forza l'immagine del QR a essere visibile e della dimensione giusta */
+.zara-popup-qr {
+    display: block !important;
+    width: 180px !important;
+    height: 180px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    filter: none !important; /* Rimuove eventuali filtri che lo rendono invisibile */
+    background-color: #fff; /* Sfondo bianco per farlo leggere bene dai telefoni */
+}
+
+/* Distanzia il testo "SCARICALA SUBITO" */
+.zara-popup-subtitle {
+    margin-top: 20px !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px !important;
+    letter-spacing: 3px !important;
+    text-transform: uppercase;
+    color: #000;
+}
 
 
 
