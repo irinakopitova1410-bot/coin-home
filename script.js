@@ -1,20 +1,33 @@
 function toggleMenu(show) {
     const menu = document.getElementById('side-menu');
-    if(show) menu.classList.add('active');
-    else menu.classList.remove('active');
-}
-
-function toggleSearch(show) {
-    const overlay = document.getElementById('search-overlay');
+    const overlay = document.getElementById('body-overlay');
+    
     if(show) {
-        overlay.style.display = 'flex';
-        setTimeout(() => { document.getElementById('main-search-input').focus(); }, 100);
+        menu.classList.add('active');
+        overlay.style.display = 'block';
+        setTimeout(() => overlay.classList.add('active'), 10);
+        document.body.style.overflow = 'hidden';
     } else {
-        overlay.style.display = 'none';
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+        setTimeout(() => overlay.style.display = 'none', 400);
+        document.body.style.overflow = 'auto';
     }
 }
 
-// Chiudi tutto con ESC
+function toggleSearch(show) {
+    const searchOverlay = document.getElementById('search-overlay');
+    if(show) {
+        searchOverlay.style.display = 'flex';
+        document.getElementById('main-search-input').focus();
+        document.body.style.overflow = 'hidden';
+    } else {
+        searchOverlay.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Chiudi con ESC
 document.addEventListener('keydown', (e) => {
     if (e.key === "Escape") {
         toggleMenu(false);
