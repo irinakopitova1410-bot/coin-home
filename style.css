@@ -85,3 +85,116 @@ header {
 main { margin-top: 140px; padding: 40px; }
 .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .product-item img { width: 100%; margin-bottom: 15px; }
+/* CONTAINER LOGIN */
+.login-container {
+    max-width: 400px;
+    margin: 120px auto;
+    padding: 20px;
+}
+
+.login-logo {
+    height: 45px;
+    margin-bottom: 60px;
+}
+
+.login-section h2, .social-login h3 {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* INPUT STILE ZARA (SOLO LINEA SOTTO) */
+.input-group {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #000;
+}
+
+.input-group label {
+    display: block;
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    border: none;
+    padding: 10px 0;
+    outline: none;
+    font-size: 14px;
+}
+
+.password-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.show-password {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.forgot-password {
+    display: block;
+    font-size: 12px;
+    color: #000;
+    margin: 20px 0 30px;
+}
+
+/* PULSANTI */
+.btn-black {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.btn-white {
+    width: 100%;
+    background: #fff;
+    color: #000;
+    padding: 15px;
+    border: 1px solid #000;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+/* SOCIAL LOGIN */
+.social-login {
+    margin-top: 60px;
+}
+
+.privacy-note {
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+.social-btn {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #000;
+    padding: 12px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.social-btn img {
+    height: 15px;
+}
+
