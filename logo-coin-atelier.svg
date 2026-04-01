@@ -1,13 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 160">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400&amp;display=swap');
       .main-txt { 
         font-family: 'Bodoni Moda', serif; 
-        font-size: 55px; 
+        font-size: 50px; 
         fill: #5B7A9A; 
-        letter-spacing: 35px; /* Crea lo spazio largo della tua foto */
-        text-transform: uppercase;
+        letter-spacing: 30px; 
       }
       .atelier-txt { 
         font-family: 'Bodoni Moda', serif; 
@@ -18,8 +17,6 @@
       }
     </style>
   </defs>
-  
   <text x="400" y="70" text-anchor="middle" class="main-txt">COIN HOME</text>
-  
   <text x="400" y="130" text-anchor="middle" class="atelier-txt">Atelier</text>
 </svg>
