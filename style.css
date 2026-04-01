@@ -20,9 +20,9 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; color: #000; ove
 }
 
 .zara-logo-img {
-    height: 90px; /* Dimensione ideale per il logo fuso */
+    height: 50px; /* Ridotto l'altezza così si allarga la proporzione */
     width: auto;
-    filter: none !important; /* Forza il colore blu dell'SVG */
+    filter: none !important;
     display: block;
 }
 
