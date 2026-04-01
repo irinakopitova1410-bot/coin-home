@@ -6,13 +6,13 @@ function toggleSearch() {
     document.getElementById('search-overlay').classList.toggle('active');
 }
 
-function closeAppPopup() {
+function closePopup() {
     document.getElementById('app-popup').classList.remove('active');
 }
 
+// Mostra il pop-up dell'app dopo 2 secondi
 window.onload = () => {
     setTimeout(() => {
-        const popup = document.getElementById('app-popup');
-        if(popup) popup.classList.add('active');
-    }, 2500);
+        document.getElementById('app-popup').classList.add('active');
+    }, 2000);
 };
