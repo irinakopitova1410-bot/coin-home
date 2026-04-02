@@ -131,3 +131,33 @@ header {
     display: block;
     opacity: 1;
 }
+/* Stile per il logo Grande ed Elegante */
+.logo-container {
+    text-align: center;
+    padding: 50px 0; /* Spazio sopra e sotto per eleganza */
+}
+
+.site-logo {
+    width: 100%;
+    max-width: 450px; /* Aumenta a 500px o 600px se lo vuoi ancora più grande */
+    height: auto;
+    display: inline-block;
+    transition: all 0.4s ease;
+}
+
+/* Effetto al passaggio del mouse */
+.site-logo:hover {
+    transform: scale(1.03);
+}
+
+/* Adattamento per cellulari */
+@media (max-width: 768px) {
+    .site-logo {
+        max-width: 250px;
+        padding: 20px;
+    }
+}
+
+
+
+
