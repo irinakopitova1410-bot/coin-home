@@ -5,191 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COIN HOME | ATELIER</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
 </head>
-<body class="layout-zara">
-<div id="search-overlay" class="search-overlay">
-    <div class="search-header-zara">
-        <input type="text" id="search-input" placeholder="COSA STAI CERCANDO?" autocomplete="off">
-        <span class="close-zara" onclick="toggleSearch()">ANNULLA</span>
-    </div>
-</div>
+<body>
 
-<div id="login-overlay" class="login-overlay">
-    <span class="close-zara-btn" onclick="toggleLogin()">CHIUDI</span>
-    <div class="login-wrapper">
-        <div class="login-box">
-            <h2>ACCEDI</h2>
-            <div class="zara-input-group">
-                <label>E-MAIL</label>
-                <input type="email">
-            </div>
-            <div class="zara-input-group">
-                <label>PASSWORD</label>
-                <input type="password">
-            </div>
-            <button class="btn-zara-black">ACCEDI</button>
-            
-            <div class="social-login">
-                <p class="separator"><span>O ACCEDI CON</span></p>
-                <button class="btn-social" onclick="window.location.href='https://instagram.com'"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"> INSTAGRAM</button>
-                <button class="btn-social" onclick="window.location.href='https://facebook.com'"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_2023.png"> FACEBOOK</button>
-                <button class="btn-social" onclick="window.location.href='https://google.com'"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"> GMAIL</button>
-            </div>
+    <header>
+        <div class="header-left" onclick="toggleMenu()">
+            <div class="menu-burger"><div class="line"></div><div class="line"></div></div>
+            <span>MENU</span>
         </div>
-    </div>
-</div>
-    <header class="header-main">
-        <div class="header-content">
-            <div class="header-left">
-                <button class="menu-trigger" onclick="toggleMenu()">
-                    <div class="burger-icon">
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <span class="label">MENU</span>
-                </button>
-            </div>
-
-            <div class="header-center">
-                <a href="/"><img src="logo-coin-atelier.svg" alt="COIN HOME" class="logo-img"></a>
-            </div>
-
-            <div class="header-right">
-                <button class="search-trigger" onclick="toggleSearch()">CERCA</button>
-                <div class="user-actions">
-                    <span>ACCEDI</span>
-                    <span>(0)</span>
-                </div>
-            </div>
+        <div class="logo-center">
+            <img src="logo-coin-atelier.svg" alt="ATELIER" class="main-logo">
+        </div>
+        <div class="header-right">
+            <span onclick="toggleSearch()">RICERCA</span>
+            <span onclick="toggleLogin()" style="margin-left:20px">ACCEDI</span>
         </div>
     </header>
 
-    <aside id="side-menu" class="zara-sidebar">
-        <button class="close-icon" onclick="toggleMenu()">&times;</button>
-        <nav class="nav-menu">
+    <div id="search-overlay" class="search-overlay">
+        <div class="search-header-zara">
+            <input type="text" id="search-input" placeholder="COSA STAI CERCANDO?" autocomplete="off">
+            <span class="close-search" onclick="toggleSearch()">ANNULLA</span>
+        </div>
+        <div class="search-suggestions">
+            <p>PUÒ INTERESSARTI</p>
             <ul>
-                <li><a href="#">NOVITÀ</a></li>
-                <li><a href="#">COLLEZIONE PETS</a></li>
-                <li><a href="#">CAMERA DA LETTO</a></li>
-                <li><a href="#">CUCINA</a></li>
-                <li><a href="#">FRAGRANZE</a></li>
+                <li>ASCIUGAMANI</li>
+                <li>CANDELE ATELIER</li>
+                <li>LINO</li>
             </ul>
-        </nav>
-    </aside>
-
-    <div id="search-overlay" class="zara-search-overlay">
-        <button class="close-icon" onclick="toggleSearch()">&times;</span>
-        <div class="search-wrapper">
-            <h2>COSA STAI CERCANDO?</h2>
-            <input type="text" placeholder="CERCA..." id="search-input" autofocus>
         </div>
     </div>
-<div id="login-overlay" class="login-overlay">
-  <span onclick="toggleLogin()">ACCEDI</span>
-    <div class="login-wrapper">
-        <div class="login-box">
-            <h2>ACCEDI AL TUO ACCOUNT</h2>
-            
-            <div class="zara-field">
-                <label>E-MAIL</label>
-                <input type="email" spellcheck="false">
-            </div>
 
-            <div class="zara-field">
-                <label>PASSWORD</label>
-                <input type="password">
-            </div>
-
-            <div class="login-extra">
-                <a href="#" class="forgot-link">Hai dimenticato la password?</a>
-                <p class="vip-notice">I soci **VIP** accedono a promozioni esclusive e al catalogo **Atelier**.</p>
-            </div>
-
-<div class="social-login-section">
-    <span class="social-separator">ACCESSO CON</span>
-    <p class="social-disclaimer">Effettuando l'accesso, accetto i termini di servizio e la politica sulla privacy.</p>
-    
-    <button class="btn-social btn-instagram">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
-        CONTINUA CON INSTAGRAM
-    </button>
-    
-    <button class="btn-social btn-facebook">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_2023.png" alt="Facebook">
-        CONTINUA CON FACEBOOK
-    </button>
-    
-    <button class="btn-social btn-google">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google">
-        CONTINUA CON GMAIL
-    </button>
-</div>
-
-
-
-
-
-
-
-
-
-            
-  <main>
-    <div class="product-grid">
-        <div class="product-card">
-            <div class="product-image-wrapper">
-                <img src="https://static.zarahome.net/assets/public/6ec8/bd73/31e8424682ac/7cc3c382f/43386029052-a7/43386029052-a7.jpg" alt="Asciugamano">
-                <span class="tag-recycle">RICICLAGGIO</span>
-            </div>
-            <div class="product-description">
-                <p class="product-status">PERSONALIZZABILE</p>
-                <h3 class="product-name">ASCIUGAMANO DA BAGNO IN COTONE PREMIUM (600 G/M²)</h3>
-                <div class="price-container">
-                    <span class="price-old">35,99 €</span>
-                    <span class="price-vip">VIP: 22,99 €</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <div class="product-image-wrapper">
-                <img src="https://static.zarahome.net/assets/public/008b/76b7/e00a44279b9c/0438b4d8d1e2/43386029052-a7.jpg" alt="Lenzuolo">
-            </div>
-            <div class="product-description">
-                <p class="product-status">PER MATERASSI ALTI 30 CM</p>
-                <h3 class="product-name">LENZUOLO CON ANGOLI SATIN | 30 CM ALTEZZA (300 FILI)</h3>
-                <div class="price-container">
-                    <span class="price-current">22,99 € - 45,99 €</span>
-                </div>
-            </div>
-        </div>
-        
-        <div class="product-card">
-            <div class="product-image-wrapper">
-                <img src="https://static.zarahome.net/assets/public/6641/1231/948348638685/2919d3640b39/43343029052-a7.jpg" alt="Vaso">
-            </div>
-            <div class="product-description">
-                <h3 class="product-name">VASO IN CERAMICA ATELIER</h3>
-                <div class="price-container">
-                    <span class="price-old">59,99 €</span>
-                    <span class="price-recycle">MAGAZZINO: 29,99 €</span>
+    <div id="login-overlay" class="login-overlay">
+        <span class="close-btn" onclick="toggleLogin()">CHIUDI</span>
+        <div class="login-wrapper">
+            <div class="login-box">
+                <h2>ACCEDI AL TUO ACCOUNT</h2>
+                <div class="field"><label>E-MAIL</label><input type="email"></div>
+                <div class="field"><label>PASSWORD</label><input type="password"></div>
+                <button class="btn-black">ACCEDI</button>
+                
+                <div class="social-section">
+                    <p class="sep"><span>O ACCEDI CON</span></p>
+                    <button class="btn-social" onclick="location.href='https://instagram.com'"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"> INSTAGRAM</button>
+                    <button class="btn-social" onclick="location.href='https://facebook.com'"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_2023.png"> FACEBOOK</button>
+                    <button class="btn-social" onclick="location.href='https://google.com'"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"> GMAIL</button>
                 </div>
             </div>
         </div>
     </div>
-</main>
 
-    <div id="app-popup" class="zara-modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closePopup()">&times;</button>
-            <h2 class="modal-title">NON HAI ANCORA LA NOSTRA APP?</h2>
-            <div class="qr-box">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://coin-home.onrender.com/" alt="QR">
-            </div>
-            <p class="modal-footer-text">SCARICALA SUBITO!</p>
-        </div>
-    </div>
+    <main>
+        </main>
 
     <script src="script.js"></script>
 </body>
