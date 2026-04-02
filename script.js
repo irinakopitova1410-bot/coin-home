@@ -1,17 +1,13 @@
 function toggleMenu() {
-    const menu = document.getElementById('side-menu');
-    menu.classList.toggle('active');
+    document.getElementById('side-menu').classList.toggle('active');
 }
 
 function toggleSearch() {
-    const search = document.getElementById('search-overlay');
-    search.classList.toggle('active');
-    if(search.classList.contains('active')) {
-        setTimeout(() => document.getElementById('search-input').focus(), 200);
-    }
+    const el = document.getElementById('search-overlay');
+    el.classList.toggle('active');
+    if(el.classList.contains('active')) document.getElementById('search-input').focus();
 }
 
 function toggleLogin() {
-    const login = document.getElementById('login-overlay');
-    login.classList.toggle('active');
+    document.getElementById('login-overlay').classList.toggle('active');
 }
