@@ -157,7 +157,28 @@ header {
         padding: 20px;
     }
 }
+/* Rendi il logo GRANDE ed ELEGANTE */
+.logo-container img, 
+img[alt="Coin Home Logo"], 
+.site-logo {
+    width: 450px !important;  /* Forza la larghezza a 450px */
+    max-width: 90vw;          /* Si assicura che non esca dallo schermo sui telefoni */
+    height: auto;             /* Mantiene le proporzioni */
+    display: block;
+    margin: 20px auto;        /* Lo centra perfettamente e gli dà respiro */
+    transition: transform 0.3s ease;
+}
 
+/* Opzionale: effetto al passaggio del mouse */
+.site-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Se la riga del menu è troppo stretta, la allarghiamo */
+header, .header-content {
+    height: auto !important;
+    padding: 20px 0;
+}
 
 
 
