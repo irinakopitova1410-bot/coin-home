@@ -157,79 +157,62 @@ header {
         padding: 20px;
     }
 }
-/* Rendi il logo GRANDE ed ELEGANTE */
-.logo-container img, 
-img[alt="Coin Home Logo"], 
-.site-logo {
-    width: 450px !important;  /* Forza la larghezza a 450px */
-    max-width: 90vw;          /* Si assicura che non esca dallo schermo sui telefoni */
-    height: auto;             /* Mantiene le proporzioni */
-    display: block;
-    margin: 20px auto;        /* Lo centra perfettamente e gli dà respiro */
+/* --- HEADER LUXURY ATELIER --- */
+header, .header-content, .nav-container {
+    display: flex !important;
+    justify-content: space-between !important; /* Spinge Menu a sx e Ricerca a dx */
+    align-items: center !important;            /* Centra tutto verticalmente */
+    padding: 20px 40px !important;             /* Spazio ai lati */
+    height: auto !important;                   /* Altezza dinamica per il logo grande */
+    min-height: 180px !important;              /* Altezza minima per eleganza */
+    background-color: #ffffff;                 /* Sfondo pulito */
+}
+
+/* 2. IL LOGO: GRANDE E CENTRATO */
+.logo-container, header a:has(img), .site-logo-link {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;    /* Lo mette esattamente al centro */
+    z-index: 10;
+}
+
+header img, .site-logo, img[alt*="Coin Home"] {
+    width: 450px !important;                   /* DIMENSIONE GRANDE */
+    max-width: 40vw !important;                /* Si adatta agli schermi */
+    height: auto !important;
+    display: block !important;
     transition: transform 0.3s ease;
 }
 
-/* Opzionale: effetto al passaggio del mouse */
-.site-logo:hover {
-    transform: scale(1.05);
+/* 3. TASTI LATERALI (Menu, Ricerca, Login) */
+.menu-btn, .nav-left, #menu-toggle {
+    order: 1 !important;                       /* Forza a sinistra */
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-/* Se la riga del menu è troppo stretta, la allarghiamo */
-header, .header-content {
-    height: auto !important;
-    padding: 20px 0;
-}
-
-/* TRASFORMAZIONE LOGO COIN HOME ATELIER */
-.logo-container img, 
-img[src*="logo"], 
-.site-logo {
-    width: 600px !important;  /* Qui decidiamo la GRANDEZZA reale */
-    max-width: 90vw;          /* Si adatta ai cellulari */
-    height: auto !important;
-    display: block;
-    margin: 40px auto !important; /* Lo centra e gli dà molta importanza */
-    filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.1)); /* Un tocco di eleganza */
-}
-
-/* Sistemiamo la testata per ospitare il logo grande */
-header, .header-content {
-    height: auto !important;
-    flex-direction: column; /* Mette il logo sopra e i menu sotto/lati */
-    padding: 20px 0;
-}
-
-
-/* --- TRASFORMAZIONE LOGO ATELIER GRANDE --- */
-
-/* 1. Liberiamo lo spazio in alto */
-header, .header, .nav-container, .header-content {
-    height: auto !important;      /* Toglie il limite di altezza */
-    min-height: 200px;             /* Dà spazio per un logo grande */
+.nav-right, .search-login-container {
+    order: 3 !important;                       /* Forza a destra */
     display: flex !important;
-    flex-direction: column !important; /* Mette il logo SOPRA e i tasti SOTTO */
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 30px 0 !important;
+    gap: 20px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-/* 2. Rendiamo il logo PROTAGONISTA */
-header img, .logo-container img, .site-logo {
-    width: 500px !important;       /* Qui decidi la GRANDEZZA (es. 600px per ancora più grande) */
-    max-width: 90vw !important;    /* Si adatta ai cellulari */
-    height: auto !important;
-    display: block !important;
-    margin: 0 auto 20px auto !important; /* Lo centra e dà respiro */
-    filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.1)); /* Effetto profondità lusso */
+/* Mobile: su cellulare il logo si rimpicciolisce */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row !important;
+        padding: 10px 15px !important;
+        min-height: 100px !important;
+    }
+    header img {
+        width: 200px !important;
+    }
 }
 
-/* 3. Sistemiamo i tasti Menu e Ricerca */
-.nav-links, .menu-bar, nav {
-    width: 100% !important;
-    display: flex !important;
-    justify-content: space-around !important; /* Mette i tasti ai lati ma sotto il logo */
-    margin-top: 10px;
-}
 
 
 
