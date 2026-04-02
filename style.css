@@ -189,3 +189,25 @@ button { background: none; border: none; cursor: pointer; font-family: inherit; 
 
 /* Margini extra per separare meglio */
 .btn-instagram { margin-top: 10px; }
+/* OVERLAYS COMUNI */
+.search-overlay, .login-overlay {
+    position: fixed; inset: 0; background: #fff; z-index: 9999;
+    display: none; transition: 0.3s ease;
+}
+.search-overlay.active, .login-overlay.active { display: flex !important; flex-direction: column; }
+
+/* RICERCA */
+.search-header-zara { height: 100px; display: flex; align-items: center; padding: 0 40px; border-bottom: 1px solid #000; margin: 0 40px; }
+#search-input { flex: 1; border: none; outline: none; font-size: 24px; font-weight: 300; text-transform: uppercase; }
+
+/* LOGIN DESIGN */
+.login-wrapper { width: 100%; max-width: 400px; margin: 100px auto; padding: 20px; }
+.zara-input-group { border-bottom: 1px solid #000; margin-bottom: 30px; }
+.zara-input-group label { font-size: 9px; letter-spacing: 1px; color: #666; }
+.zara-input-group input { width: 100%; border: none; padding: 10px 0; outline: none; font-size: 14px; }
+.btn-zara-black { width: 100%; background: #000; color: #fff; border: none; padding: 15px; cursor: pointer; letter-spacing: 1px; }
+
+/* BOTTONI SOCIAL */
+.btn-social { width: 100%; background: #fff; border: 1px solid #000; padding: 12px; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 10px; font-weight: 600; cursor: pointer; }
+.btn-social img { height: 16px; }
+.close-zara, .close-zara-btn { cursor: pointer; font-size: 11px; letter-spacing: 1px; }
