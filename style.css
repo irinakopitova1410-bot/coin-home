@@ -43,7 +43,80 @@ main { margin-top: 160px; padding: 0 40px; }
 .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .product-item img { width: 100%; display: block; }
 
-.side-menu { position: fixed; top: 0; left: -100%; width: 400px; height: 100%; background: #fff; z-index: 4000; transition: 0.4s; padding: 100px 40px; }
-.side-menu.active { left: 0; }
-.close-x { position: absolute; top: 35px; right: 40px; font-size: 45px; cursor: pointer; font-weight: 100; }
- 
+/* SIDE MENU ZARA STYLE */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 450px; /* Più largo per dare aria */
+    height: 100vh;
+    background: #fff;
+    z-index: 5000;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 120px 50px;
+    display: block;
+}
+
+.side-menu.active {
+    transform: translateX(100%);
+    left: 0;
+}
+
+.menu-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.main-categories li {
+    list-style: none;
+    margin-bottom: 12px; /* Spazio ridotto tra le voci */
+}
+
+.main-categories a {
+    text-decoration: none;
+    color: #000;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.secondary-categories {
+    margin-top: 50px;
+    border-top: 0.5px solid #eee;
+    padding-top: 30px;
+}
+
+.secondary-categories li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.secondary-categories a {
+    text-decoration: none;
+    color: #666; /* Grigio come il login */
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* HEADER: BURGER IDENTICO A ZARA */
+.menu-burger {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.menu-burger .line {
+    width: 22px;
+    height: 1px; /* Linea finissima */
+    background: #000;
+    margin: 4px 0;
+}
+
+.menu-text {
+    font-size: 11px;
+    letter-spacing: 2px;
+}
