@@ -1,28 +1,14 @@
-document.addEventListener('DOMContentLoaded', () => {
-    console.log("Script caricato e pronto!");
-});
-
 function toggleMenu() {
-    const menu = document.getElementById('side-menu');
-    if (menu) {
-        menu.classList.toggle('active');
-        console.log("Menu commutato");
-    }
+    const m = document.getElementById('side-menu');
+    m.classList.toggle('active');
 }
 
 function toggleSearch() {
-    const search = document.getElementById('search-overlay');
-    if (search) {
-        search.classList.toggle('active');
-        if(search.classList.contains('active')) {
-            document.getElementById('search-input').focus();
-        }
-    }
+    const s = document.getElementById('search-overlay');
+    s.classList.toggle('active');
 }
 
 function toggleLogin() {
-    const login = document.getElementById('login-overlay');
-    if (login) {
-        login.classList.toggle('active');
-    }
+    const l = document.getElementById('login-overlay');
+    l.classList.toggle('active');
 }
