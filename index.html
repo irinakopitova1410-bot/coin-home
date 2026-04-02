@@ -8,7 +8,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+<div id="side-menu" class="side-menu">
+    <div class="menu-close-section">
+        <span class="close-btn" onclick="toggleMenu()">CHIUDI</span>
+    </div>
 
+    <nav class="menu-content">
+        <ul class="menu-list">
+            <li class="menu-item highlight"><a href="#">NUOVI ARRIVI</a></li>
+            <li class="menu-item"><a href="#">CAMERA DA LETTO</a></li>
+            <li class="menu-item"><a href="#">SOGGIORNO</a></li>
+            <li class="menu-item"><a href="#">CUCINA</a></li>
+            <li class="menu-item"><a href="#">BAGNO</a></li>
+            <li class="menu-item"><a href="#">FRAGRANZE</a></li>
+            <li class="menu-item"><a href="#">ACCESSORI</a></li>
+        </ul>
+
+        <ul class="menu-list-secondary">
+            <li class="menu-item promo"><a href="#">RICICLAGGIO MAGAZZINO %</a></li>
+            <li class="menu-item vip"><a href="#">COIN ATELIER VIP</a></li>
+            <li class="menu-item info"><a href="#">+ INFO</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div id="menu-backdrop" class="menu-backdrop" onclick="toggleMenu()"></div>
     <header>
         <div class="header-left" onclick="toggleMenu()">
             <div class="menu-burger"><div class="line"></div><div class="line"></div></div>
