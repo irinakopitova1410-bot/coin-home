@@ -11,17 +11,12 @@
 
     <header>
         <div class="header-left" onclick="toggleMenu()">
-            <div class="menu-burger">
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
+            <div class="menu-burger"><div class="line"></div><div class="line"></div></div>
             <span class="menu-text">MENU</span>
         </div>
-        
         <div class="logo-center">
             <a href="#"><img src="logo-coin-atelier.svg" alt="COIN HOME" class="main-logo"></a>
         </div>
-
         <div class="header-right">
             <span onclick="toggleSearch()">RICERCA</span>
             <div class="user-nav">
@@ -31,31 +26,25 @@
         </div>
     </header>
 
-  <div id="search-overlay" class="search-overlay">
-    <div class="search-header">
-        <div class="search-input-wrapper">
-            <input type="text" id="search-input" placeholder="CERCA" autocomplete="off">
-        </div>
-        <span class="close-search" onclick="toggleSearch()">ANNULLA</span>
-    </div>
-    
-    <div class="search-content">
-        <div class="search-suggestions">
-            <p class="suggestion-title">TENDENZE</p>
-            <ul>
-                <li><a href="#">LINO</a></li>
-                <li><a href="#">CANDELE ATELIER</a></li>
-                <li><a href="#">COLEZIONE CUCINA</a></li>
-                <li><a href="#">SET BAGNO</a></li>
+    <div id="side-menu" class="side-menu">
+        <span class="close-x" onclick="toggleMenu()">CHIUDI</span>
+        <nav class="side-nav-content">
+            <ul class="main-cats">
+                <li><a href="#">NUOVI ARRIVI</a></li>
+                <li class="recycle-link"><a href="#">RICICLAGGIO MAGAZZINO -50%</a></li>
+                <li class="vip-link"><a href="#">AREA VIP</a></li>
             </ul>
-        </div>
+        </nav>
     </div>
-</div>
 
     <div id="search-overlay" class="search-overlay">
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="COSA STAI CERCANDO?">
+        <div class="search-header">
+            <input type="text" id="search-input" placeholder="CERCA">
             <span class="close-search" onclick="toggleSearch()">ANNULLA</span>
+        </div>
+        <div class="search-suggestions">
+            <p>TENDENZE</p>
+            <ul><li>LINO</li><li>CANDELE ATELIER</li><li>SOGGIORNO</li></ul>
         </div>
     </div>
 
@@ -64,27 +53,16 @@
         <div class="login-wrapper">
             <div class="login-box">
                 <h2>ACCEDI AL TUO ACCOUNT</h2>
-                <div class="zara-field">
-                    <label>E-MAIL</label>
-                    <input type="email">
-                </div>
-                <div class="zara-field">
-                    <label>PASSWORD</label>
-                    <input type="password">
-                </div>
-                <div class="login-extra">
-                    <a href="#" class="forgot-link">Hai dimenticato la password?</a>
-                    <p class="vip-notice">Accedi per sbloccare i **Prezzi VIP** e le offerte **Atelier**.</p>
-                </div>
+                <div class="zara-field"><label>E-MAIL</label><input type="email"></div>
+                <div class="zara-field"><label>PASSWORD</label><input type="password"></div>
+                <p class="vip-notice">Accedi per visualizzare i prezzi **VIP** e **Riciclaggio**.</p>
                 <button class="btn-black">ACCEDI</button>
                 <button class="btn-outline">CREA UN ACCOUNT</button>
-
+                
                 <div class="social-login-section">
                     <span class="social-separator">ACCESSO CON</span>
-                    <p class="social-disclaimer">Effettuando l'accesso, accetto la <a href="#">Politica sulla Privacy</a>.</p>
-                    <button class="btn-social"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_2023.png" alt=""> CONTINUA CON FACEBOOK</button>
-                    <button class="btn-social"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt=""> CONTINUA CON GOOGLE</button>
-                    <button class="btn-social"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt=""> CONTINUA CON APPLE</button>
+                    <button class="btn-social"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_2023.png" alt=""> FACEBOOK</button>
+                    <button class="btn-social"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt=""> GOOGLE</button>
                 </div>
             </div>
         </div>
@@ -93,18 +71,13 @@
     <main>
         <div class="product-grid">
             <div class="product-card">
-                <div class="img-container">
-                    <img src="https://static.zarahome.net/assets/public/6ec8/bd73/31e8424682ac/7cc3c382f/43386029052-a7/43386029052-a7.jpg">
-                    <span class="badge-recycle">RICICLAGGIO</span>
-                </div>
+                <img src="https://static.zarahome.net/assets/public/6ec8/bd73/31e8424682ac/7cc3c382f/43386029052-a7/43386029052-a7.jpg">
                 <div class="product-info">
-                    <p class="name">COPRILETTO COTONE ATELIER</p>
-                    <p class="price-old">99,00 EUR</p>
+                    <p>COPRILETTO ATELIER</p>
                     <p class="price-vip">PREZZO VIP: 69,00 EUR</p>
-                    <p class="price-recycle">SCONTO MAGAZZINO: 45,00 EUR</p>
                 </div>
             </div>
-            </div>
+        </div>
     </main>
 
     <script src="script.js"></script>
