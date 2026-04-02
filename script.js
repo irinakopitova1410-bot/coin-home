@@ -1,24 +1,15 @@
-// Gestione Overlay
 function toggleSearch() {
-    const el = document.getElementById('search-layer');
-    el.style.display = (el.style.display === 'flex') ? 'none' : 'flex';
-    setTimeout(() => el.classList.toggle('active'), 10);
+    const el = document.getElementById('search-overlay');
+    el.classList.toggle('active');
+    if(el.classList.contains('active')) {
+        setTimeout(() => document.getElementById('search-input').focus(), 100);
+    }
 }
 
 function toggleLogin() {
-    const el = document.getElementById('login-layer');
-    el.style.display = (el.style.display === 'flex') ? 'none' : 'flex';
-    setTimeout(() => el.classList.toggle('active'), 10);
+    document.getElementById('login-overlay').classList.toggle('active');
 }
 
 function toggleMenu() {
-    document.getElementById('side-layer').classList.toggle('active');
-}
-
-// Simulazione: Se sei VIP, i prezzi cambiano (Logica futura)
-let isVip = false;
-function applyVipDiscounts() {
-    isVip = true;
-    alert("Vip Mode Activated: Exclusive prices applied.");
-    // Qui andrebbe la logica per cambiare i testi dei prezzi
+    document.getElementById('side-menu').classList.toggle('active');
 }
