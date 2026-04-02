@@ -3,22 +3,22 @@ function toggleMenu() {
 }
 
 function toggleSearch() {
-    const searchOverlay = document.getElementById('search-overlay');
-    searchOverlay.classList.toggle('active');
-    
-    const input = document.getElementById('search-input');
-    
-    if (searchOverlay.classList.contains('active')) {
-        // Aspettiamo la fine dell'animazione per dare il focus
-        setTimeout(() => {
-            input.focus();
-        }, 400);
-        document.body.style.overflow = 'hidden'; // Blocca lo scroll del sito
-    } else {
-        input.value = ''; // Pulisce la ricerca quando chiudi
-        document.body.style.overflow = 'auto';
+    const s = document.getElementById('search-overlay');
+    s.classList.toggle('active');
+    if(s.classList.contains('active')) {
+        setTimeout(() => document.getElementById('search-input').focus(), 400);
     }
 }
+
 function toggleLogin() {
     document.getElementById('login-overlay').classList.toggle('active');
 }
+
+// Chiudi tutto con ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+        document.getElementById('side-menu').classList.remove('active');
+        document.getElementById('search-overlay').classList.remove('active');
+        document.getElementById('login-overlay').classList.remove('active');
+    }
+});
