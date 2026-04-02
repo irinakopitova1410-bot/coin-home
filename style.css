@@ -200,7 +200,36 @@ header, .header-content {
 }
 
 
+/* --- TRASFORMAZIONE LOGO ATELIER GRANDE --- */
 
+/* 1. Liberiamo lo spazio in alto */
+header, .header, .nav-container, .header-content {
+    height: auto !important;      /* Toglie il limite di altezza */
+    min-height: 200px;             /* Dà spazio per un logo grande */
+    display: flex !important;
+    flex-direction: column !important; /* Mette il logo SOPRA e i tasti SOTTO */
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 30px 0 !important;
+}
+
+/* 2. Rendiamo il logo PROTAGONISTA */
+header img, .logo-container img, .site-logo {
+    width: 500px !important;       /* Qui decidi la GRANDEZZA (es. 600px per ancora più grande) */
+    max-width: 90vw !important;    /* Si adatta ai cellulari */
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto 20px auto !important; /* Lo centra e dà respiro */
+    filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.1)); /* Effetto profondità lusso */
+}
+
+/* 3. Sistemiamo i tasti Menu e Ricerca */
+.nav-links, .menu-bar, nav {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-around !important; /* Mette i tasti ai lati ma sotto il logo */
+    margin-top: 10px;
+}
 
 
 
