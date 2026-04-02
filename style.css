@@ -1,28 +1,19 @@
-/* RESET E OTTIMIZZAZIONE FONT */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { 
     font-family: 'Montserrat', sans-serif; 
     background: #fff; 
-    -webkit-font-smoothing: antialiased; 
+    -webkit-font-smoothing: antialiased; /* Font liscio come Zara */
     overflow-x: hidden;
 }
 
-/* HEADER FISSO */
 header { 
     position: fixed; top: 0; width: 100%; height: 90px; 
     display: flex; justify-content: space-between; align-items: center; 
     padding: 0 40px; background: #fff; z-index: 1000; 
 }
-.header-center { position: absolute; left: 50%; transform: translateX(-50%); }
 .main-logo { height: 42px; }
-.header-left, .header-right { 
-    width: 280px; font-size: 11px; letter-spacing: 2px; 
-    cursor: pointer; display: flex; align-items: center; gap: 20px; 
-}
-.header-right { justify-content: flex-end; }
-.menu-burger .line { width: 22px; height: 1px; background: #000; margin: 4px 0; }
 
-/* OVERLAYS FULLSCREEN (RICERCA E LOGIN) */
+/* OVERLAYS: Nascondono ricerca e login */
 .overlay-full { 
     position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
     background: #fff; z-index: 3000; display: none; flex-direction: column; 
@@ -30,46 +21,29 @@ header {
 }
 .overlay-full.active { display: flex !important; }
 
-/* RICERCA LUNGA (DALL'IMMAGINE) */
-.search-content { width: 100%; }
+/* RICERCA LUNGA */
 .search-content h2 { 
     font-size: 52px; font-weight: 300; color: #999; 
-    letter-spacing: -2px; text-transform: uppercase; margin-bottom: 5px; 
+    letter-spacing: -2px; margin-bottom: 5px; 
 }
 .search-content input { 
     width: 100%; border: none; border-bottom: 1px solid #000; 
-    padding: 15px 0; font-size: 26px; outline: none; font-weight: 200; 
+    padding: 15px 0; font-size: 26px; outline: none; 
 }
 
-/* LOGIN ZARA STYLE (DALL'IMMAGINE) */
+/* LOGIN */
 .login-wrapper { max-width: 450px; margin: 0 auto; width: 100%; }
-.login-wrapper h2 { font-size: 13px; font-weight: 600; margin-bottom: 40px; letter-spacing: 1.5px; }
 .input-zara { margin-bottom: 35px; border-bottom: 1px solid #000; }
-.input-zara label { display: block; font-size: 10px; color: #666; letter-spacing: 1px; margin-bottom: 5px; }
-.input-zara input { width: 100%; border: none; padding: 10px 0; outline: none; font-size: 15px; }
-.btn-black { background: #000; color: #fff; width: 100%; padding: 18px; border: none; font-size: 11px; letter-spacing: 2px; margin-top: 20px; cursor: pointer; }
-.btn-white { background: #fff; color: #000; width: 100%; padding: 18px; border: 1px solid #000; font-size: 11px; letter-spacing: 2px; margin-top: 12px; cursor: pointer; }
-.forgot-link { font-size: 12px; color: #000; text-decoration: underline; display: block; margin-top: 10px; }
+.input-zara label { display: block; font-size: 10px; color: #666; margin-bottom: 5px; }
+.btn-black { background: #000; color: #fff; width: 100%; padding: 18px; border: none; font-size: 11px; letter-spacing: 2px; cursor: pointer; }
+.btn-white { background: #fff; color: #000; width: 100%; padding: 18px; border: 1px solid #000; font-size: 11px; letter-spacing: 2px; margin-top: 10px; cursor: pointer; }
 
-/* SOCIAL LOGIN SECTION */
-.social-access { margin-top: 60px; }
-.social-access h3 { font-size: 12px; font-weight: 600; margin-bottom: 20px; }
-.privacy-text { font-size: 11px; color: #666; line-height: 1.5; margin-bottom: 30px; }
-.social-btn { width: 100%; background: #fff; border: 1px solid #000; padding: 14px; font-size: 10px; letter-spacing: 1.5px; margin-bottom: 10px; cursor: pointer; }
-
-/* SIDE MENU */
-.side-menu { 
-    position: fixed; top: 0; left: -100%; width: 400px; height: 100%; 
-    background: #fff; z-index: 4000; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
-    padding: 100px 40px; 
-}
-.side-menu.active { left: 0; }
-.side-menu li { list-style: none; margin-bottom: 25px; }
-.side-menu a { text-decoration: none; color: #000; font-size: 13px; letter-spacing: 1.5px; }
-
-.close-x { position: absolute; top: 35px; right: 40px; font-size: 45px; cursor: pointer; font-weight: 100; z-index: 5000; }
-
-/* GRIGLIA PRODOTTI */
+/* GRIGLIA PRODOTTI: Abbassata per non coprire l'header */
 main { margin-top: 160px; padding: 0 40px; }
 .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.product-item img { width: 100%; height: auto; display: block; }
+.product-item img { width: 100%; display: block; }
+
+.side-menu { position: fixed; top: 0; left: -100%; width: 400px; height: 100%; background: #fff; z-index: 4000; transition: 0.4s; padding: 100px 40px; }
+.side-menu.active { left: 0; }
+.close-x { position: absolute; top: 35px; right: 40px; font-size: 45px; cursor: pointer; font-weight: 100; }
+ 
