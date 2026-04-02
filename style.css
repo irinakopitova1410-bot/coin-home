@@ -131,88 +131,78 @@ header {
     display: block;
     opacity: 1;
 }
-/* Stile per il logo Grande ed Elegante */
-.logo-container {
-    text-align: center;
-    padding: 50px 0; /* Spazio sopra e sotto per eleganza */
-}
 
-.site-logo {
-    width: 100%;
-    max-width: 450px; /* Aumenta a 500px o 600px se lo vuoi ancora più grande */
-    height: auto;
-    display: inline-block;
-    transition: all 0.4s ease;
-}
-
-/* Effetto al passaggio del mouse */
-.site-logo:hover {
-    transform: scale(1.03);
-}
-
-/* Adattamento per cellulari */
-@media (max-width: 768px) {
-    .site-logo {
-        max-width: 250px;
-        padding: 20px;
-    }
-}
-/* --- HEADER LUXURY ATELIER --- */
-header, .header-content, .nav-container {
-    display: flex !important;
-    justify-content: space-between !important; /* Spinge Menu a sx e Ricerca a dx */
-    align-items: center !important;            /* Centra tutto verticalmente */
-    padding: 20px 40px !important;             /* Spazio ai lati */
-    height: auto !important;                   /* Altezza dinamica per il logo grande */
-    min-height: 180px !important;              /* Altezza minima per eleganza */
-    background-color: #ffffff;                 /* Sfondo pulito */
-}
-
-/* 2. IL LOGO: GRANDE E CENTRATO */
-.logo-container, header a:has(img), .site-logo-link {
-    position: absolute !important;
     left: 50% !important;
     transform: translateX(-50%) !important;    /* Lo mette esattamente al centro */
     z-index: 10;
 }
 
+/* --- HEADER STILE ZARA (PULITO E MINIMALE) --- */
+header, .nav-container, .header-content {
+    display: flex !important;
+    justify-content: space-between !important; /* Menu a SX, Logo CENTRO, Search a DX */
+    align-items: center !important;
+    padding: 15px 40px !important; /* Spazio elegante ai lati */
+    height: 80px !important;       /* Altezza fissa stile Zara */
+    background: #fff !important;
+    border-bottom: 1px solid #eeeeee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* LOGO AL CENTRO: Dimensioni equilibrate */
 header img, .site-logo, img[alt*="Coin Home"] {
-    width: 450px !important;                   /* DIMENSIONE GRANDE */
-    max-width: 40vw !important;                /* Si adatta agli schermi */
-    height: auto !important;
-    display: block !important;
-    transition: transform 0.3s ease;
+    height: 45px !important;    /* Altezza bilanciata, non gigante */
+    width: auto !important;     /* Mantiene le proporzioni */
+    display: block;
+    margin: 0 auto;
+    position: absolute;         /* Lo centra perfettamente rispetto alla pagina */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-/* 3. TASTI LATERALI (Menu, Ricerca, Login) */
-.menu-btn, .nav-left, #menu-toggle {
-    order: 1 !important;                       /* Forza a sinistra */
-    font-weight: 300;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.nav-right, .search-login-container {
-    order: 3 !important;                       /* Forza a destra */
+/* MENU A SINISTRA */
+.menu-toggle, .nav-left, nav ul {
     display: flex !important;
     gap: 20px;
-    font-weight: 300;
-    letter-spacing: 2px;
+    font-size: 11px !important;  /* Font piccolo stile Zara */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    color: #000;
+    text-decoration: none;
+}
+
+/* RICERCA E LOGIN A DESTRA */
+.nav-right, .search-login-box, .user-actions {
+    display: flex !important;
+    align-items: center;
+    gap: 25px;
+    font-size: 11px !important;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-left: auto; /* Spinge tutto a destra */
+}
+
+/* Nascondi bordi inutili o bottoni brutti */
+button, .search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
     text-transform: uppercase;
 }
 
-/* Mobile: su cellulare il logo si rimpicciolisce */
+/* Mobile: Adattamento */
 @media (max-width: 768px) {
     header {
-        flex-direction: row !important;
-        padding: 10px 15px !important;
-        min-height: 100px !important;
+        padding: 10px 20px !important;
+        height: 60px !important;
     }
     header img {
-        width: 200px !important;
+        height: 30px !important;
     }
 }
-
 
 
 
