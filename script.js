@@ -1,3 +1,4 @@
+// Gestione Overlay
 function toggleSearch() {
     const el = document.getElementById('search-layer');
     el.style.display = (el.style.display === 'flex') ? 'none' : 'flex';
@@ -12,4 +13,12 @@ function toggleLogin() {
 
 function toggleMenu() {
     document.getElementById('side-layer').classList.toggle('active');
+}
+
+// Simulazione: Se sei VIP, i prezzi cambiano (Logica futura)
+let isVip = false;
+function applyVipDiscounts() {
+    isVip = true;
+    alert("Vip Mode Activated: Exclusive prices applied.");
+    // Qui andrebbe la logica per cambiare i testi dei prezzi
 }
