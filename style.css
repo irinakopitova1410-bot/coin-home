@@ -41,3 +41,97 @@ button { background: none; border: none; cursor: pointer; font-family: inherit; 
 .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .product-card img { width: 100%; }
 .product-info { margin-top: 15px; font-size: 11px; letter-spacing: 1px; }
+/* GRIGLIA PRODOTTI */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Due colonne come Zara Mobile/Web */
+    gap: 10px;
+    padding: 10px;
+}
+
+.product-card {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-image-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.product-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* DESCRIZIONE (Sotto l'immagine) */
+.product-description {
+    padding-top: 12px;
+    text-align: center; /* Zara spesso centra o tiene a sinistra, qui centrate per eleganza */
+}
+
+.product-status {
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.product-name {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    color: #000;
+}
+
+/* PREZZI */
+.price-container {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+}
+
+.price-current {
+    color: #000;
+}
+
+.price-old {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 8px;
+}
+
+.price-vip {
+    color: #000;
+    font-weight: 600;
+}
+
+.price-recycle {
+    color: #d00000; /* Rosso per svuota magazzino */
+    font-weight: 600;
+}
+
+/* BADGE SULL'IMMAGINE */
+.tag-recycle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #fff;
+    padding: 4px 8px;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 1px solid #000;
+}
+
+/* EFFETTO HOVER (Opzionale) */
+.product-card:hover img {
+    opacity: 0.8;
+    transition: 0.3s;
+}
