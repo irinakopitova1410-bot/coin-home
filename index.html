@@ -40,8 +40,13 @@
                 <li><a href="#">SOGGIORNO</a></li>
                 <li><a href="#">CUCINA</a></li>
                 <li><a href="#">BAGNO</a></li>
+                <li><a href="#">FRAGRANZE</a></li>
                 <li class="special-link"><a href="#">PROMOZIONI %</a></li>
             </ul>
+            <div class="side-footer">
+                <a href="#">JOIN LIFE</a>
+                <a href="#">+ INFO</a>
+            </div>
         </nav>
     </div>
 
@@ -50,33 +55,55 @@
         <div class="search-body">
             <label>COSA STAI CERCANDO?</label>
             <input type="text" id="search-input" placeholder="" autocomplete="off">
+            <div class="search-suggestions">
+                <span>NUOVI ARRIVI</span>
+                <span>COLLEZIONE PETS</span>
+                <span>BEST SELLERS</span>
+            </div>
         </div>
     </div>
 
     <div id="login-overlay" class="login-overlay">
         <span class="close-x" onclick="toggleLogin()">CHIUDI</span>
-        <div class="login-form">
-            <h3>ACCEDI AL TUO ACCOUNT</h3>
-            <div class="zara-field">
-                <label>E-MAIL</label>
-                <input type="email">
+        <div class="login-wrapper">
+            <div class="login-box">
+                <h2>ACCEDI AL TUO ACCOUNT</h2>
+                
+                <div class="zara-field">
+                    <label>E-MAIL</label>
+                    <input type="email" spellcheck="false">
+                </div>
+
+                <div class="zara-field">
+                    <label>PASSWORD</label>
+                    <input type="password">
+                </div>
+
+                <a href="#" class="forgot-link">Hai dimenticato la password?</a>
+
+                <div class="login-actions">
+                    <button class="btn-black">ACCEDI</button>
+                    <button class="btn-outline">CREA UN ACCOUNT</button>
+                </div>
             </div>
-            <div class="zara-field">
-                <label>PASSWORD</label>
-                <input type="password">
-            </div>
-            <button class="btn-dark">ACCEDI</button>
         </div>
     </div>
 
     <main>
         <div class="product-grid">
-            <div class="product-card"><img src="https://static.zarahome.net/assets/public/6ec8/bd73/31e8424682ac/7cc3c382f/43386029052-a7/43386029052-a7.jpg"></div>
-            <div class="product-card"><img src="https://static.zarahome.net/assets/public/008b/76b7/e00a44279b9c/0438b4d8d1e2/43386029052-a7.jpg"></div>
-            <div class="product-card"><img src="https://static.zarahome.net/assets/public/6641/1231/948348638685/2919d3640b39/43343029052-a7.jpg"></div>
+            <div class="product-card">
+                <img src="https://static.zarahome.net/assets/public/6ec8/bd73/31e8424682ac/7cc3c382f/43386029052-a7/43386029052-a7.jpg" alt="Prodotto 1">
+            </div>
+            <div class="product-card">
+                <img src="https://static.zarahome.net/assets/public/008b/76b7/e00a44279b9c/0438b4d8d1e2/43386029052-a7.jpg" alt="Prodotto 2">
+            </div>
+            <div class="product-card">
+                <img src="https://static.zarahome.net/assets/public/6641/1231/948348638685/2919d3640b39/43343029052-a7.jpg" alt="Prodotto 3">
+            </div>
         </div>
     </main>
 
     <script src="script.js"></script>
+
 </body>
 </html>
