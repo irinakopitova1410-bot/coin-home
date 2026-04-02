@@ -180,5 +180,27 @@ header, .header-content {
     padding: 20px 0;
 }
 
+/* TRASFORMAZIONE LOGO COIN HOME ATELIER */
+.logo-container img, 
+img[src*="logo"], 
+.site-logo {
+    width: 600px !important;  /* Qui decidiamo la GRANDEZZA reale */
+    max-width: 90vw;          /* Si adatta ai cellulari */
+    height: auto !important;
+    display: block;
+    margin: 40px auto !important; /* Lo centra e gli dà molta importanza */
+    filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.1)); /* Un tocco di eleganza */
+}
+
+/* Sistemiamo la testata per ospitare il logo grande */
+header, .header-content {
+    height: auto !important;
+    flex-direction: column; /* Mette il logo sopra e i menu sotto/lati */
+    padding: 20px 0;
+}
+
+
+
+
 
 
