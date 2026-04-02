@@ -35,20 +35,21 @@
         <span class="close-x" onclick="toggleMenu()">CHIUDI</span>
         <nav class="side-nav-content">
             <ul class="main-cats">
+                <li class="category-header">COLLEZIONI</li>
                 <li><a href="#">NUOVI ARRIVI</a></li>
                 <li><a href="#">CAMERA DA LETTO</a></li>
                 <li><a href="#">SOGGIORNO</a></li>
                 <li><a href="#">CUCINA</a></li>
-                <li class="special-link"><a href="#">PROMOZIONI %</a></li>
+                <li class="recycle-link"><a href="#">RICICLAGGIO MAGAZZINO -50%</a></li>
+                <li class="vip-link"><a href="#">ESCLUSIVO VIP</a></li>
             </ul>
         </nav>
     </div>
 
     <div id="search-overlay" class="search-overlay">
-        <span class="close-x" onclick="toggleSearch()">CHIUDI</span>
-        <div class="search-body">
-            <label>COSA STAI CERCANDO?</label>
-            <input type="text" id="search-input" placeholder="">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="COSA STAI CERCANDO?">
+            <span class="close-search" onclick="toggleSearch()">ANNULLA</span>
         </div>
     </div>
 
@@ -57,37 +58,27 @@
         <div class="login-wrapper">
             <div class="login-box">
                 <h2>ACCEDI AL TUO ACCOUNT</h2>
-                
                 <div class="zara-field">
                     <label>E-MAIL</label>
                     <input type="email">
                 </div>
-
                 <div class="zara-field">
                     <label>PASSWORD</label>
                     <input type="password">
                 </div>
-
-                <a href="#" class="forgot-link">Hai dimenticato la password?</a>
-
-                <div class="login-actions">
-                    <button class="btn-black">ACCEDI</button>
-                    <button class="btn-outline">CREA UN ACCOUNT</button>
+                <div class="login-extra">
+                    <a href="#" class="forgot-link">Hai dimenticato la password?</a>
+                    <p class="vip-notice">Accedi per sbloccare i **Prezzi VIP** e le offerte **Atelier**.</p>
                 </div>
+                <button class="btn-black">ACCEDI</button>
+                <button class="btn-outline">CREA UN ACCOUNT</button>
 
                 <div class="social-login-section">
                     <span class="social-separator">ACCESSO CON</span>
-                    <p class="social-disclaimer">Effettuando l'accesso con il mio social login, accetto di collegare il mio account in conformità alla <a href="#">Politica sulla Privacy</a>.</p>
-                    
-                    <button class="btn-social">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_2023.png" alt=""> CONTINUA CON FACEBOOK
-                    </button>
-                    <button class="btn-social">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt=""> CONTINUA CON GOOGLE
-                    </button>
-                    <button class="btn-social">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt=""> CONTINUA CON APPLE
-                    </button>
+                    <p class="social-disclaimer">Effettuando l'accesso, accetto la <a href="#">Politica sulla Privacy</a>.</p>
+                    <button class="btn-social"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_2023.png" alt=""> CONTINUA CON FACEBOOK</button>
+                    <button class="btn-social"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt=""> CONTINUA CON GOOGLE</button>
+                    <button class="btn-social"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt=""> CONTINUA CON APPLE</button>
                 </div>
             </div>
         </div>
@@ -95,14 +86,21 @@
 
     <main>
         <div class="product-grid">
-            <div class="product-card"><img src="https://static.zarahome.net/assets/public/6ec8/bd73/31e8424682ac/7cc3c382f/43386029052-a7/43386029052-a7.jpg"></div>
-            <div class="product-card"><img src="https://static.zarahome.net/assets/public/008b/76b7/e00a44279b9c/0438b4d8d1e2/43386029052-a7.jpg"></div>
-            <div class="product-card"><img src="https://static.zarahome.net/assets/public/6641/1231/948348638685/2919d3640b39/43343029052-a7.jpg"></div>
-        </div>
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="https://static.zarahome.net/assets/public/6ec8/bd73/31e8424682ac/7cc3c382f/43386029052-a7/43386029052-a7.jpg">
+                    <span class="badge-recycle">RICICLAGGIO</span>
+                </div>
+                <div class="product-info">
+                    <p class="name">COPRILETTO COTONE ATELIER</p>
+                    <p class="price-old">99,00 EUR</p>
+                    <p class="price-vip">PREZZO VIP: 69,00 EUR</p>
+                    <p class="price-recycle">SCONTO MAGAZZINO: 45,00 EUR</p>
+                </div>
+            </div>
+            </div>
     </main>
 
     <script src="script.js"></script>
 </body>
 </html>
-
-
