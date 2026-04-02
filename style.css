@@ -39,3 +39,95 @@ header {
 }
 .btn-social img { height: 16px; }
 .close-btn { position: absolute; top: 30px; right: 40px; cursor: pointer; font-size: 11px; }
+/* STRUTTURA MENU */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -400px; /* Nascosto a sinistra */
+    width: 380px;
+    height: 100%;
+    background-color: #fff;
+    z-index: 9999;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Quando il menu è attivo */
+.side-menu.active {
+    transform: translateX(400px);
+}
+
+/* Pulsante Chiudi */
+.menu-close-section {
+    padding: 30px 40px;
+    text-align: right;
+}
+
+.close-btn {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+/* Contenuto Menu */
+.menu-content {
+    padding: 20px 40px 60px 40px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.menu-list, .menu-list-secondary {
+    list-style: none;
+    margin-bottom: 50px;
+}
+
+.menu-item {
+    margin-bottom: 12px;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: #000;
+    font-size: 13px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    transition: opacity 0.2s;
+}
+
+.menu-item a:hover {
+    opacity: 0.6;
+}
+
+/* Stili Speciali */
+.menu-item.highlight a {
+    font-weight: 600;
+}
+
+.menu-item.promo a {
+    color: #d00000; /* Rosso Zara per i saldi */
+    font-weight: 600;
+}
+
+.menu-item.vip a {
+    color: #888;
+    font-size: 11px;
+}
+
+/* Backdrop (sfondo che si scurisce) */
+.menu-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.1);
+    z-index: 9998;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.menu-backdrop.active {
+    display: block;
+    opacity: 1;
+}
