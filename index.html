@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COIN HOME | ATELIER</title>
+    <title>COIN HOME | ATELIER PRIVATE</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&display=swap" rel="stylesheet">
 </head>
@@ -12,16 +12,14 @@
     <header class="glass-header">
         <div class="nav-trigger" onclick="toggleMenu()">
             <div class="dot"></div>
-            <span>EXPLORE</span>
+            <span>COLLECTIONS</span>
         </div>
-        
         <div class="logo-wrap">
             <a href="/"><img src="logo-coin-atelier.svg" alt="COIN" class="logo-minimal"></a>
         </div>
-
         <div class="nav-actions">
             <span onclick="toggleSearch()">SEARCH</span>
-            <span onclick="toggleLogin()">ACCOUNT</span>
+            <span onclick="toggleLogin()" class="vip-tag">VIP ACCESS</span>
             <span>CART(0)</span>
         </div>
     </header>
@@ -29,9 +27,9 @@
     <div id="search-layer" class="full-layer">
         <div class="close-layer" onclick="toggleSearch()">CLOSE</div>
         <div class="layer-content">
-            <input type="text" id="search-input" placeholder="Type to find..." autocomplete="off">
+            <input type="text" id="search-input" placeholder="Search Atelier..." autocomplete="off">
             <div class="trending-tags">
-                <span>NEW ARRIVALS</span> <span>PETS</span> <span>BEDROOM</span>
+                <span>NEW IN</span> <span>LIMITED EDITION</span> <span>VIP PREVIEW</span>
             </div>
         </div>
     </div>
@@ -39,16 +37,18 @@
     <div id="login-layer" class="full-layer">
         <div class="close-layer" onclick="toggleLogin()">CLOSE</div>
         <div class="login-box">
+            <span class="special-label">MEMBERS ONLY</span>
+            <h2>ATELIER PRIVÉ</h2>
             <div class="field-float">
                 <input type="email" placeholder="E-mail">
             </div>
             <div class="field-float">
-                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Vip Code">
             </div>
-            <button class="btn-prime">CONTINUE</button>
+            <button class="btn-prime">ENTER ATELIER</button>
             <div class="login-footer">
-                <a href="#">Forgot password?</a>
-                <a href="#">Create account</a>
+                <a href="#">Join the program</a>
+                <a href="#">Request Access</a>
             </div>
         </div>
     </div>
@@ -56,17 +56,50 @@
     <div id="side-layer" class="side-panel">
         <div class="close-panel" onclick="toggleMenu()">×</div>
         <nav class="panel-nav">
-            <a href="#" class="nav-item"><span>01</span> ATELIER NEW</a>
-            <a href="#" class="nav-item"><span>02</span> FURNITURE</a>
-            <a href="#" class="nav-item"><span>03</span> TEXTILES</a>
-            <a href="#" class="nav-item"><span>04</span> FRAGRANCES</a>
+            <a href="#" class="nav-item"><span>01</span> NEW ARRIVALS</a>
+            <a href="#" class="nav-item vip-link"><span>02</span> VIP SELECTION %</a>
+            <a href="#" class="nav-item"><span>03</span> FURNITURE</a>
+            <a href="#" class="nav-item"><span>04</span> TEXTILES</a>
             <div class="panel-bottom">
-                <a href="#">Support</a>
-                <a href="#">Stores</a>
+                <p>Exclusive discounts for VIP Members up to 30%</p>
             </div>
         </nav>
     </div>
 
     <main class="grid-reveal">
-        <div class="hero-item"><img src="https://static.zarahome.net/assets/public/6ec8/bd73/31e8424682ac/7cc3c382f/43386029052-a7/43386029052-a7.jpg"></div>
-        <div class="hero-item"><img src="
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://static.zarahome.net/assets/public/6ec8/bd73/31e8424682ac/7cc3c382f/43386029052-a7/43386029052-a7.jpg">
+                <span class="badge-vip">-20% VIP</span>
+            </div>
+            <div class="product-info">
+                <h3>Vaso in ceramica Atelier</h3>
+                <p class="price"><span class="old-price">49,90€</span> 39,90€</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://static.zarahome.net/assets/public/008b/76b7/e00a44279b9c/0438b4d8d1e2/43386029052-a7.jpg">
+            </div>
+            <div class="product-info">
+                <h3>Poltrona Bouclé Limited</h3>
+                <p class="price">299,00€</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://static.zarahome.net/assets/public/6641/1231/948348638685/2919d3640b39/43343029052-a7.jpg">
+                <span class="badge-new">NEW</span>
+            </div>
+            <div class="product-info">
+                <h3>Set Lino Lavato</h3>
+                <p class="price">89,00€</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
