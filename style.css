@@ -153,7 +153,7 @@ header, .nav-container, .header-content {
 
 /* LOGO AL CENTRO: Dimensioni equilibrate */
 header img, .site-logo, img[alt*="Coin Home"] {
-    height: 45px !important;    /* Altezza bilanciata, non gigante */
+    height: 85px !important;    /* Altezza bilanciata, non gigante */
     width: auto !important;     /* Mantiene le proporzioni */
     display: block;
     margin: 0 auto;
