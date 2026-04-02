@@ -1,9 +1,15 @@
 function toggleSearch() {
-    document.getElementById('search-overlay').classList.toggle('active');
+    const el = document.getElementById('search-layer');
+    el.style.display = (el.style.display === 'flex') ? 'none' : 'flex';
+    setTimeout(() => el.classList.toggle('active'), 10);
 }
+
 function toggleLogin() {
-    document.getElementById('login-overlay').classList.toggle('active');
+    const el = document.getElementById('login-layer');
+    el.style.display = (el.style.display === 'flex') ? 'none' : 'flex';
+    setTimeout(() => el.classList.toggle('active'), 10);
 }
+
 function toggleMenu() {
-    document.getElementById('side-menu').classList.toggle('active');
+    document.getElementById('side-layer').classList.toggle('active');
 }
