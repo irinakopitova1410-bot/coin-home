@@ -1,31 +1,34 @@
-function toggleMenu() {
-    document.getElementById('side-menu').classList.toggle('active');
-}
-
 function toggleSearch() {
-    document.getElementById('search-overlay').classList.toggle('active');
+    const s = document.getElementById('search-overlay');
+    s.classList.toggle('active');
+    if(s.classList.contains('active')) document.getElementById('search-input').focus();
 }
 
-function closePopup() {
-    document.getElementById('app-popup').classList.remove('active');
-}
-
-// Mostra il pop-up dell'app dopo 2 secondi
-window.onload = () => {
-    setTimeout(() => {
-        document.getElementById('app-popup').classList.add('active');
-    }, 2000);
-};
 function toggleLogin() {
-    const login = document.getElementById('login-overlay');
-    if (login) {
-        login.classList.toggle('active');
-        
-        // Gestione scroll del corpo pagina
-        if (login.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
-    }
+    const l = document.getElementById('login-overlay');
+    l.classList.toggle('active');
 }
+
+function toggleMenu() {
+    const m = document.getElementById('side-menu');
+    if(m) m.classList.toggle('active');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
