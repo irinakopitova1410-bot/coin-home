@@ -69,3 +69,93 @@ main { margin-top: 100px; padding: 20px; }
 .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .img-container { position: relative; }
 .img-container img { width: 100%; height: auto; }
+
+
+/* SEARCH OVERLAY ZARA STYLE */
+.search-overlay {
+    position: fixed;
+    top: -100%; /* Nascosta sopra */
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Copre tutto lo schermo quando aperta */
+    background: #fff;
+    z-index: 9999;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 0;
+    display: block !important; /* Gestiamo la visibilità con transform */
+    visibility: hidden;
+}
+
+.search-overlay.active {
+    transform: translateY(100%);
+    visibility: visible;
+}
+
+.search-header {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.search-input-wrapper {
+    flex-grow: 1;
+}
+
+#search-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    font-weight: 200;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
+
+#search-input::placeholder {
+    color: #ccc;
+}
+
+.close-search {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    margin-left: 40px;
+    font-weight: 400;
+}
+
+/* SUGGESTIONS AREA */
+.search-content {
+    padding: 40px;
+}
+
+.suggestion-title {
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+}
+
+.search-suggestions ul {
+    list-style: none;
+}
+
+.search-suggestions li {
+    margin-bottom: 10px;
+}
+
+.search-suggestions a {
+    text-decoration: none;
+    color: #000;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s;
+}
+
+.search-suggestions a:hover {
+    opacity: 0.5;
+}
+
+
+
