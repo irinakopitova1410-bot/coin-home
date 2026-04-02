@@ -1,13 +1,28 @@
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("Script caricato e pronto!");
+});
+
 function toggleMenu() {
-    document.getElementById('side-menu').classList.toggle('active');
+    const menu = document.getElementById('side-menu');
+    if (menu) {
+        menu.classList.toggle('active');
+        console.log("Menu commutato");
+    }
 }
 
 function toggleSearch() {
-    const el = document.getElementById('search-overlay');
-    el.classList.toggle('active');
-    if(el.classList.contains('active')) document.getElementById('search-input').focus();
+    const search = document.getElementById('search-overlay');
+    if (search) {
+        search.classList.toggle('active');
+        if(search.classList.contains('active')) {
+            document.getElementById('search-input').focus();
+        }
+    }
 }
 
 function toggleLogin() {
-    document.getElementById('login-overlay').classList.toggle('active');
+    const login = document.getElementById('login-overlay');
+    if (login) {
+        login.classList.toggle('active');
+    }
 }
