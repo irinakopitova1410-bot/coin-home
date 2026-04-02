@@ -8,7 +8,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
 </head>
 <body class="layout-zara">
+<div id="search-overlay" class="search-overlay">
+    <div class="search-header-zara">
+        <input type="text" id="search-input" placeholder="COSA STAI CERCANDO?" autocomplete="off">
+        <span class="close-zara" onclick="toggleSearch()">ANNULLA</span>
+    </div>
+</div>
 
+<div id="login-overlay" class="login-overlay">
+    <span class="close-zara-btn" onclick="toggleLogin()">CHIUDI</span>
+    <div class="login-wrapper">
+        <div class="login-box">
+            <h2>ACCEDI</h2>
+            <div class="zara-input-group">
+                <label>E-MAIL</label>
+                <input type="email">
+            </div>
+            <div class="zara-input-group">
+                <label>PASSWORD</label>
+                <input type="password">
+            </div>
+            <button class="btn-zara-black">ACCEDI</button>
+            
+            <div class="social-login">
+                <p class="separator"><span>O ACCEDI CON</span></p>
+                <button class="btn-social" onclick="window.location.href='https://instagram.com'"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"> INSTAGRAM</button>
+                <button class="btn-social" onclick="window.location.href='https://facebook.com'"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_2023.png"> FACEBOOK</button>
+                <button class="btn-social" onclick="window.location.href='https://google.com'"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"> GMAIL</button>
+            </div>
+        </div>
+    </div>
+</div>
     <header class="header-main">
         <div class="header-content">
             <div class="header-left">
