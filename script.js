@@ -1,15 +1,29 @@
+function toggleMenu() {
+    const menu = document.getElementById('side-menu');
+    if (menu) {
+        menu.classList.toggle('active');
+    } else {
+        console.error("Errore: Elemento 'side-menu' non trovato");
+    }
+}
+
 function toggleSearch() {
-    const el = document.getElementById('search-overlay');
-    el.classList.toggle('active');
-    if(el.classList.contains('active')) {
-        setTimeout(() => document.getElementById('search-input').focus(), 100);
+    const search = document.getElementById('search-overlay');
+    if (search) {
+        search.classList.toggle('active');
+        // Se si apre, metti il cursore nell'input
+        if(search.classList.contains('active')) {
+            setTimeout(() => {
+                const input = document.getElementById('search-input');
+                if(input) input.focus();
+            }, 300);
+        }
     }
 }
 
 function toggleLogin() {
-    document.getElementById('login-overlay').classList.toggle('active');
-}
-
-function toggleMenu() {
-    document.getElementById('side-menu').classList.toggle('active');
+    const login = document.getElementById('login-overlay');
+    if (login) {
+        login.classList.toggle('active');
+    }
 }
