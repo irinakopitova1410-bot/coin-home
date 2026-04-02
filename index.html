@@ -5,25 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COIN HOME | ATELIER</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <div class="header-left">
-            <div class="menu-burger" onclick="toggleMenu()">
+        <div class="header-left" onclick="toggleMenu()">
+            <div class="menu-burger">
                 <div class="line"></div>
                 <div class="line"></div>
             </div>
-            <span class="menu-text" onclick="toggleMenu()">MENU</span>
+            <span class="menu-text">MENU</span>
         </div>
         
         <div class="logo-center">
-            <a href="/"><img src="logo-coin-atelier.svg" alt="COIN HOME" class="main-logo"></a>
+            <a href="#"><img src="logo-coin-atelier.svg" alt="COIN HOME" class="main-logo"></a>
         </div>
 
         <div class="header-right">
-            <span class="search-trigger" onclick="toggleSearch()">RICERCA</span>
+            <span onclick="toggleSearch()">RICERCA</span>
             <div class="user-nav">
                 <span onclick="toggleLogin()">ACCEDI</span>
                 <span>CARRELLO (0)</span>
@@ -39,14 +39,8 @@
                 <li><a href="#">CAMERA DA LETTO</a></li>
                 <li><a href="#">SOGGIORNO</a></li>
                 <li><a href="#">CUCINA</a></li>
-                <li><a href="#">BAGNO</a></li>
-                <li><a href="#">FRAGRANZE</a></li>
                 <li class="special-link"><a href="#">PROMOZIONI %</a></li>
             </ul>
-            <div class="side-footer">
-                <a href="#">JOIN LIFE</a>
-                <a href="#">+ INFO</a>
-            </div>
         </nav>
     </div>
 
@@ -54,12 +48,7 @@
         <span class="close-x" onclick="toggleSearch()">CHIUDI</span>
         <div class="search-body">
             <label>COSA STAI CERCANDO?</label>
-            <input type="text" id="search-input" placeholder="" autocomplete="off">
-            <div class="search-suggestions">
-                <span>NUOVI ARRIVI</span>
-                <span>COLLEZIONE PETS</span>
-                <span>BEST SELLERS</span>
-            </div>
+            <input type="text" id="search-input" placeholder="">
         </div>
     </div>
 
@@ -71,7 +60,7 @@
                 
                 <div class="zara-field">
                     <label>E-MAIL</label>
-                    <input type="email" spellcheck="false">
+                    <input type="email">
                 </div>
 
                 <div class="zara-field">
@@ -85,25 +74,22 @@
                     <button class="btn-black">ACCEDI</button>
                     <button class="btn-outline">CREA UN ACCOUNT</button>
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <main>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="https://static.zarahome.net/assets/public/6ec8/bd73/31e8424682ac/7cc3c382f/43386029052-a7/43386029052-a7.jpg" alt="Prodotto 1">
-            </div>
-            <div class="product-card">
-                <img src="https://static.zarahome.net/assets/public/008b/76b7/e00a44279b9c/0438b4d8d1e2/43386029052-a7.jpg" alt="Prodotto 2">
-            </div>
-            <div class="product-card">
-                <img src="https://static.zarahome.net/assets/public/6641/1231/948348638685/2919d3640b39/43343029052-a7.jpg" alt="Prodotto 3">
-            </div>
-        </div>
-    </main>
+                <div class="social-login-section">
+                    <span class="social-separator">ACCESSO CON</span>
+                    <p class="social-disclaimer">Effettuando l'accesso con il mio social login, accetto di collegare il mio account in conformità alla <a href="#">Politica sulla Privacy</a>.</p>
+                    
+                    <button class="btn-social">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_2023.png" alt="FB">
+                        CONTINUA CON FACEBOOK
+                    </button>
+                    
+                    <button class="btn-social">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G">
+                        CONTINUA CON GOOGLE
+                    </button>
+                    
+                    <button class="btn-social">
+                        <img src="
 
-    <script src="script.js"></script>
 
-</body>
-</html>
