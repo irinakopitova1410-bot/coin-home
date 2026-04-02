@@ -31,20 +31,26 @@
         </div>
     </header>
 
-    <div id="side-menu" class="side-menu">
-        <span class="close-x" onclick="toggleMenu()">CHIUDI</span>
-        <nav class="side-nav-content">
-            <ul class="main-cats">
-                <li class="category-header">COLLEZIONI</li>
-                <li><a href="#">NUOVI ARRIVI</a></li>
-                <li><a href="#">CAMERA DA LETTO</a></li>
-                <li><a href="#">SOGGIORNO</a></li>
-                <li><a href="#">CUCINA</a></li>
-                <li class="recycle-link"><a href="#">RICICLAGGIO MAGAZZINO -50%</a></li>
-                <li class="vip-link"><a href="#">ESCLUSIVO VIP</a></li>
-            </ul>
-        </nav>
+  <div id="search-overlay" class="search-overlay">
+    <div class="search-header">
+        <div class="search-input-wrapper">
+            <input type="text" id="search-input" placeholder="CERCA" autocomplete="off">
+        </div>
+        <span class="close-search" onclick="toggleSearch()">ANNULLA</span>
     </div>
+    
+    <div class="search-content">
+        <div class="search-suggestions">
+            <p class="suggestion-title">TENDENZE</p>
+            <ul>
+                <li><a href="#">LINO</a></li>
+                <li><a href="#">CANDELE ATELIER</a></li>
+                <li><a href="#">COLEZIONE CUCINA</a></li>
+                <li><a href="#">SET BAGNO</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 
     <div id="search-overlay" class="search-overlay">
         <div class="search-container">
