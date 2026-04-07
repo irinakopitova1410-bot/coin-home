@@ -1,13 +1,3 @@
-
-
-
-
-
-
-
-
-
-
 Function toggleMenu() {
     const menu = document.getElementById('side-menu');
     if (menu) {
