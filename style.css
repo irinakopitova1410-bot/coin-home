@@ -644,43 +644,6 @@ header {
 }
 .drawer-content ul li:hover { color: #888; text-decoration: underline; }
 
-/* --- LOGO ATELIER GRANDE ED ELEGANTE --- */
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&display=swap');
-
-.atelier-style {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    /* Ingrandisce l'intero blocco del logo */
-    transform: scale(1.4); 
-    padding: 10px 0;
-}
-
-.atelier-style .brand-name {
-    font-family: 'Bodoni Moda', serif;
-    font-size: 24px; /* Molto più grande */
-    letter-spacing: 10px; /* Spaziatura lusso */
-    font-weight: 500;
-    color: #000;
-    text-transform: uppercase;
-}
-
-.atelier-style .line {
-    width: 100px; /* Linea più lunga */
-    height: 1px;
-    background: #000;
-    margin: 12px 0;
-}
-
-.atelier-style .brand-atelier {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    letter-spacing: 5px;
-    color: #888;
-    text-transform: uppercase;
-}
 
 /* --- HEADER ADATTATO --- */
 header {
@@ -696,7 +659,75 @@ header {
     z-index: 2000;
     border-bottom: 1px solid #f2f2f2;
 }
+/* --- LOGO ATELIER: MINIMAL & REFINED --- */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@200;300;400&display=swap');
 
+.atelier-style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+}
+
+.atelier-style .brand-name {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 15px; /* Dimensioni ridotte per eleganza */
+    letter-spacing: 7px; /* Molto spazio per far respirare il nome */
+    font-weight: 400;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.atelier-style .line {
+    width: 30px; /* Linea cortissima e chic */
+    height: 0.5px; /* Sottilissima */
+    background: #000;
+    margin: 8px 0;
+}
+
+.atelier-style .brand-atelier {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7.5px; /* Piccolissimo */
+    letter-spacing: 4px;
+    color: #a3a3a3; /* Grigio etereo */
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/* --- HEADER PROPORZIONATO --- */
+header {
+    height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+    border-bottom: 1px solid #f8f8f8;
+}
+
+.nav-left, .nav-right {
+    flex: 1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #000;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.nav-right { text-align: right; }
+
+/* Spazio per il contenuto sotto l'header */
+.arrivals-wrapper {
+    padding-top: 120px;
+}
 /* --- MENU FILTRI ZARA (LATERALE) --- */
 .side-drawer-right {
     position: fixed;
