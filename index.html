@@ -3,60 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novità | COIN HOME ATELIER</title>
+    <title>COIN HOME | ATELIER</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
 </head>
-<body class="zara-style">
+<body>
 
-    <header class="header-transparent">
-        <div class="nav-left" onclick="location.href='index.html'">INDIETRO</div>
-        <div class="logo-area">
-            <img src="logo-coin-home-atelier.png" alt="COIN HOME" class="main-logo">
+    <header>
+        <div class="nav-left">
+            <span class="menu-trigger" onclick="toggleMenu()">MENU</span>
         </div>
+
+        <div class="logo-area">
+            <a href="index.html">
+                <img src="logo-coin-home-atelier.png" alt="COIN HOME" class="main-logo">
+            </a>
+        </div>
+
         <div class="nav-right">
-            <span class="search-trigger" onclick="openUltraSearch()">CERCA</span>
+            <span class="vip-badge">VIP ACCESS</span>
+            <span class="search-trigger" onclick="openSearch()">RICERCA</span>
         </div>
     </header>
 
-    <main class="zara-grid">
-        <div class="grid-header">
-            <h1>NOVITÀ</h1>
-            <p>La nuova collezione Atelier: un dialogo tra materia e forma.</p>
-        </div>
+    <nav id="side-menu" class="side-drawer">
+        <div class="close-btn" onclick="toggleMenu()">×</div>
+        <ul class="menu-list">
+            <li><a href="nuovi-arrivi.html">Nuovi Arrivi</a></li>
+            <li><a href="#archivio">Archivio Riservato</a></li>
+            <li><a href="#fedelta">Programma Fedeltà</a></li>
+        </ul>
+    </nav>
 
-        <div class="zara-item wide">
-            <img src="https://images.unsplash.com/photo-1616489953149-804364409514?q=80&w=2000" alt="New">
-            <div class="item-info">
-                <h3>POLTRONA BOUCLÉ LIMITED</h3>
-                <p>€ 890,00</p>
-            </div>
+    <div id="search-overlay" class="search-overlay">
+        <div class="close-search" onclick="closeSearch()">×</div>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="COSA CERCHI?">
+            <div class="line"></div>
         </div>
+    </div>
 
-        <div class="zara-item">
-            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000" alt="New">
-            <div class="item-info">
-                <h3>VASO IN CERAMICA N.04</h3>
-                <p>€ 45,90</p>
-            </div>
-        </div>
-
-        <div class="zara-item">
-            <img src="https://images.unsplash.com/photo-1513519247388-4e282650d44d?q=80&w=1000" alt="New">
-            <div class="item-info">
-                <h3>LAMPADA MINIMALISTA</h3>
-                <p>€ 129,00</p>
-            </div>
-        </div>
-
-        <div class="zara-item tall">
-            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1000" alt="New">
-            <div class="item-info">
-                <h3>SET TESSILI LINO</h3>
-                <p>€ 89,00</p>
-            </div>
-        </div>
-    </main>
+    <section class="hero">
+        <h1>COIN HOME <br><span>ATELIER</span></h1>
+    </section>
 
     <script src="script.js"></script>
 </body>
