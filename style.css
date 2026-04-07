@@ -110,3 +110,31 @@ header {
     cursor: pointer;
     font-weight: 400;
 }
+/* --- STILE RICERCA DINAMICA ZARA --- */
+
+/* Contenitore a destra */
+.header-right {
+    display: flex !important;
+    align-items: center !important;
+    gap: 25px !important;
+}
+
+.search-container {
+    display: flex !important;
+    align-items: center !important;
+    position: relative;
+}
+
+/* La barra di input (inizialmente invisibile e stretta) */
+#search-input {
+    width: 0;
+    opacity: 0;
+    border: none;
+    border-bottom: 1px solid #000; /* Linea sottile stile Zara */
+    outline: none;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Animazione fluida */
+    background: transparent;
+    padding: 2px 0;
