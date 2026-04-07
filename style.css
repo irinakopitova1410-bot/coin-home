@@ -82,3 +82,31 @@ header {
     .header-right { display: none !important; }
     .site-logo { height: 35px !important; }
 }
+/* --- STILE RICERCA ZARA --- */
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#search-input {
+    width: 0;
+    opacity: 0;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    font-size: 11px;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+}
+
+/* Quando la barra è attiva */
+#search-input.open {
+    width: 150px;
+    opacity: 1;
+}
+
+.search-btn {
+    cursor: pointer;
+    font-weight: 400;
+}
