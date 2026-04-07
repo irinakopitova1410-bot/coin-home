@@ -1,22 +1,28 @@
-function toggleMenu() {
-    const menu = document.getElementById('side-menu');
-    menu.classList.toggle('active');
+function openUltraSearch() {
+    const modal = document.getElementById('search-overlay');
+    const input = document.getElementById('ultra-search-input');
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Blocca lo scroll sotto
+    
+    setTimeout(() => {
+        input.focus(); // Mette il cursore pronto per scrivere
+    }, 400);
 }
 
-// Chiudi menu con tasto ESC
-document.addEventListener('keydown', (e) => {
-    if (e.key === "Escape") {
-        document.getElementById('side-menu').classList.remove('active');
-    }
-});
+function closeUltraSearch() {
+    const modal = document.getElementById('search-overlay');
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Riattiva lo scroll
+}
 
-// Funzione scroll morbido per i link
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        toggleMenu(); // Chiude il menu dopo il click
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
+// Chiudi con tasto ESC o cerca con INVIO
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") closeUltraSearch();
+    
+    const input = document.getElementById('ultra-search-input');
+    if (e.key === "Enter" && document.activeElement === input && input.value !== "") {
+        alert("Accesso Archivio per: " + input.value.toUpperCase());
+        closeUltraSearch();
+    }
 });
