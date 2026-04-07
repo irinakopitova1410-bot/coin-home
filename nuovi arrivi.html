@@ -2,19 +2,72 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Nuovi Arrivi | COIN HOME</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuovi Arrivi | COIN HOME ATELIER</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="page-arrivals">
+
     <header>
-        <div class="nav-left"><span onclick="location.href='index.html'">INDIETRO</span></div>
-        <div class="logo-area"><img src="logo-coin-home-atelier.png" class="main-logo"></div>
-        <div class="nav-right"><span>NUOVI ARRIVI</span></div>
+        <div class="nav-left" onclick="location.href='index.html'">
+            <span class="back-btn">← HOME</span>
+        </div>
+        <div class="logo-area">
+            <img src="logo-coin-home-atelier.png" alt="COIN HOME" class="main-logo">
+        </div>
+        <div class="nav-right">
+            <span class="search-trigger" onclick="openUltraSearch()">RICERCA</span>
+        </div>
     </header>
 
-    <section style="padding: 150px 50px; text-align: center;">
-        <h1 style="font-family: 'Tenor Sans'; letter-spacing: 5px;">NUOVI ARRIVI</h1>
-        <p style="margin-top: 20px; color: #888;">La selezione esclusiva della stagione.</p>
-        </section>
+    <main class="arrivals-container">
+        <div class="arrivals-header">
+            <h1>NUOVI ARRIVI</h1>
+            <p>Selezione Primavera / Estate 2026</p>
+        </div>
+
+        <div class="arrivals-grid">
+            <div class="product-card tall">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1616489953149-804364409514?q=80&w=1000" alt="New">
+                </div>
+                <div class="info">
+                    <h3>POLTRONA ATELIER LINO</h3>
+                    <p>€ 749,00</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800" alt="New">
+                </div>
+                <div class="info">
+                    <h3>VASO CERAMICA N.02</h3>
+                    <p>€ 55,00</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1513519247388-4e282650d44d?q=80&w=800" alt="New">
+                </div>
+                <div class="info">
+                    <h3>LAMPADA BRASS MINIMAL</h3>
+                    <p>€ 185,00</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="search-overlay" class="search-modal">
+        <span class="close-search" onclick="closeUltraSearch()">×</span>
+        <div class="search-content">
+            <input type="text" id="ultra-search-input" placeholder="CERCA NEI NUOVI ARRIVI...">
+            <div class="search-underline"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
