@@ -1,3 +1,20 @@
+
+
+
+
+
+
+
+
+
+
+// Funzione per aprire/chiudere il menu laterale
+function toggleMenu() {
+    const menu = document.getElementById('side-menu');
+    if (menu) {
+        menu.classList.toggle('active');
+    }
+}
 function openUltraSearch() {
     const modal = document.getElementById('search-overlay');
     const input = document.getElementById('ultra-search-input');
