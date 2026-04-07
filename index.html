@@ -1,30 +1,26 @@
 <header>
-    <div class="header-left" onclick="toggleMenu()">MENU</div>
-
+    <div class="header-left" onclick="toggleMenu()" style="cursor:pointer;">MENU</div>
+    
     <div class="logo-container">
         <a href="index.html">
-            <img src="logo-coin-home.png" alt="COIN HOME" class="site-logo">
+            <img src="logo-coin-home-atelier.png" alt="COIN HOME" class="site-logo">
         </a>
     </div>
 
     <div class="header-right">
-        <div class="search-container" style="display: flex; align-items: center;">
-            <input type="text" id="search-input" placeholder="CERCA...">
-            <span class="search-btn" onclick="openSearch()">RICERCA</span>
-        </div>
-        <span class="login-btn">ACCEDI</span>
+        <span onclick="openSearch()">RICERCA</span>
+        <span>ACCEDI</span>
     </div>
 </header>
-<nav id="side-menu" class="side-menu">
+
+<div id="side-menu" class="side-menu">
     <div class="close-menu" onclick="toggleMenu()">×</div>
-    <div class="menu-content">
+    <nav class="menu-nav">
         <ul>
             <li><a href="#">Nuovi Arrivi</a></li>
-            <li><a href="#">Collezione Casa</a></li>
-            <li><a href="#">Tessili</a></li>
+            <li><a href="#">Collezione</a></li>
             <li><a href="#">Atelier</a></li>
-            <li><a href="#">Outlet</a></li>
+            <li><a href="#">Contatti</a></li>
         </ul>
-    </div>
-</nav>
-
+    </nav>
+</div>
