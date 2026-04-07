@@ -1,73 +1,52 @@
-/* RESET */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Montserrat', sans-serif; background: #fff; }
-
-/* HEADER */
+/* --- HEADER MINIMAL (STILE ZARA HOME) --- */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 40px;
-    height: 90px;
-    background: #fff;
-    border-bottom: 1px solid #f2f2f2;
-    position: sticky;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 30px !important;
+    height: 60px !important; /* Più basso */
+    background: #ffffff !important;
+    border-bottom: 1px solid #f2f2f2 !important;
+    position: sticky !important;
     top: 0;
     z-index: 1000;
 }
 
-/* LOGO SEMPRE AL CENTRO */
+/* LOGO PICCOLO E CENTRALISSIMO */
 .logo-container {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    pointer-events: auto;
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important; /* Centra perfettamente sia X che Y */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
 .site-logo {
-    height: 40px;
-    width: auto;
-    filter: brightness(0);
+    height: 25px !important; /* Logo più piccolo ed elegante */
+    width: auto !important;
+    filter: brightness(0) !important;
+    display: block !important;
 }
 
-/* LATI (MENU E RICERCA) */
+/* TESTI LATERALI PIÙ PICCOLI */
 .header-left, .header-right {
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    z-index: 10; /* Sopra al logo se necessario */
+    font-size: 10px !important; /* Scritte ancora più sottili */
+    letter-spacing: 1.2px !important;
+    text-transform: uppercase !important;
+    color: #000 !important;
+    z-index: 10 !important;
 }
-
-.header-left { cursor: pointer; }
 
 .header-right {
-    display: flex;
-    align-items: center;
-    gap: 25px;
+    display: flex !important;
+    gap: 20px !important;
 }
 
-/* BARRA DI RICERCA ANIMATA */
-.search-container {
-    display: flex;
-    align-items: center;
-}
-
-#search-input {
-    width: 0;
-    opacity: 0;
-    border: none;
-    border-bottom: 1px solid #000;
-    outline: none;
-    font-size: 10px;
-    transition: all 0.5s ease;
-    background: transparent;
-    margin-right: 0;
-}
-
+/* FIX PER LA RICERCA CHE NON SPOSTA NULLA */
 #search-input.open {
-    width: 150px;
-    opacity: 1;
-    margin-right: 10px;
+    width: 120px !important; /* Barra più corta per non toccare il logo */
+    opacity: 1 !important;
+    margin-right: 10px !important;
 }
-
-.search-btn, .login-btn { cursor: pointer; }
