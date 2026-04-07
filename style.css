@@ -261,3 +261,73 @@ header {
     font-size: 11px;
     letter-spacing: 2px;
 }
+/* --- SEARCH OVERLAY ULTRA-MODERN --- */
+.search-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255, 255, 255, 0.98); /* Bianco quasi totale */
+    backdrop-filter: blur(10px); /* Sfoca il sito dietro */
+    z-index: 3000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.search-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.search-modal-content {
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+}
+
+#ultra-search-input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 40px; /* Testo grande e impattante */
+    font-family: 'Tenor Sans', serif;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    outline: none;
+    text-align: center;
+    color: #000;
+}
+
+.search-line {
+    height: 1px;
+    background: #000;
+    width: 0;
+    margin: 20px auto;
+    transition: width 0.8s ease 0.2s;
+}
+
+.search-overlay.active .search-line {
+    width: 100%;
+}
+
+.search-hint {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #999;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.close-search {
+    position: absolute;
+    top: 40px; right: 50px;
+    font-size: 40px;
+    cursor: pointer;
+    font-weight: 200;
+}
+
+/* Nascondi lo scroll quando la ricerca è aperta */
+body.no-scroll { overflow: hidden; }
