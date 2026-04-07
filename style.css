@@ -1,109 +1,77 @@
-/* RESET GENERALE */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* RESET TOTALE */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Montserrat', sans-serif; background: #fff; }
+
+/* HEADER STILE ZARA */
+header {
+    display: grid !important;
+    grid-template-columns: 1fr auto 1fr !important; /* Forza 3 colonne */
+    align-items: center !important;
+    padding: 0 30px !important;
+    height: 80px !important;
+    background: #ffffff !important;
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Rimuoviamo bordi pesanti per pulizia */
 }
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #ffffff;
+/* TESTI LATERALI (Menu, Ricerca, Accedi) */
+.header-left, .header-right {
+    font-size: 11px !important; /* Font piccolissimo stile Zara */
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-weight: 400;
     color: #000;
 }
 
-/* HEADER STILE LA REDOUTE */
-header {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr; /* 3 colonne perfette */
-    align-items: center;
-    padding: 0 40px;
-    height: 90px;
-    background: #fff;
-    border-bottom: 1px solid #e5e5e5;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-/* MENU A SINISTRA */
-.header-left {
-    font-size: 13px;
-    letter-spacing: 1.5px;
-    font-weight: 500;
+.header-left { 
+    grid-column: 1; 
     cursor: pointer;
-    text-transform: uppercase;
 }
 
-/* LOGO AL CENTRO */
+.header-right { 
+    grid-column: 3; 
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 20px;
+}
+
+.header-right span { cursor: pointer; }
+
+/* LOGO CENTRALE */
 .logo-container {
+    grid-column: 2;
     display: flex;
     justify-content: center;
 }
 
 .site-logo {
-    height: 42px; /* Dimensione elegante */
-    width: auto;
-    filter: brightness(0); /* Lo rende nero puro */
+    height: 38px !important; /* Dimensione equilibrata Zara */
+    width: auto !important;
+    filter: brightness(0); /* Nero puro */
+    transition: 0.3s;
 }
 
-/* DESTRA: RICERCA E ACCEDI */
-.header-right {
-    display: flex;
-    justify-content: flex-end;
-    gap: 25px;
-    font-size: 13px;
-    letter-spacing: 1.5px;
-    font-weight: 500;
-    text-transform: uppercase;
-}
-
-.header-right div {
-    cursor: pointer;
-}
-
-/* MENU LATERALE (SIDE MENU) */
+/* SIDE MENU (Quello che esce da sinistra) */
 .side-menu {
     position: fixed;
     top: 0;
-    left: -300px; /* Nascosto a sinistra */
+    left: -100%;
     width: 300px;
     height: 100%;
     background: #fff;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-    transition: 0.4s;
     z-index: 2000;
-    padding: 40px;
+    transition: 0.4s ease;
+    padding: 50px 30px;
 }
 
-.side-menu.active {
-    left: 0; /* Appare */
-}
+.side-menu.active { left: 0; }
 
-.close-menu {
-    font-size: 30px;
-    cursor: pointer;
-    margin-bottom: 30px;
-}
-
-.side-menu ul {
-    list-style: none;
-}
-
-.side-menu ul li {
-    margin-bottom: 20px;
-}
-
-.side-menu ul li a {
-    text-decoration: none;
-    color: #000;
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* RESPONSIVE */
+/* MOBILE */
 @media (max-width: 768px) {
-    header { padding: 0 20px; }
-    .header-right { display: none; }
-    .site-logo { height: 32px; }
+    header { padding: 0 15px !important; height: 60px !important; }
+    .header-right { display: none !important; } /* Zara nasconde ricerca su mobile */
+    .site-logo { height: 28px !important; }
 }
