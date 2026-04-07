@@ -567,3 +567,60 @@ header {
 }
 .underline { height: 1px; background: #000; width: 60%; margin: 10px auto; }
 .close-search { position: absolute; top: 30px; right: 40px; font-size: 40px; cursor: pointer; }
+
+/* --- LAYOUT GENERALE --- */
+.arrivals-wrapper { padding-top: 100px; background: #fff; }
+
+/* --- BARRA ZARA CONTROLS --- */
+.zara-controls {
+    display: flex; justify-content: flex-end; align-items: center;
+    padding: 40px; gap: 40px; background: #fff;
+}
+.control-group { display: flex; align-items: center; gap: 15px; cursor: pointer; }
+.label, .filter-btn, .sort-btn { font-size: 10px; letter-spacing: 1.5px; font-weight: 400; }
+
+/* La linea e il pallino mobile */
+.view-indicator { position: relative; width: 60px; height: 10px; display: flex; align-items: center; }
+.view-indicator .line { width: 100%; height: 1px; background: #000; }
+.view-indicator .dot { 
+    width: 8px; height: 8px; background: #000; border-radius: 50%; 
+    position: absolute; right: 0; 
+    transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Classe per muovere il pallino a sinistra */
+.dot-left { transform: translateX(-52px); }
+
+.separator { color: #e0e0e0; font-weight: 200; }
+
+/* --- GRIGLIA PRODOTTI VARIABILE --- */
+.products-grid {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); /* Default 2 colonne */
+    gap: 20px; padding: 0 40px 80px;
+    transition: all 0.5s ease;
+}
+
+/* Classe attivata da JS per le 4 colonne */
+.grid-wide {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
+.product-item .img-container { background: #f7f7f7; aspect-ratio: 3/4; overflow: hidden; }
+.product-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+.product-item:hover img { transform: scale(1.03); }
+.product-info { padding: 15px 0; font-size: 10px; letter-spacing: 1px; }
+.product-info p { color: #888; margin-top: 5px; }
+
+/* Mobile: forza sempre 2 colonne */
+@media (max-width: 768px) {
+    .products-grid { grid-template-columns: repeat(2, 1fr) !important; padding: 20px; }
+    .zara-controls { justify-content: center; padding: 20px; gap: 20px; }
+    .view-indicator { display: none; } /* Nascondi visualizzazione su mobile */
+}
+
+
+
+
+
+
