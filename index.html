@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COIN HOME ATELIER</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500&display=swap" rel="stylesheet">
-</head>
-<body>
 <header>
     <div class="header-left" onclick="toggleMenu()">
         MENU
@@ -20,23 +10,10 @@
     </div>
 
     <div class="header-right">
-        <span class="search-btn">RICERCA</span>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="CERCA...">
+            <span class="search-btn" onclick="openSearch()">RICERCA</span>
+        </div>
         <span class="login-btn">ACCEDI</span>
     </div>
 </header>
-   <nav id="side-menu" class="side-menu">
-        <div class="close-menu" onclick="toggleMenu()">×</div>
-        <ul>
-            <li><a href="#">NUOVI ARRIVI</a></li>
-            <li><a href="#">COLLEZIONE</a></li>
-            <li><a href="#">ATELIER</a></li>
-            <li><a href="#">CONTATTI</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        </main>
-
-    <script src="script.js"></script>
-</body>
-</html>
