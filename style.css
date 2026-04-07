@@ -112,3 +112,125 @@ header {
     header { padding: 0 20px; }
     .side-drawer { width: 100%; }
 }
+
+/* --- SEZIONE ARCHIVIO VIP --- */
+.vip-archive {
+    padding: 120px 40px;
+    background: #fff;
+}
+
+.archive-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.pre-title {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #b0914f; /* Oro opaco */
+    font-weight: 600;
+}
+
+.section-desc {
+    font-size: 14px;
+    color: #666;
+    max-width: 600px;
+    margin: 20px auto;
+    font-weight: 300;
+}
+
+/* GRID DEI PRODOTTI */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.product-item {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.img-wrapper {
+    position: relative;
+    background: #f8f8f8;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: scale 0.8s ease;
+}
+
+.product-item:hover img {
+    scale: 1.05;
+}
+
+/* OVERLAY AL PASSAGGIO DEL MOUSE */
+.overlay-buy {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: bottom 0.3s ease;
+    cursor: pointer;
+}
+
+.product-item:hover .overlay-buy {
+    bottom: 0;
+}
+
+/* TAG SCONTO */
+.badge-discount {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #000;
+    color: #fff;
+    font-size: 10px;
+    padding: 5px 12px;
+    z-index: 5;
+    font-weight: 600;
+}
+
+/* INFO PRODOTTO */
+.product-info h3 {
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.category {
+    font-size: 9px;
+    color: #b0914f;
+    display: block;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.price {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #aaa;
+    margin-right: 10px;
+    font-weight: 300;
+}
