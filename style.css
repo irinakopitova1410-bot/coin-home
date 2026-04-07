@@ -1,58 +1,42 @@
-/* RESET TOTALE */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Montserrat', sans-serif; background: #fff; }
-
-
-.header-right { 
-    grid-column: 3; 
-    display: flex !important;
-    justify-content: flex-end !important;
-    gap: 20px;
+/* --- RESET GENERALE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* --- HEADER STILE ZARA/LA REDOUTE --- */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* --- HEADER STILE ZARA / LA REDOUTE --- */
 header {
     display: grid !important;
-    grid-template-columns: 1fr auto 1fr !important; /* Crea 3 zone: SX, Centro, DX */
+    grid-template-columns: 1fr auto 1fr !important; /* Tre colonne: SX, Centro, DX */
     align-items: center !important;
     padding: 0 40px !important;
-    height: 100px !important; /* Altezza per dare respiro al logo */
+    height: 100px !important;
     background: #ffffff !important;
     border-bottom: 1px solid #f2f2f2 !important;
     position: sticky !important;
     top: 0;
     z-index: 1000;
     width: 100% !important;
-    box-sizing: border-box !important;
 }
 
-/* SCRITTE LATERALI: Menu, Ricerca, Accedi */
-.header-left, .header-right {
-    font-size: 11px !important; /* Carattere piccolo ed elegante */
-    letter-spacing: 2px !important; /* Spaziatura lusso */
+/* MENU A SINISTRA (Stile Minimal) */
+.header-left {
+    grid-column: 1 !important;
+    font-size: 11px !important;
     text-transform: uppercase !important;
-    color: #000 !important;
+    letter-spacing: 2px !important;
+    cursor: pointer !important;
     font-weight: 400 !important;
 }
 
-.header-left {
-    grid-column: 1 !important;
-    cursor: pointer;
-    text-align: left;
-}
-
-.header-right {
-    grid-column: 3 !important;
-    display: flex !important;
-    justify-content: flex-end !important;
-    gap: 30px !important; /* Spazio tra Ricerca e Accedi */
-}
-
-.header-right span {
-    cursor: pointer;
-}
-
-/* LOGO CENTRALE */
+/* LOGO AL CENTRO (Elegante) */
 .logo-container {
     grid-column: 2 !important;
     display: flex !important;
@@ -61,40 +45,68 @@ header {
 }
 
 .site-logo {
-    height: 50px !important; /* Dimensione equilibrata */
+    height: 45px !important; /* Dimensione chic */
     width: auto !important;
     display: block !important;
-    filter: brightness(0) !important; /* Nero profondo */
+    filter: brightness(0) !important; /* Lo rende nero puro */
 }
 
-/* MOBILE FIX */
-@media (max-width: 768px) {
-    header {
-        padding: 0 20px !important;
-        grid-template-columns: 1fr 1fr !important; /* Su mobile togliamo la zona Ricerca */
-    }
-    .header-right { display: none !important; }
-    .site-logo { height: 35px !important; }
+/* RICERCA E ACCEDI A DESTRA */
+.header-right {
+    grid-column: 3 !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 30px !important;
+    font-size: 11px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    font-weight: 400 !important;
 }
 
-/* SIDE MENU (Quello che esce da sinistra) */
+.header-right span {
+    cursor: pointer !important;
+}
+
+/* SIDE MENU (Quello che si apre) */
 .side-menu {
     position: fixed;
     top: 0;
-    left: -100%;
-    width: 300px;
+    left: -320px;
+    width: 320px;
     height: 100%;
     background: #fff;
     z-index: 2000;
-    transition: 0.4s ease;
-    padding: 50px 30px;
+    transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    padding: 80px 40px;
+    box-shadow: 10px 0 30px rgba(0,0,0,0.05);
 }
 
-.side-menu.active { left: 0; }
+.side-menu.active {
+    left: 0;
+}
 
-/* MOBILE */
+.side-menu ul {
+    list-style: none;
+}
+
+.side-menu ul li {
+    margin-bottom: 25px;
+}
+
+.side-menu ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- MOBILE FIX --- */
 @media (max-width: 768px) {
-    header { padding: 0 15px !important; height: 60px !important; }
+    header {
+        padding: 0 20px !important;
+        grid-template-columns: 1fr 1fr !important;
+    }
     .header-right { display: none !important; } /* Zara nasconde ricerca su mobile */
-    .site-logo { height: 28px !important; }
+    .site-logo { height: 32px !important; }
 }
