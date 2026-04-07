@@ -644,6 +644,69 @@ header {
 }
 .drawer-content ul li:hover { color: #888; text-decoration: underline; }
 
+/* --- LOGO ATELIER GRANDE ED ELEGANTE --- */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&display=swap');
 
+.atelier-style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* Ingrandisce l'intero blocco del logo */
+    transform: scale(1.4); 
+    padding: 10px 0;
+}
+
+.atelier-style .brand-name {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 24px; /* Molto più grande */
+    letter-spacing: 10px; /* Spaziatura lusso */
+    font-weight: 500;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.atelier-style .line {
+    width: 100px; /* Linea più lunga */
+    height: 1px;
+    background: #000;
+    margin: 12px 0;
+}
+
+.atelier-style .brand-atelier {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: #888;
+    text-transform: uppercase;
+}
+
+/* --- HEADER ADATTATO --- */
+header {
+    height: 120px; /* Più alto per far stare il logo grande */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+/* --- MENU FILTRI ZARA (LATERALE) --- */
+.side-drawer-right {
+    position: fixed;
+    top: 0; right: -100%;
+    width: 400px; height: 100%;
+    background: #fff; z-index: 5000;
+    transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    padding: 100px 50px;
+    box-shadow: -15px 0 40px rgba(0,0,0,0.05);
+}
+.side-drawer-right.active { right: 0; }
 
 
