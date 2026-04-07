@@ -708,5 +708,51 @@ header {
     box-shadow: -15px 0 40px rgba(0,0,0,0.05);
 }
 .side-drawer-right.active { right: 0; }
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&display=swap');
 
+.atelier-style {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    /* Aumenta questo numero per farlo ancora più gigante */
+    transform: scale(1.6) !important; 
+    margin: 0 auto;
+}
+
+.atelier-style .brand-name {
+    font-family: 'Bodoni Moda', serif !important;
+    font-size: 26px !important; /* Grandezza del testo principale */
+    letter-spacing: 12px !important; /* Spaziatura tra le lettere */
+    font-weight: 500 !important;
+    color: #000 !important;
+    text-transform: uppercase !important;
+    line-height: 1 !important;
+}
+
+.atelier-style .line {
+    width: 110px !important; /* Lunghezza della linea nera */
+    height: 1.5px !important;
+    background: #000 !important;
+    margin: 12px 0 !important;
+}
+
+.atelier-style .brand-atelier {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 13px !important;
+    letter-spacing: 6px !important;
+    color: #888 !important;
+    text-transform: uppercase !important;
+}
+
+/* Alza l'header per non tagliare il logo grande */
+header {
+    height: 140px !important; 
+    padding: 0 50px !important;
+}
+
+/* Sposta il contenuto della pagina più in basso per l'header più alto */
+.arrivals-wrapper {
+    padding-top: 160px !important;
+}
 
