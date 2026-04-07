@@ -3,18 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuovi Arrivi | COIN HOME</title>
-    <link rel="stylesheet" href="style.css"> </head>
+    <title>Nuovi Arrivi | COIN HOME ATELIER</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+</head>
 <body>
+
     <header>
-        <div class="nav-left" onclick="window.location.href='index.html'" style="cursor:pointer;">← HOME</div>
-        <div class="logo-area">COIN HOME ATELIER</div>
-        <div class="nav-right">NUOVI ARRIVI</div>
+        <div class="nav-left" onclick="location.href='index.html'">
+            <span class="back-btn">INDIETRO</span>
+        </div>
+        <div class="logo-area">
+            <img src="logo-coin-home-atelier.png" alt="COIN HOME" class="main-logo">
+        </div>
+        <div class="nav-right">
+            <span class="search-trigger" onclick="openUltraSearch()">CERCA</span>
+        </div>
     </header>
 
-    <main style="padding-top: 150px; text-align: center;">
-        <h1 style="font-family: serif; letter-spacing: 5px;">NUOVI ARRIVI</h1>
-        <p style="color: #888; margin-top: 20px;">L'archivio è in fase di aggiornamento...</p>
+    <main class="arrivals-wrapper">
+        <div class="zara-controls">
+            <div class="control-group">
+                <span class="label">VISUALIZZAZIONE</span>
+                <div class="view-indicator">
+                    <div class="line"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <div class="control-group">
+                <span class="filter-btn">FILTRI</span>
+                <span class="separator">|</span>
+                <span class="sort-btn">ORDINA</span>
+            </div>
+        </div>
+
+        <div class="products-grid">
+            <div class="product-item">
+                <img src="https://images.unsplash.com/photo-1616489953149-804364409514?q=80&w=800" alt="Prodotto">
+                <div class="product-info">
+                    <h3>POLTRONA MINIMAL LINO</h3>
+                    <p>749,00 EUR</p>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800" alt="Prodotto">
+                <div class="product-info">
+                    <h3>VASO IN CERAMICA N.02</h3>
+                    <p>55,00 EUR</p>
+                </div>
+            </div>
+        </div>
     </main>
+
+    <div id="search-overlay" class="search-modal">
+        <span class="close-search" onclick="closeUltraSearch()">×</span>
+        <div class="search-content">
+            <input type="text" id="ultra-search-input" placeholder="COSA CERCHI?">
+            <div class="underline"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
-</html
+</html>
