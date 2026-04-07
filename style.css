@@ -373,3 +373,51 @@ header {
     justify-content: center;
     align-items: center;
 }
+header {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 2000; /* Deve stare sopra a tutto */
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Distribuzione equa dei tre spazi */
+.nav-left, .nav-right, .logo-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.logo-area { justify-content: center; }
+.nav-right { justify-content: flex-end; gap: 25px; }
+
+.menu-trigger, .search-trigger {
+    font-size: 11px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* Stile per il pannello laterale che si apre */
+.side-drawer {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Nascosto */
+    width: 350px;
+    height: 100%;
+    background: #fff;
+    z-index: 3000;
+    transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    padding: 80px 40px;
+    box-shadow: 15px 0 50px rgba(0,0,0,0.05);
+}
+
+.side-drawer.active {
+    left: 0; /* Entra in scena */
+}
