@@ -1,56 +1,22 @@
-// Gestione Menu Laterale
 function toggleMenu() {
     const menu = document.getElementById('side-menu');
-    if (menu) {
-        menu.classList.toggle('active');
-        console.log("Menu commutato");
-    } else {
-        console.error("Elemento 'side-menu' non trovato nell'HTML");
-    }
+    menu.classList.toggle('active');
 }
 
-// Chiudi il menu quando si clicca su un link
-document.addEventListener('click', function(e) {
-    if (e.target.closest('.side-drawer a')) {
-        const menu = document.getElementById('side-menu');
-        if (menu) menu.classList.remove('active');
+// Chiudi menu con tasto ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+        document.getElementById('side-menu').classList.remove('active');
     }
 });
 
-// Gestione Ricerca Ultra-Veloce
-function openUltraSearch() {
-    const modal = document.getElementById('search-overlay');
-    const input = document.getElementById('ultra-search-input');
-    
-    if (modal && input) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; 
-        
-        setTimeout(() => {
-            input.focus();
-        }, 400);
-    }
-}
-
-function closeUltraSearch() {
-    const modal = document.getElementById('search-overlay');
-    if (modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-}
-
-// Tasti rapidi: ESC per chiudere, INVIO per cercare
-document.addEventListener('keydown', (e) => {
-    if (e.key === "Escape") {
-        closeUltraSearch();
-        const menu = document.getElementById('side-menu');
-        if (menu) menu.classList.remove('active');
-    }
-    
-    const input = document.getElementById('ultra-search-input');
-    if (e.key === "Enter" && document.activeElement === input && input.value.trim() !== "") {
-        alert("Accesso Archivio per: " + input.value.toUpperCase());
-        closeUltraSearch();
-    }
+// Funzione scroll morbido per i link
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        toggleMenu(); // Chiude il menu dopo il click
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
