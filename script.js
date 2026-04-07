@@ -33,17 +33,35 @@ function toggleGridLayout() {
         dot.classList.toggle('dot-left');  // Muove il pallino
     }
 }
-
-// Placeholder per Filtri e Ordina
+// Gestione FILTRI
 function openFilters() {
-    console.log("Filtri aperti");
-    alert("Funzionalità FILTRI in arrivo.");
+    const menu = document.getElementById('filter-menu');
+    if (menu) menu.classList.add('active');
 }
 
-function openSort() {
-    console.log("Ordinamento aperto");
-    alert("Funzionalità ORDINA in arrivo.");
+function closeFilters() {
+    const menu = document.getElementById('filter-menu');
+    if (menu) menu.classList.remove('active');
 }
+
+// Gestione ORDINA
+function openSort() {
+    const menu = document.getElementById('sort-menu');
+    if (menu) menu.classList.add('active');
+}
+
+function closeSort() {
+    const menu = document.getElementById('sort-menu');
+    if (menu) menu.classList.remove('active');
+}
+
+// Chiudi tutto con ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+        closeFilters();
+        closeSort();
+    }
+});
 
 // Gestione Ricerca (già configurata prima)
 function openUltraSearch() {
