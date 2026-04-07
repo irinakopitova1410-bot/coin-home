@@ -1,71 +1,71 @@
-/* --- RESET TOTALE PER EFFETTO ZARA --- */
-
-/* 1. Pulizia dell'Header */
+/* --- RESET TOTALE HEADER STILE LA REDOUTE --- */
 header, .header, .nav-container {
     display: grid !important;
-    grid-template-columns: 1fr auto 1fr !important; /* Forza 3 colonne */
+    grid-template-columns: 1fr auto 1fr !important; /* Tre colonne: sinistra, centro, destra */
     align-items: center !important;
-    justify-content: space-between !important;
-    padding: 0 50px !important;
-    height: 100px !important;
-    min-height: 100px !important;
-    width: 100% !important;
+    padding: 0 40px !important;
+    height: 90px !important;
     background: #ffffff !important;
     border-bottom: 1px solid #eeeeee !important;
     position: relative !important;
-    left: 0 !important;
-    top: 0 !important;
-    margin: 0 !important;
+    width: 100% !important;
     box-sizing: border-box !important;
 }
 
-/* 2. MENU A SINISTRA (Pulito) */
+/* 1. MENU A SINISTRA */
 .header-left, #menu-toggle, .menu-btn {
     grid-column: 1 !important;
     display: flex !important;
     justify-content: flex-start !important;
-    font-size: 11px !important;
+    font-size: 12px !important;
     text-transform: uppercase !important;
-    letter-spacing: 2px !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    letter-spacing: 1.5px !important;
+    color: #000 !important;
+    font-weight: 400 !important;
+    cursor: pointer !important;
 }
 
-/* 3. LOGO AL CENTRO (Equilibrato) */
+/* 2. LOGO AL CENTRO (Elegante) */
 .logo-container, header a:has(img) {
     grid-column: 2 !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    position: static !important; /* Toglie l'absolute che creava il disastro */
-    transform: none !important;
     margin: 0 !important;
+    padding: 0 20px !important;
 }
 
 .site-logo, img[alt*="COIN HOME"] {
-    height: 50px !important; /* Dimensione chic */
+    height: 45px !important; /* Altezza perfetta stile La Redoute */
     width: auto !important;
     display: block !important;
-    margin: 0 auto !important;
 }
 
-/* 4. RICERCA E ACCEDI A DESTRA */
+/* 3. RICERCA E ACCEDI A DESTRA */
 .header-right {
     grid-column: 3 !important;
     display: flex !important;
     justify-content: flex-end !important;
     gap: 30px !important;
-    font-size: 11px !important;
+    font-size: 12px !important;
     text-transform: uppercase !important;
-    letter-spacing: 2px !important;
+    letter-spacing: 1.5px !important;
+    color: #000 !important;
 }
 
-/* MOBILE FIX FINAL */
+.header-right a, .header-right div {
+    text-decoration: none !important;
+    color: #000 !important;
+    cursor: pointer !important;
+}
+
+/* MOBILE FIX */
 @media (max-width: 768px) {
     header {
         padding: 0 20px !important;
-        grid-template-columns: 1fr 1fr !important;
+        grid-template-columns: 1fr 1fr !important; /* Menu e Logo su mobile */
+        height: 70px !important;
     }
-    .header-right { display: none !important; }
+    .header-right { display: none !important; } /* Nasconde ricerca su mobile per pulizia */
     .site-logo { height: 35px !important; }
 }
