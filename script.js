@@ -23,3 +23,30 @@ function toggleMenu() {
 document.addEventListener('keydown', (e) => {
     if (e.key === "Escape") closeUltraSearch();
 });
+// Cambia layout griglia (Zara Style)
+function toggleGridLayout() {
+    const grid = document.getElementById('products-grid');
+    const dot = document.getElementById('grid-dot');
+    
+    if (grid && dot) {
+        grid.classList.toggle('grid-wide'); // Cambia colonne
+        dot.classList.toggle('dot-left');  // Muove il pallino
+    }
+}
+
+// Placeholder per Filtri e Ordina
+function openFilters() {
+    console.log("Filtri aperti");
+    alert("Funzionalità FILTRI in arrivo.");
+}
+
+function openSort() {
+    console.log("Ordinamento aperto");
+    alert("Funzionalità ORDINA in arrivo.");
+}
+
+// Gestione Ricerca (già configurata prima)
+function openUltraSearch() {
+    const modal = document.getElementById('search-overlay');
+    if (modal) modal.classList.add('active');
+}
