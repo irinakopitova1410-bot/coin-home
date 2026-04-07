@@ -68,3 +68,33 @@ function openUltraSearch() {
     const modal = document.getElementById('search-overlay');
     if (modal) modal.classList.add('active');
 }
+// Gestione Menu Laterali (Filtri/Ordina)
+function openFilters() {
+    const menu = document.getElementById('filter-menu');
+    if (menu) menu.classList.add('active');
+}
+
+function closeFilters() {
+    const menu = document.getElementById('filter-menu');
+    if (menu) menu.classList.remove('active');
+}
+
+function openSort() {
+    const menu = document.getElementById('sort-menu');
+    if (menu) menu.classList.add('active');
+}
+
+function closeSort() {
+    const menu = document.getElementById('sort-menu');
+    if (menu) menu.classList.remove('active');
+}
+
+// Visualizzazione Zara (Pallino)
+function toggleGridLayout() {
+    const grid = document.getElementById('products-grid');
+    const dot = document.getElementById('grid-dot');
+    if(grid && dot) {
+        grid.classList.toggle('grid-wide');
+        dot.classList.toggle('dot-left');
+    }
+}
