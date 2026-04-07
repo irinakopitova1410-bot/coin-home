@@ -3,85 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COIN HOME | ATELIER</title>
+    <title>COIN HOME ATELIER</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-<div id="side-menu" class="side-menu">
-    <div class="menu-close-section">
-        <span class="close-btn" onclick="toggleMenu()">CHIUDI</span>
-    </div>
 
-    <nav class="menu-content">
-        <ul class="menu-list">
-            <li class="menu-item highlight"><a href="#">NUOVI ARRIVI</a></li>
-            <li class="menu-item"><a href="#">CAMERA DA LETTO</a></li>
-            <li class="menu-item"><a href="#">SOGGIORNO</a></li>
-            <li class="menu-item"><a href="#">CUCINA</a></li>
-            <li class="menu-item"><a href="#">BAGNO</a></li>
-            <li class="menu-item"><a href="#">FRAGRANZE</a></li>
-            <li class="menu-item"><a href="#">ACCESSORI</a></li>
-        </ul>
-
-        <ul class="menu-list-secondary">
-            <li class="menu-item promo"><a href="#">RICICLAGGIO MAGAZZINO %</a></li>
-            <li class="menu-item vip"><a href="#">COIN ATELIER VIP</a></li>
-            <li class="menu-item info"><a href="#">+ INFO</a></li>
-        </ul>
-    </nav>
-</div>
-
-<div id="menu-backdrop" class="menu-backdrop" onclick="toggleMenu()"></div>
     <header>
         <div class="header-left" onclick="toggleMenu()">
-            <div class="menu-burger"><div class="line"></div><div class="line"></div></div>
             <span>MENU</span>
         </div>
+
         <div class="logo-container">
-    <a href="index.html">
-        <img src="logo-coin-home-atelier.png" alt="COIN HOME ATELIER" class="site-logo">
-    </a>
-</div>>
+            <a href="index.html">
+                <img src="logo-coin-home-atelier.png" alt="COIN HOME" class="site-logo">
+            </a>
+        </div>
+
         <div class="header-right">
-            <span onclick="toggleSearch()">RICERCA</span>
-            <span onclick="toggleLogin()" style="margin-left:20px">ACCEDI</span>
+            <div class="search-btn" onclick="alert('Ricerca in arrivo...')">RICERCA</div>
+            <div class="login-btn">ACCEDI</div>
         </div>
     </header>
 
-    <div id="search-overlay" class="search-overlay">
-        <div class="search-header-zara">
-            <input type="text" id="search-input" placeholder="COSA STAI CERCANDO?" autocomplete="off">
-            <span class="close-search" onclick="toggleSearch()">ANNULLA</span>
-        </div>
-        <div class="search-suggestions">
-            <p>PUÒ INTERESSARTI</p>
-            <ul>
-                <li>ASCIUGAMANI</li>
-                <li>CANDELE ATELIER</li>
-                <li>LINO</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="login-overlay" class="login-overlay">
-        <span class="close-btn" onclick="toggleLogin()">CHIUDI</span>
-        <div class="login-wrapper">
-            <div class="login-box">
-                <h2>ACCEDI AL TUO ACCOUNT</h2>
-                <div class="field"><label>E-MAIL</label><input type="email"></div>
-                <div class="field"><label>PASSWORD</label><input type="password"></div>
-                <button class="btn-black">ACCEDI</button>
-                
-                <div class="social-section">
-                    <p class="sep"><span>O ACCEDI CON</span></p>
-                    <button class="btn-social" onclick="location.href='https://instagram.com'"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"> INSTAGRAM</button>
-                    <button class="btn-social" onclick="location.href='https://facebook.com'"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_2023.png"> FACEBOOK</button>
-                    <button class="btn-social" onclick="location.href='https://google.com'"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"> GMAIL</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <nav id="side-menu" class="side-menu">
+        <div class="close-menu" onclick="toggleMenu()">×</div>
+        <ul>
+            <li><a href="#">NUOVI ARRIVI</a></li>
+            <li><a href="#">COLLEZIONE</a></li>
+            <li><a href="#">ATELIER</a></li>
+            <li><a href="#">CONTATTI</a></li>
+        </ul>
+    </nav>
 
     <main>
         </main>
