@@ -78,4 +78,41 @@ header {
     display: flex !important;
     gap: 20px !important;
 }
+/* PANNELLO MENU LATERALE */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -400px; /* Nascosto a sinistra */
+    width: 350px;
+    height: 100%;
+    background: #fff;
+    z-index: 9999;
+    transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    padding: 80px 40px;
+    box-shadow: 10px 0 30px rgba(0,0,0,0.05);
+}
+
+/* Quando aggiungiamo la classe .active via JS, il menu entra */
+.side-menu.active {
+    left: 0;
+}
+
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    cursor: pointer;
+    font-weight: 200;
+}
+
+.menu-nav ul { list-style: none; margin-top: 40px; }
+.menu-nav ul li { margin-bottom: 20px; }
+.menu-nav ul li a { 
+    text-decoration: none; 
+    color: #000; 
+    font-size: 13px; 
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+}
 
