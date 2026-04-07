@@ -1,35 +1,70 @@
-/* --- HEADER MINIMAL (STILE ZARA HOME) --- */
+/* --- RESET E HEADER MINIMAL STYLE --- */
 header {
     display: flex !important;
+    flex-flow: row nowrap !important; /* Impedisce di andare a capo */
     justify-content: space-between !important;
     align-items: center !important;
     padding: 0 30px !important;
-    height: 60px !important; /* Più basso */
+    height: 60px !important; /* Header sottile */
     background: #ffffff !important;
     border-bottom: 1px solid #f2f2f2 !important;
-    position: sticky !important;
+    position: fixed !important; /* Resta in alto */
     top: 0;
+    width: 100%;
     z-index: 1000;
 }
 
-/* LOGO PICCOLO E CENTRALISSIMO */
+/* LOGO PICCOLO E AL CENTRO */
 .logo-container {
     position: absolute !important;
     left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) !important; /* Centra perfettamente sia X che Y */
+    transform: translateX(-50%) !important;
     display: flex !important;
-    justify-content: center !important;
     align-items: center !important;
 }
 
 .site-logo {
-    height: 25px !important; /* Logo più piccolo ed elegante */
+    height: 22px !important; /* Logo molto sottile ed elegante */
     width: auto !important;
     filter: brightness(0) !important;
-    display: block !important;
 }
 
+/* MENU (SINISTRA) E RICERCA/ACCEDI (DESTRA) */
+.header-left, .header-right {
+    font-size: 10px !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    color: #000 !important;
+    white-space: nowrap !important; /* Forza il testo su una riga */
+}
+
+.header-right {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+}
+
+/* BARRA DI RICERCA SOTTILE */
+#search-input {
+    width: 0;
+    opacity: 0;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    font-size: 10px;
+    transition: all 0.4s ease;
+    background: transparent;
+}
+
+#search-input.open {
+    width: 100px !important; /* Più corta così non tocca il logo */
+    opacity: 1 !important;
+    padding: 0 5px !important;
+}
+
+.search-btn, .login-btn {
+    cursor: pointer;
+}
 /* TESTI LATERALI PIÙ PICCOLI */
 .header-left, .header-right {
     font-size: 10px !important; /* Scritte ancora più sottili */
@@ -44,9 +79,3 @@ header {
     gap: 20px !important;
 }
 
-/* FIX PER LA RICERCA CHE NON SPOSTA NULLA */
-#search-input.open {
-    width: 120px !important; /* Barra più corta per non toccare il logo */
-    opacity: 1 !important;
-    margin-right: 10px !important;
-}
