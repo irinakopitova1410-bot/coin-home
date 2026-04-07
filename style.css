@@ -234,3 +234,30 @@ header {
     margin-right: 10px;
     font-weight: 300;
 }
+/* --- LOGICA BARRA DI RICERCA --- */
+#search-input {
+    width: 0;
+    opacity: 0;
+    border: none;
+    border-bottom: 1px solid #000; /* Linea sottile stile Zara */
+    outline: none;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    padding: 5px 0;
+}
+
+/* Questa classe viene attivata dal JavaScript */
+#search-input.active {
+    width: 180px; /* La barra si allunga */
+    opacity: 1;
+    margin-right: 15px;
+}
+
+.search-trigger {
+    cursor: pointer;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
