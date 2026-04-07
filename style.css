@@ -1,118 +1,114 @@
-/* --- RESET E HEADER MINIMAL STYLE --- */
+/* RESET E FONTS */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: 'Montserrat', sans-serif; 
+    background: #fff; 
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+h1, h2 { font-family: 'Tenor Sans', serif; text-transform: uppercase; letter-spacing: 4px; }
+
+/* HEADER STILE GALLERIA D'ARTE */
 header {
-    display: flex !important;
-    flex-flow: row nowrap !important; /* Impedisce di andare a capo */
-    justify-content: space-between !important;
-    align-items: center !important;
-    padding: 0 30px !important;
-    height: 60px !important; /* Header sottile */
-    background: #ffffff !important;
-    border-bottom: 1px solid #f2f2f2 !important;
-    position: fixed !important; /* Resta in alto */
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-/* LOGO PICCOLO E AL CENTRO */
-.logo-container {
-    position: absolute !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    display: flex !important;
-    align-items: center !important;
-}
-
-.site-logo {
-    height: 22px !important; /* Logo molto sottile ed elegante */
-    width: auto !important;
-    filter: brightness(0) !important;
-}
-
-/* MENU (SINISTRA) E RICERCA/ACCEDI (DESTRA) */
-.header-left, .header-right {
-    font-size: 10px !important;
-    letter-spacing: 1px !important;
-    text-transform: uppercase !important;
-    color: #000 !important;
-    white-space: nowrap !important; /* Forza il testo su una riga */
-}
-
-.header-right {
-    display: flex !important;
-    align-items: center !important;
-    gap: 15px !important;
-}
-
-/* BARRA DI RICERCA SOTTILE */
-#search-input {
-    width: 0;
-    opacity: 0;
-    border: none;
-    border-bottom: 1px solid #000;
-    outline: none;
-    font-size: 10px;
-    transition: all 0.4s ease;
-    background: transparent;
-}
-
-#search-input.open {
-    width: 100px !important; /* Più corta così non tocca il logo */
-    opacity: 1 !important;
-    padding: 0 5px !important;
-}
-
-.search-btn, .login-btn {
-    cursor: pointer;
-}
-/* TESTI LATERALI PIÙ PICCOLI */
-.header-left, .header-right {
-    font-size: 10px !important; /* Scritte ancora più sottili */
-    letter-spacing: 1.2px !important;
-    text-transform: uppercase !important;
-    color: #000 !important;
-    z-index: 10 !important;
-}
-
-.header-right {
-    display: flex !important;
-    gap: 20px !important;
-}
-/* PANNELLO MENU LATERALE */
-.side-menu {
     position: fixed;
-    top: 0;
-    left: -400px; /* Nascosto a sinistra */
-    width: 350px;
-    height: 100%;
-    background: #fff;
-    z-index: 9999;
-    transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-    padding: 80px 40px;
-    box-shadow: 10px 0 30px rgba(0,0,0,0.05);
+    top: 0; width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    background: rgba(255,255,255,0.95);
+    z-index: 1000;
+    border-bottom: 1px solid #f0f0f0;
 }
 
-/* Quando aggiungiamo la classe .active via JS, il menu entra */
-.side-menu.active {
-    left: 0;
+.main-logo { height: 28px; filter: brightness(0); }
+
+.nav-trigger, .search-trigger { 
+    font-size: 11px; letter-spacing: 2px; cursor: pointer; text-transform: uppercase;
 }
 
-.close-menu {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 30px;
-    cursor: pointer;
-    font-weight: 200;
+.vip-badge {
+    font-size: 9px;
+    background: #000;
+    color: #fff;
+    padding: 4px 10px;
+    letter-spacing: 1px;
+    margin-right: 20px;
 }
 
-.menu-nav ul { list-style: none; margin-top: 40px; }
-.menu-nav ul li { margin-bottom: 20px; }
-.menu-nav ul li a { 
-    text-decoration: none; 
-    color: #000; 
-    font-size: 13px; 
-    text-transform: uppercase; 
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    background: #f9f9f9; /* Qui potrai mettere un'immagine di lino o interni */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 70px;
+}
+
+.hero h1 { font-size: 3rem; font-weight: 200; margin-bottom: 20px; }
+.hero h1 span { font-weight: 400; color: #b0914f; } /* Oro opaco */
+
+.btn-main {
+    margin-top: 30px;
+    padding: 15px 40px;
+    background: #000;
+    color: #fff;
+    border: none;
     letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
+.btn-main:hover { background: #b0914f; }
+
+/* SIDE DRAWER */
+.side-drawer {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 380px; height: 100%;
+    background: #fff;
+    z-index: 2000;
+    transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    padding: 100px 50px;
+}
+
+.side-drawer.active { left: 0; }
+
+.drawer-tag { font-size: 10px; color: #b0914f; margin-bottom: 30px; letter-spacing: 3px; }
+
+.side-drawer ul { list-style: none; }
+.side-drawer ul li { margin-bottom: 30px; }
+.side-drawer ul li a { 
+    text-decoration: none; color: #000; font-size: 18px; 
+    text-transform: uppercase; letter-spacing: 2px;
+}
+
+.gold-link { color: #b0914f !important; font-weight: bold; }
+
+/* PRODUCT GRID */
+.vip-section { padding: 100px 50px; background: #fff; }
+.section-title { text-align: center; margin-bottom: 60px; font-size: 1.5rem; }
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.product-card { position: relative; text-align: center; }
+.product-img-placeholder { height: 350px; background: #f4f4f4; margin-bottom: 15px; }
+.sale-tag { 
+    position: absolute; top: 10px; left: 10px; 
+    background: #b0914f; color: #fff; font-size: 10px; padding: 5px 10px; 
+}
+
+.old-price { text-decoration: line-through; color: #999; margin-right: 10px; }
+
+@media (max-width: 768px) {
+    header { padding: 0 20px; }
+    .side-drawer { width: 100%; }
+}
