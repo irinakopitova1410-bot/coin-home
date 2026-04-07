@@ -15,3 +15,17 @@ document.addEventListener('click', function(e) {
         }
     }
 });
+
+function openSearch() {
+    const input = document.getElementById('search-input');
+    input.classList.toggle('open');
+    input.focus(); // Mette subito il cursore per scrivere
+}
+
+// Se l'utente preme INVIO mentre scrive
+document.getElementById('search-input')?.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        alert('Stai cercando: ' + this.value);
+        // Qui potrai collegare la ricerca vera ai tuoi prodotti
+    }
+});
