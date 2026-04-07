@@ -331,3 +331,45 @@ header {
 
 /* Nascondi lo scroll quando la ricerca è aperta */
 body.no-scroll { overflow: hidden; }
+/* --- FIX HEADER DISTRIBUZIONE --- */
+header {
+    display: flex !important;
+    justify-content: space-between !important; /* Spinge i tre blocchi ai lati e al centro */
+    align-items: center !important;
+    padding: 0 40px !important;
+    height: 70px !important;
+    position: fixed !important;
+    width: 100%;
+    background: #fff;
+    z-index: 1000;
+}
+
+.nav-left, .nav-right {
+    flex: 1; /* Forza i lati ad avere la stessa larghezza per centrare il logo */
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.nav-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu-trigger, .search-trigger {
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.menu-trigger:hover, .search-trigger:hover {
+    opacity: 0.5;
+}
+
+/* Assicurati che il logo sia centrale */
+.logo-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
