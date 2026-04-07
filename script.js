@@ -29,24 +29,31 @@ document.getElementById('search-input')?.addEventListener('keypress', function (
         executeSearch(this.value);
     }
 });
+// Funzione per aprire/chiudere il menu laterale
+function toggleMenu() {
+    const menu = document.getElementById('side-menu');
+    if (menu) {
+        menu.classList.toggle('active');
+    }
+}
+
+// Funzione per la ricerca ultra-moderna (Blur)
 function openUltraSearch() {
     const overlay = document.getElementById('search-overlay');
     const input = document.getElementById('ultra-search-input');
-    
-    overlay.classList.add('active');
-    document.body.classList.add('no-scroll');
-    
-    // Focus ritardato per lasciare tempo all'animazione
-    setTimeout(() => {
-        input.focus();
-    }, 300);
+    if (overlay) {
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Blocca lo scroll
+        setTimeout(() => input.focus(), 400);
+    }
 }
 
 function closeUltraSearch() {
     const overlay = document.getElementById('search-overlay');
-    overlay.classList.remove('active');
-    document.body.classList.remove('no-scroll');
-}
+    if (overlay) {
+        overlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
 
 // Chiudi con il tasto ESC o esegui ricerca con INVIO
 document.addEventListener('keydown', (e) => {
