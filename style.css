@@ -455,3 +455,82 @@ header {
 .search-modal.active {
     display: flex; /* Appare quando clicchi */
 }
+/* --- STILE PAGINA NUOVI ARRIVI --- */
+.page-arrivals { background: #fff; }
+
+.arrivals-container {
+    padding: 120px 40px 60px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.arrivals-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.arrivals-header h1 {
+    font-family: 'Tenor Sans', serif;
+    font-size: 2.5rem;
+    font-weight: 200;
+    letter-spacing: 6px;
+}
+
+.arrivals-header p {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #999;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+/* Griglia Editoriale */
+.arrivals-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.product-card {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.product-card.tall {
+    grid-row: span 2;
+}
+
+.product-card .img-box {
+    background: #f9f9f9;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.8s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.03);
+}
+
+.product-card .info h3 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.product-card .info p {
+    font-size: 11px;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .arrivals-grid { grid-template-columns: 1fr; }
+    .arrivals-header h1 { font-size: 1.8rem; }
+}
