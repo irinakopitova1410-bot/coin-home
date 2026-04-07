@@ -1,40 +1,23 @@
-// --- FUNZIONE MENU ---
 function toggleMenu() {
     const menu = document.getElementById('side-menu');
-    if (menu) {
-        menu.classList.toggle('active');
-        console.log("Menu cliccato");
-    } else {
-        console.error("ERRORE: Non trovo l'elemento con id 'side-menu'");
-    }
+    menu.classList.toggle('active');
 }
 
-// --- FUNZIONE RICERCA ---
-function openUltraSearch() {
-    const overlay = document.getElementById('search-overlay');
-    if (overlay) {
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        setTimeout(() => {
-            document.getElementById('ultra-search-input')?.focus();
-        }, 400);
-    } else {
-        console.error("ERRORE: Non trovo l'elemento con id 'search-overlay'");
-    }
+function openSearch() {
+    const search = document.getElementById('search-overlay');
+    search.classList.add('active');
+    setTimeout(() => { document.getElementById('search-input').focus(); }, 100);
 }
 
-function closeUltraSearch() {
-    const overlay = document.getElementById('search-overlay');
-    if (overlay) {
-        overlay.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
+function closeSearch() {
+    const search = document.getElementById('search-overlay');
+    search.classList.remove('active');
 }
 
-// Chiudi tutto con il tasto ESC
+// Chiudi tutto con ESC
 document.addEventListener('keydown', (e) => {
     if (e.key === "Escape") {
-        closeUltraSearch();
-        document.getElementById('side-menu')?.classList.remove('active');
+        closeSearch();
+        document.getElementById('side-menu').classList.remove('active');
     }
 });
