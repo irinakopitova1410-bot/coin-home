@@ -29,3 +29,33 @@ document.getElementById('search-input')?.addEventListener('keypress', function (
         executeSearch(this.value);
     }
 });
+function openUltraSearch() {
+    const overlay = document.getElementById('search-overlay');
+    const input = document.getElementById('ultra-search-input');
+    
+    overlay.classList.add('active');
+    document.body.classList.add('no-scroll');
+    
+    // Focus ritardato per lasciare tempo all'animazione
+    setTimeout(() => {
+        input.focus();
+    }, 300);
+}
+
+function closeUltraSearch() {
+    const overlay = document.getElementById('search-overlay');
+    overlay.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+}
+
+// Chiudi con il tasto ESC o esegui ricerca con INVIO
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") closeUltraSearch();
+    
+    const input = document.getElementById('ultra-search-input');
+    if (e.key === "Enter" && document.activeElement === input && input.value !== "") {
+        console.log("Ricerca Ultra-Veloce per:", input.value);
+        // Qui puoi reindirizzare ai risultati o filtrare i prodotti
+        alert("Accesso all'archivio per: " + input.value);
+    }
+});
