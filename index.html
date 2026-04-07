@@ -14,10 +14,19 @@
         <div class="logo-area">
             <img src="logo-coin-home-atelier.png" alt="COIN HOME" class="main-logo">
         </div>
-        <div class="nav-right">
-            <span class="vip-badge">VIP ACCESS</span>
-            <span class="search-trigger" onclick="openSearch()">CERCA</span>
-        </div>
+      <div class="nav-right">
+    <span class="vip-badge">VIP ACCESS</span>
+    <span class="search-trigger" onclick="openUltraSearch()">CERCA</span>
+</div>
+
+<div id="search-overlay" class="search-overlay">
+    <div class="close-search" onclick="closeUltraSearch()">×</div>
+    <div class="search-modal-content">
+        <input type="text" id="ultra-search-input" placeholder="COSA STAI CERCANDO?" autocomplete="off">
+        <div class="search-line"></div>
+        <p class="search-hint">Premi INVIO per esplorare l'archivio VIP</p>
+    </div>
+</div>
     </header>
 
     <nav id="side-menu" class="side-drawer">
