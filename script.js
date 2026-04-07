@@ -3,11 +3,15 @@ function toggleMenu() {
     const menu = document.getElementById('side-menu');
     if (menu) {
         menu.classList.toggle('active');
-        console.log("Menu attivato correttamente");
-    } else {
-        console.error("Errore: Non trovo l'elemento con id 'side-menu'");
     }
 }
+
+// Questo assicura che se clicchi su un link del menu, il menu si chiuda
+document.querySelectorAll('.side-drawer a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('side-menu').classList.remove('active');
+    });
+});
 
 // Funzione per la RICERCA
 function openUltraSearch() {
