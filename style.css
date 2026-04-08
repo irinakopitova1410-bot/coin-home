@@ -862,3 +862,52 @@ header {
     text-transform: uppercase;
     color: black !important;
 }
+/* Stile del Pannello Laterale */
+.side-drawer-right {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Inizia fuori dallo schermo */
+    width: 350px;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 9999;
+    transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    padding: 100px 40px;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+}
+
+/* Quando il pannello è attivo */
+.side-drawer-right.active {
+    right: 0;
+}
+
+.drawer-content h4 {
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    font-weight: 400;
+}
+
+.drawer-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.drawer-content ul li {
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.close-btn {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: 24px;
+    cursor: pointer;
+}
