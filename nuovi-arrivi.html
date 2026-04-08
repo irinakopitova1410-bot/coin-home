@@ -49,15 +49,19 @@
 <div id="filter-menu" class="side-drawer-right">
     <div class="close-btn" onclick="closeFilters()">×</div>
     <div class="drawer-content">
-        <h4>FILTRA PER</h4>
+    <script src="script.js"></script>
+<div id="filter-menu" class="side-drawer-right">
+    <div class="close-btn" onclick="closeFilters()">×</div>
+    <div class="drawer-content">
+        <h4>ESPLORA</h4>
         <ul>
-            <li onclick="filterProducts('all')">NUOVI ARRIVI</li>
-            <li onclick="filterProducts('arredo')">ARREDO</li>
-            <li onclick="filterProducts('decorazioni')">DECORAZIONI</li>
-            <li onclick="filterProducts('tessili')">TESSILI</li>
+            <li onclick="location.href='nuovi-arrivi.html'">NUOVI ARRIVI</li>
+            <li onclick="location.href='nuovi-arrivi.html?cat=arredo'">ARREDO</li>
+            <li onclick="location.href='nuovi-arrivi.html?cat=decorazioni'">DECORAZIONI</li>
+            <li onclick="location.href='nuovi-arrivi.html?cat=tessili'">TESSILI</li>
         </ul>
     </div>
 </div>
-    <script src="script.js"></script>
+    
 </body>
 </html>
