@@ -823,3 +823,52 @@ header {
     letter-spacing: 15px;
     font-weight: 400;
 }
+/* --- FIX FILTRI LATERALE --- */
+.side-drawer-right {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Inizia fuori a destra */
+    width: 350px;
+    height: 100vh;
+    background-color: white !important; /* Forza lo sfondo bianco */
+    z-index: 10000; /* Lo mette sopra le immagini */
+    transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    padding: 80px 40px;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    display: block !important; /* Assicura che sia visibile */
+}
+
+/* Questa classe viene aggiunta dal tasto Filtri */
+.side-drawer-right.active {
+    right: 0 !important; /* Lo porta dentro lo schermo */
+}
+
+.drawer-content h4 {
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.drawer-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.drawer-content li {
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
