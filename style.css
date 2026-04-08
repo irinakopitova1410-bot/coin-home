@@ -661,68 +661,52 @@ header {
 }
 /* --- LOGO ATELIER: MINIMAL & REFINED --- */
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@200;300;400&display=swap');
-
+/* --- LOGO ATELIER: RIDIMENSIONATO --- */
 .atelier-style {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    text-decoration: none;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    /* Ridotto da 1.6 a 1.0 per dimensioni standard */
+    transform: scale(1.0) !important; 
+    margin: 0 auto;
 }
 
 .atelier-style .brand-name {
-    font-family: 'Bodoni Moda', serif;
-    font-size: 15px; /* Dimensioni ridotte per eleganza */
-    letter-spacing: 7px; /* Molto spazio per far respirare il nome */
-    font-weight: 400;
-    color: #000;
-    text-transform: uppercase;
-    line-height: 1;
+    font-family: 'Bodoni Moda', serif !important;
+    font-size: 18px !important; /* Carattere più piccolo */
+    letter-spacing: 8px !important; /* Spaziatura elegante */
+    font-weight: 500 !important;
+    color: #000 !important;
+    text-transform: uppercase !important;
+    line-height: 1 !important;
 }
 
 .atelier-style .line {
-    width: 30px; /* Linea cortissima e chic */
-    height: 0.5px; /* Sottilissima */
-    background: #000;
-    margin: 8px 0;
+    width: 60px !important; /* Linea più corta */
+    height: 1px !important;
+    background: #000 !important;
+    margin: 10px 0 !important;
 }
 
 .atelier-style .brand-atelier {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 7.5px; /* Piccolissimo */
-    letter-spacing: 4px;
-    color: #a3a3a3; /* Grigio etereo */
-    text-transform: uppercase;
-    font-weight: 300;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 9px !important; /* Sottotitolo minuscolo */
+    letter-spacing: 5px !important;
+    color: #888 !important;
+    text-transform: uppercase !important;
 }
 
-/* --- HEADER PROPORZIONATO --- */
+/* Riporta l'header a un'altezza normale */
 header {
-    height: 85px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 40px;
-    background: #fff;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 2000;
-    border-bottom: 1px solid #f8f8f8;
+    height: 90px !important; 
+    padding: 0 40px !important;
 }
 
-.nav-left, .nav-right {
-    flex: 1;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 9px;
-    letter-spacing: 2px;
-    color: #000;
-    cursor: pointer;
-    text-transform: uppercase;
+/* Sistema lo spazio sotto l'header */
+.arrivals-wrapper, .hero-section {
+    padding-top: 100px !important;
 }
-
-.nav-right { text-align: right; }
 
 /* Spazio per il contenuto sotto l'header */
 .arrivals-wrapper {
