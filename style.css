@@ -398,7 +398,7 @@ header {
 .nav-right { justify-content: flex-end; gap: 25px; }
 
 .menu-trigger, .search-trigger {
-    font-size: 15px;
+    font-size: 13px;
     letter-spacing: 2px;
     cursor: pointer;
     text-transform: uppercase;
