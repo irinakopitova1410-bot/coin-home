@@ -3,38 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuovi Arrivi | COIN HOME ATELIER</title>
+    <title>Nuovi Arrivi - COIN HOME ATELIER</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="nav-left" onclick="location.href='index.html'">
-            <span class="back-btn">INDIETRO</span>
+
+<header>
+    <div class="nav-left">
+        <span onclick="location.href='index.html'">INDIETRO</span>
+    </div>
+    <div class="logo-area atelier-style">
+        <div class="brand-name">COIN HOME</div>
+        <div class="line"></div>
+        <div class="brand-atelier">ATELIER</div>
+    </div>
+    <div class="nav-right">
+        <span onclick="openUltraSearch()">CERCA</span>
+    </div>
+</header>
+
+<div class="zara-controls">
+    <div class="control-group" onclick="toggleGridLayout()">
+        <span>VISUALIZZAZIONE</span>
+        <div class="view-indicator">
+            <div id="grid-dot" class="dot"></div>
         </div>
-        <div class="logo-area">
-            <img src="logo-coin-home-atelier.png" alt="COIN HOME" class="main-logo">
-        </div>
-        <div class="nav-right">
-            <span class="search-trigger" onclick="openUltraSearch()">CERCA</span>
-        </div>
-    </header>
-    <main class="arrivals-wrapper">
-        <div class="zara-controls">
-            <div class="control-group" onclick="toggleGridLayout()">
-                <span class="label">VISUALIZZAZIONE</span>
-                <div class="view-indicator">
-                    <div class="line"></div>
-                    <div id="grid-dot" class="dot"></div>
-                </div>
-            </div>
-            <div class="control-group">
-                <span class="filter-btn" onclick="openFilters()">FILTRI</span>
-                <span class="separator">|</span>
-                <span class="sort-btn" onclick="openSort()">ORDINA</span>
-            </div>
-        </div>
-       <div id="products-grid" class="products-grid">
+    </div>
+    <span class="separator">|</span>
+    <div class="control-group" onclick="openFilters()">
+        <span>FILTRI</span>
+    </div>
+    <span class="separator">|</span>
+    <div class="control-group" onclick="openSort()">
+        <span>ORDINA</span>
+    </div>
+</div>
+
+<div id="products-grid" class="products-grid">
     <div class="product-item" data-category="arredo">
         <div class="img-container">
             <img src="https://images.unsplash.com/photo-1616489953149-804364409514?q=80&w=800" alt="Item">
@@ -43,7 +48,6 @@
             <h3>POLTRONA ATELIER</h3>
             <p>890,00 EUR</p>
         </div>
-    </div>
     </div>
     <div class="product-item" data-category="decorazioni">
         <div class="img-container">
@@ -54,60 +58,21 @@
             <p>65,00 EUR</p>
         </div>
     </div>
-    <div class="product-item" data-category="decorazioni">
-        <div class="img-container">
-            <img src="https://images.unsplash.com/photo-1513519247388-4e282650d44d?q=80&w=800" alt="Item">
-        </div>
-        <div class="product-info">
-            <h3>LAMPADA BRASS</h3>
-            <p>120,00 EUR</p>
-        </div>
-    </div>
-
-    <div class="product-item" data-category="tessili">
-        <div class="img-container">
-            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800" alt="Item">
-        </div>
-        <div class="product-info">
-            <h3>TESSILI IN LINO</h3>
-            <p>45,00 EUR</p>
-        </div>
-    </div>
 </div>
-            <div class="product-item">
-                <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800" alt="Item">
-                </div>
-                <div class="product-info">
-                    <h3>TESSILI IN LINO</h3>
-                    <p>45,00 EUR</p>
-                </div>
-            </div>
-        </div>
-    </main>
-    <script src="script.js"></script>
+
 <div id="filter-menu" class="side-drawer-right">
     <div class="close-btn" onclick="closeFilters()">×</div>
     <div class="drawer-content">
         <h4>FILTRA PER</h4>
         <ul>
-            <li>NUOVA COLLEZIONE</li>
-            <li>ARREDO</li>
-            <li>DECORAZIONI</li>
-            <li>TESSILI</li>
+            <li onclick="filterProducts('all')">TUTTO</li>
+            <li onclick="filterProducts('arredo')">ARREDO</li>
+            <li onclick="filterProducts('decorazioni')">DECORAZIONI</li>
+            <li onclick="filterProducts('tessili')">TESSILI</li>
         </ul>
     </div>
 </div>
-<div id="sort-menu" class="side-drawer-right">
-    <div class="close-btn" onclick="closeSort()">×</div>
-    <div class="drawer-content">
-        <h4>ORDINA PER</h4>
-        <ul>
-            <li>PIÙ RECENTI</li>
-            <li>PREZZO: CRESCENTE</li>
-            <li>PREZZO: DECRESCENTE</li>
-        </ul>
-    </div>
-</div>
+
+<script src="script.js"></script>
 </body>
 </html>
