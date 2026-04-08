@@ -816,7 +816,6 @@ header {
     height: 80vh;
     text-align: center;
 }
-
 .hero-section h1 {
     font-family: 'Bodoni Moda', serif;
     font-size: 48px;
@@ -837,38 +836,29 @@ header {
     box-shadow: -10px 0 30px rgba(0,0,0,0.1);
     display: block !important; /* Assicura che sia visibile */
 }
-
-/* Questa classe viene aggiunta dal tasto Filtri */
+/* --- AGGIUNGI QUESTO IN FONDO AL FILE STYLE.CSS --- */
+.side-drawer-right {
+    position: fixed !important;
+    top: 0 !important;
+    right: -100%; /* Inizia fuori */
+    width: 350px;
+    height: 100vh;
+    background: #ffffff !important; /* Bianco assoluto */
+    z-index: 99999 !important; /* Deve stare sopra tutto */
+    transition: right 0.5s ease-in-out;
+    padding: 80px 40px;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.2);
+    display: block !important;
+}
+/* Questa è la regola che fa apparire il menu */
 .side-drawer-right.active {
-    right: 0 !important; /* Lo porta dentro lo schermo */
+    right: 0 !important;
 }
-
-.drawer-content h4 {
+.drawer-content ul li {
     font-size: 11px;
-    letter-spacing: 3px;
-    margin-bottom: 40px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-}
-
-.drawer-content ul {
-    list-style: none;
-    padding: 0;
-}
-
-.drawer-content li {
-    font-size: 10px;
     letter-spacing: 2px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     cursor: pointer;
     text-transform: uppercase;
+    color: black !important;
 }
-
-.close-btn {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    font-size: 24px;
-    cursor: pointer;
-}
-
