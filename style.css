@@ -724,46 +724,49 @@ header {
 }
 .side-drawer-right.active { right: 0; }
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&display=swap');
-
 .atelier-style {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    /* Aumenta questo numero per farlo ancora più gigante */
-    transform: scale(1.6) !important; 
+    transform: scale(0.7) !important; /* Rimpicciolisce tutto del 30% */
     margin: 0 auto;
 }
 
 .atelier-style .brand-name {
     font-family: 'Bodoni Moda', serif !important;
-    font-size: 26px !important; /* Grandezza del testo principale */
-    letter-spacing: 12px !important; /* Spaziatura tra le lettere */
-    font-weight: 500 !important;
-    color: #000 !important;
-    text-transform: uppercase !important;
-    line-height: 1 !important;
+    font-size: 16px !important; /* Molto più piccolo */
+    letter-spacing: 8px !important;
+    font-weight: 400 !important;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1;
 }
 
 .atelier-style .line {
-    width: 110px !important; /* Lunghezza della linea nera */
-    height: 1.5px !important;
-    background: #000 !important;
-    margin: 12px 0 !important;
+    width: 30px !important; /* Linea cortissima */
+    height: 0.8px !important; /* Linea sottilissima */
+    background: #000;
+    margin: 5px 0 !important;
 }
 
 .atelier-style .brand-atelier {
     font-family: 'Montserrat', sans-serif !important;
-    font-size: 13px !important;
-    letter-spacing: 6px !important;
-    color: #888 !important;
-    text-transform: uppercase !important;
+    font-size: 7px !important; /* Quasi impercettibile, molto chic */
+    letter-spacing: 4px !important;
+    color: #999 !important;
+    text-transform: uppercase;
 }
 
-/* Alza l'header per non tagliare il logo grande */
+/* RIDUCIAMO ANCHE L'ALTEZZA DELLA FASCIA BIANCA */
 header {
-    height: 140px !important; 
-    padding: 0 50px !important;
+    height: 70px !important; /* Header molto sottile */
+    padding: 0 30px !important;
+}
+
+/* Sistemiamo il distanziamento del contenuto */
+.hero-section, .arrivals-wrapper {
+    padding-top: 80px !important;
 }
 
 /* Sposta il contenuto della pagina più in basso per l'header più alto */
