@@ -136,3 +136,23 @@ function filterProducts(category) {
     });
     closeFilters();
 }
+function openFilters() {
+    document.getElementById('filter-menu').classList.add('active');
+}
+
+function closeFilters() {
+    document.getElementById('filter-menu').classList.remove('active');
+}
+
+function filterProducts(category) {
+    const products = document.querySelectorAll('.product-item');
+    products.forEach(p => {
+        const pCat = p.getAttribute('data-category');
+        if (category === 'all' || pCat === category) {
+            p.style.display = 'block';
+        } else {
+            p.style.display = 'none';
+        }
+    });
+    closeFilters();
+}
