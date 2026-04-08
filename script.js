@@ -1,26 +1,174 @@
-// --- 1. GESTIONE MENU LATERALE (HOME) ---
-function toggleMenu() {
-    const menu = document.getElementById('side-menu');
-    if (menu) {
-        menu.classList.toggle('active');
+// Funzione Ricerca
+function openUltraSearch() {
+    const modal = document.getElementById('search-overlay');
+    const input = document.getElementById('ultra-search-input');
+    if (modal) {
+        modal.classList.add('active');
+        setTimeout(() => input.focus(), 300);
     }
 }
 
-// --- 2. GESTIONE FILTRI (NUOVI ARRIVI) ---
-function openFilters() {
-    const filterMenu = document.getElementById('filter-menu');
-    if (filterMenu) {
-        filterMenu.classList.add('active');
+function closeUltraSearch() {
+    const modal = document.getElementById('search-overlay');
+    if (modal) modal.classList.remove('active');
+}
+
+// Funzione Menu (se presente nell'header)
+function toggleMenu() {
+    const menu = document.getElementById('side-menu');
+    if (menu) menu.classList.toggle('active');
+}
+
+// Chiudi tutto con ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") closeUltraSearch();
+});
+// Cambia layout griglia (Zara Style)
+function toggleGridLayout() {
+    const grid = document.getElementById('products-grid');
+    const dot = document.getElementById('grid-dot');
+    
+    if (grid && dot) {
+        grid.classList.toggle('grid-wide'); // Cambia colonne
+        dot.classList.toggle('dot-left');  // Muove il pallino
     }
+}
+// Funzione per filtrare i prodotti con effetto fade
+function filterProducts(category) {
+    const products = document.querySelectorAll('.product-item');
+    
+    products.forEach(product => {
+        // Logica: se la categoria coincide o è 'all', mostra; altrimenti nascondi.
+        if (category === 'all' || product.getAttribute('data-category') === category) {
+            product.style.display = 'block';
+            setTimeout(() => { product.style.opacity = '1'; }, 10);
+        } else {
+            product.style.opacity = '0';
+            setTimeout(() => { product.style.display = 'none'; }, 400);
+        }
+    });
+
+    closeFilters(); // Chiude il menu dopo la scelta
+}
+
+// Apertura e Chiusura Menu (Senza alert!)
+function openFilters() {
+    const menu = document.getElementById('filter-menu');
+    if (menu) menu.classList.add('active');
 }
 
 function closeFilters() {
-    const filterMenu = document.getElementById('filter-menu');
-    if (filterMenu) {
-        filterMenu.classList.remove('active');
-    }
+    const menu = document.getElementById('filter-menu');
+    if (menu) menu.classList.remove('active');
 }
 
+// Gestione ORDINA
+function openSort() {
+    const menu = document.getElementById('sort-menu');
+    if (menu) menu.classList.add('active');
+}
+
+function closeSort() {
+    const menu = document.getElementById('sort-menu');
+    if (menu) menu.classList.remove('active');
+}
+
+// Chiudi tutto con ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+        closeFilters();
+        closeSort();
+    }
+});
+
+// Gestione Ricerca (già configurata prima)
+function openUltraSearch() {
+    const modal = document.getElementById('search-overlay');
+    if (modal) modal.classList.add('active');
+}
+// Gestione Menu Laterali (Filtri/Ordina)
+function openFilters() {
+    const menu = document.getElementById('filter-menu');
+    if (menu) menu.classList.add('active');
+}
+
+function closeFilters() {
+    const menu = document.getElementById('filter-menu');
+    if (menu) menu.classList.remove('active');
+}
+
+function openSort() {
+    const menu = document.getElementById('sort-menu');
+    if (menu) menu.classList.add('active');
+}
+
+function closeSort() {
+    const menu = document.getElementById('sort-menu');
+    if (menu) menu.classList.remove('active');
+}
+
+// Visualizzazione Zara (Pallino)
+function toggleGridLayout() {
+    const grid = document.getElementById('products-grid');
+    const dot = document.getElementById('grid-dot');
+    if(grid && dot) {
+        grid.classList.toggle('grid-wide');
+        dot.classList.toggle('dot-left');
+    }
+}
+function openFilters() {
+    document.getElementById('filter-menu').classList.add('active');
+}
+
+function closeFilters() {
+    document.getElementById('filter-menu').classList.remove('active');
+}
+
+function filterProducts(category) {
+    const products = document.querySelectorAll('.product-item');
+    products.forEach(p => {
+        const cat = p.getAttribute('data-category');
+        if (category === 'all' || cat === category) {
+            p.style.display = 'block';
+        } else {
+            p.style.display = 'none';
+        }
+    });
+    closeFilters();
+}
+function openFilters() {
+    document.getElementById('filter-menu').classList.add('active');
+}
+
+function closeFilters() {
+    document.getElementById('filter-menu').classList.remove('active');
+}
+
+function filterProducts(category) {
+    const products = document.querySelectorAll('.product-item');
+    products.forEach(p => {
+        const pCat = p.getAttribute('data-category');
+        if (category === 'all' || pCat === category) {
+            p.style.display = 'block';
+        } else {
+            p.style.display = 'none';
+        }
+    });
+    closeFilters();
+}
+// Funzione per aprire il menu filtri
+function openFilters() {
+    const menu = document.getElementById('filter-menu');
+    if (menu) menu.classList.add('active');
+}
+
+// Funzione per chiudere il menu filtri
+function closeFilters() {
+    const menu = document.getElementById('filter-menu');
+    if (menu) menu.classList.remove('active');
+}
+
+// Logica di filtraggio prodotti
 function filterProducts(category) {
     const products = document.querySelectorAll('.product-item');
     
@@ -29,51 +177,13 @@ function filterProducts(category) {
         
         if (category === 'all' || productCategory === category) {
             product.style.display = 'block';
-            setTimeout(() => { product.style.opacity = '1'; }, 10);
+            // Opzionale: aggiunge un piccolo effetto fade
+            setTimeout(() => product.style.opacity = '1', 10);
         } else {
             product.style.opacity = '0';
             product.style.display = 'none';
         }
     });
 
-    closeFilters(); // Chiude il menu dopo la scelta
+    closeFilters(); // Chiude il menu dopo il click
 }
-
-// --- 3. GESTIONE RICERCA (ULTRA SEARCH) ---
-function openUltraSearch() {
-    const modal = document.getElementById('search-overlay');
-    const input = document.getElementById('ultra-search-input');
-    if (modal) {
-        modal.classList.add('active');
-        if (input) setTimeout(() => input.focus(), 300);
-    }
-}
-
-function closeUltraSearch() {
-    const modal = document.getElementById('search-overlay');
-    if (modal) {
-        modal.classList.remove('active');
-    }
-}
-
-// --- 4. LAYOUT GRIGLIA (ZARA STYLE) ---
-function toggleGridLayout() {
-    const grid = document.getElementById('products-grid');
-    const dot = document.getElementById('grid-dot');
-    if (grid) {
-        grid.classList.toggle('grid-wide'); // Cambia colonne nel CSS
-    }
-    if (dot) {
-        dot.classList.toggle('active');
-    }
-}
-
-// Chiudi tutto con il tasto ESC
-document.addEventListener('keydown', (e) => {
-    if (e.key === "Escape") {
-        closeFilters();
-        closeUltraSearch();
-        const sideMenu = document.getElementById('side-menu');
-        if(sideMenu) sideMenu.classList.remove('active');
-    }
-});
