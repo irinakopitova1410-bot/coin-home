@@ -23,7 +23,7 @@ header {
     border-bottom: 1px solid #f0f0f0;
 }
 
-.main-logo { height: 24px; filter: brightness(0); }
+.main-logo { height: 27px; filter: brightness(0); }
 
 .nav-trigger, .search-trigger { 
     font-size: 11px; letter-spacing: 2px; cursor: pointer; text-transform: uppercase;
