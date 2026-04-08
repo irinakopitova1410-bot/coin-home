@@ -116,3 +116,23 @@ function toggleGridLayout() {
         dot.classList.toggle('dot-left');
     }
 }
+function openFilters() {
+    document.getElementById('filter-menu').classList.add('active');
+}
+
+function closeFilters() {
+    document.getElementById('filter-menu').classList.remove('active');
+}
+
+function filterProducts(category) {
+    const products = document.querySelectorAll('.product-item');
+    products.forEach(p => {
+        const cat = p.getAttribute('data-category');
+        if (category === 'all' || cat === category) {
+            p.style.display = 'block';
+        } else {
+            p.style.display = 'none';
+        }
+    });
+    closeFilters();
+}
