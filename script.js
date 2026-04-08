@@ -139,11 +139,9 @@ function filterProducts(category) {
 function openFilters() {
     document.getElementById('filter-menu').classList.add('active');
 }
-
 function closeFilters() {
     document.getElementById('filter-menu').classList.remove('active');
 }
-
 function filterProducts(category) {
     const products = document.querySelectorAll('.product-item');
     products.forEach(p => {
@@ -156,34 +154,31 @@ function filterProducts(category) {
     });
     closeFilters();
 }
-// Funzione per aprire il menu filtri
+// Funzione per APRIRE il menu filtri
 function openFilters() {
     const menu = document.getElementById('filter-menu');
-    if (menu) menu.classList.add('active');
+    if (menu) {
+        menu.classList.add('active');
+    }
 }
-
-// Funzione per chiudere il menu filtri
+// Funzione per CHIUDERE il menu filtri
 function closeFilters() {
     const menu = document.getElementById('filter-menu');
-    if (menu) menu.classList.remove('active');
+    if (menu) {
+        menu.classList.remove('active');
+    }
 }
-
-// Logica di filtraggio prodotti
+// Funzione per FILTRARE (e gestire "NUOVI ARRIVI")
 function filterProducts(category) {
     const products = document.querySelectorAll('.product-item');
     
     products.forEach(product => {
-        const productCategory = product.getAttribute('data-category');
-        
-        if (category === 'all' || productCategory === category) {
+        const pCat = product.getAttribute('data-category');
+        if (category === 'all' || pCat === category) {
             product.style.display = 'block';
-            // Opzionale: aggiunge un piccolo effetto fade
-            setTimeout(() => product.style.opacity = '1', 10);
         } else {
-            product.style.opacity = '0';
             product.style.display = 'none';
         }
     });
-
     closeFilters(); // Chiude il menu dopo il click
 }
