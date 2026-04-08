@@ -156,3 +156,34 @@ function filterProducts(category) {
     });
     closeFilters();
 }
+// Funzione per aprire il menu filtri
+function openFilters() {
+    const menu = document.getElementById('filter-menu');
+    if (menu) menu.classList.add('active');
+}
+
+// Funzione per chiudere il menu filtri
+function closeFilters() {
+    const menu = document.getElementById('filter-menu');
+    if (menu) menu.classList.remove('active');
+}
+
+// Logica di filtraggio prodotti
+function filterProducts(category) {
+    const products = document.querySelectorAll('.product-item');
+    
+    products.forEach(product => {
+        const productCategory = product.getAttribute('data-category');
+        
+        if (category === 'all' || productCategory === category) {
+            product.style.display = 'block';
+            // Opzionale: aggiunge un piccolo effetto fade
+            setTimeout(() => product.style.opacity = '1', 10);
+        } else {
+            product.style.opacity = '0';
+            product.style.display = 'none';
+        }
+    });
+
+    closeFilters(); // Chiude il menu dopo il click
+}
