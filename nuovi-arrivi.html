@@ -3,76 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuovi Arrivi - COIN HOME ATELIER</title>
+    <title>Nuovi Arrivi - Atelier</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <div class="nav-left" onclick="location.href='index.html'">INDIETRO</div>
+        <div class="logo-area atelier-style">
+            <div class="brand-name">COIN HOME</div>
+            <div class="line"></div>
+            <div class="brand-atelier">ATELIER</div>
+        </div>
+        <div class="nav-right" onclick="openUltraSearch()">CERCA</div>
+    </header>
 
-<header>
-    <div class="nav-left">
-        <span onclick="location.href='index.html'">INDIETRO</span>
+    <div class="zara-controls">
+        <div class="control-group" onclick="toggleGridLayout()">
+            <span>VISUALIZZAZIONE</span>
+            <div class="view-indicator"><div id="grid-dot" class="dot"></div></div>
+        </div>
+        <span class="separator">|</span>
+        <div class="control-group" onclick="openFilters()"><span>FILTRI</span></div>
+        <span class="separator">|</span>
+        <div class="control-group" onclick="openSort()"><span>ORDINA</span></div>
     </div>
-    <div class="logo-area atelier-style">
-        <div class="brand-name">COIN HOME</div>
-        <div class="line"></div>
-        <div class="brand-atelier">ATELIER</div>
-    </div>
-    <div class="nav-right">
-        <span onclick="openUltraSearch()">CERCA</span>
-    </div>
-</header>
 
-<div class="zara-controls">
-    <div class="control-group" onclick="toggleGridLayout()">
-        <span>VISUALIZZAZIONE</span>
-        <div class="view-indicator">
-            <div id="grid-dot" class="dot"></div>
+    <div id="products-grid" class="products-grid">
+        <div class="product-item" data-category="arredo">
+            <div class="img-container"><img src="https://images.unsplash.com/photo-1616489953149-804364409514?q=80&w=800"></div>
+            <div class="product-info"><h3>POLTRONA ATELIER</h3><p>890,00 EUR</p></div>
+        </div>
+        <div class="product-item" data-category="decorazioni">
+            <div class="img-container"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800"></div>
+            <div class="product-info"><h3>VASO CERAMICA N.02</h3><p>65,00 EUR</p></div>
         </div>
     </div>
-    <span class="separator">|</span>
-    <div class="control-group" onclick="openFilters()">
-        <span>FILTRI</span>
-    </div>
-    <span class="separator">|</span>
-    <div class="control-group" onclick="openSort()">
-        <span>ORDINA</span>
-    </div>
-</div>
 
-<div id="products-grid" class="products-grid">
-    <div class="product-item" data-category="arredo">
-        <div class="img-container">
-            <img src="https://images.unsplash.com/photo-1616489953149-804364409514?q=80&w=800" alt="Item">
-        </div>
-        <div class="product-info">
-            <h3>POLTRONA ATELIER</h3>
-            <p>890,00 EUR</p>
-        </div>
-    </div>
-    <div class="product-item" data-category="decorazioni">
-        <div class="img-container">
-            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800" alt="Item">
-        </div>
-        <div class="product-info">
-            <h3>VASO CERAMICA N.02</h3>
-            <p>65,00 EUR</p>
+    <div id="filter-menu" class="side-drawer-right">
+        <div class="close-btn" onclick="closeFilters()">×</div>
+        <div class="drawer-content">
+            <h4>FILTRA PER</h4>
+            <ul>
+                <li onclick="filterProducts('all')">TUTTO</li>
+                <li onclick="filterProducts('arredo')">ARREDO</li>
+                <li onclick="filterProducts('decorazioni')">DECORAZIONI</li>
+                <li onclick="filterProducts('tessili')">TESSILI</li>
+            </ul>
         </div>
     </div>
-</div>
 
-<div id="filter-menu" class="side-drawer-right">
-    <div class="close-btn" onclick="closeFilters()">×</div>
-    <div class="drawer-content">
-        <h4>FILTRA PER</h4>
-        <ul>
-            <li onclick="filterProducts('all')">TUTTO</li>
-            <li onclick="filterProducts('arredo')">ARREDO</li>
-            <li onclick="filterProducts('decorazioni')">DECORAZIONI</li>
-            <li onclick="filterProducts('tessili')">TESSILI</li>
-        </ul>
-    </div>
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
