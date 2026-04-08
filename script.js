@@ -33,7 +33,25 @@ function toggleGridLayout() {
         dot.classList.toggle('dot-left');  // Muove il pallino
     }
 }
-// Gestione FILTRI
+// Funzione per filtrare i prodotti con effetto fade
+function filterProducts(category) {
+    const products = document.querySelectorAll('.product-item');
+    
+    products.forEach(product => {
+        // Logica: se la categoria coincide o è 'all', mostra; altrimenti nascondi.
+        if (category === 'all' || product.getAttribute('data-category') === category) {
+            product.style.display = 'block';
+            setTimeout(() => { product.style.opacity = '1'; }, 10);
+        } else {
+            product.style.opacity = '0';
+            setTimeout(() => { product.style.display = 'none'; }, 400);
+        }
+    });
+
+    closeFilters(); // Chiude il menu dopo la scelta
+}
+
+// Apertura e Chiusura Menu (Senza alert!)
 function openFilters() {
     const menu = document.getElementById('filter-menu');
     if (menu) menu.classList.add('active');
